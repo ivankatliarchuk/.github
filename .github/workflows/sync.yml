@@ -10,7 +10,7 @@ jobs:
     name: extract repository data
     runs-on: ubuntu-latest
     steps:
-    
+
       - uses: actions/checkout@v2
         with:
           fetch-depth: '1'
@@ -18,4 +18,4 @@ jobs:
 
       - name: test it
         run: |
-          echo ${{ github.repository.name }}
+          echo ${{ github.event.repository.name }}
