@@ -6,5 +6,6 @@ Default community health files, such as CONTRIBUTING and CODE_OF_CONDUCT. Defaul
 
 - [Probot: configuration](https://github.com/probot/probot-config)
 - [Github: configuration][1]
+- [Probot: pull requried to be set](https://wei.github.io/pull/)
 
 [1]: https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/creating-a-default-community-health-file
