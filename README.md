@@ -1,6 +1,9 @@
 
 # Configuration Repository
 
+[![syncronize-repository-content](https://github.com/ivankatliarchuk/.github/actions/workflows/sync.yml/badge.svg)](https://github.com/ivankatliarchuk/.github/actions/workflows/sync.yml)
+[![toc generator](https://github.com/ivankatliarchuk/.github/actions/workflows/toc.yml/badge.svg)](https://github.com/ivankatliarchuk/.github/actions/workflows/toc.yml)
+
 Common repository within organization.
 Default community health files, such as CONTRIBUTING and CODE_OF_CONDUCT. Default files will be used for any public repository owned by the account that does not contain its own file of that type.
 

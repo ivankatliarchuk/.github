@@ -7,18 +7,21 @@ on:
   push:
     branches: [main]
 
+env:
+  OWNER: ivankatliarchuk
+
 jobs:
   fetch-repo-info:
     name: extract repository data
     runs-on: ubuntu-latest
     steps:
-
+      # Step 1: run a standard checkout action, provided by github
       - uses: actions/checkout@v2
         with:
           fetch-depth: '1'
-          submodules: 'true'
+          submodules: 'recursive'
 
-      - name: test repo name
+      - name: fetch-repo-name
         shell: bash
         env:
           REPO_NAME: ${{ github.event.repository.name }}
@@ -28,17 +31,21 @@ jobs:
           env
           echo "---"
 
-  validate-base-pull-configuration:
-    name: validate-pull-configuration
-    if: github.repository == 'ivankatliarchuk/.github'
+  fork-sync:
+    name: fork-sync
+    if: github.repository != 'ivankatliarchuk/.github'
     needs: [fetch-repo-info]
     runs-on: ubuntu-latest
     steps:
 
-      - name: test curl
-        if: github.repository == 'ivankatliarchuk/.github'
-        uses: wei/curl@master
+      - uses: tgymnich/fork-sync@v1.4
         with:
-          args: https://pull.git.ci/check/${{ github.repository }}
+          owner: ${{ env.OWNER }}
+          base: main
+          head: main
+
+      # Step 4: Print a helpful timestamp for your records (not required, just nice)
+      - name: Timestamp
+        run: date
 
 
