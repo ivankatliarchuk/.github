@@ -3,15 +3,15 @@ name: toc generator
 on:
   push:
     branches:
-    - main
+      - main
     paths:
-    - "README.md"
+      - README.md
   pull_request:
     branches:
-    - main
+      - main
     paths:
-    - "README.md"
-    
+      - README.md
+
 # https://github.com/technote-space/toc-generator#condition2
 jobs:
   generateTOC:
