@@ -43,6 +43,25 @@ repository:
   # vulnerability alerts.
   enable_vulnerability_alerts: false
 
+branches:
+- name: main
+  protection:
+    required_pull_request_reviews:
+      required_approving_review_count: 1
+      dismiss_stale_reviews: true
+      require_code_owner_reviews: true
+      dismissal_restrictions:
+        users: []
+        teams: []
+    required_status_checks:
+      strict: true
+      contexts: []
+    enforce_admins: false
+    restrictions:
+      apps: []
+      users: []
+      teams: []
+
 # Labels: define labels for Issues and Pull Requests
 labels:
 - name: bug
@@ -113,22 +132,142 @@ labels:
 - name: release
   color: 640910
   description: A PR that updates dependencies - used by Release Drafter
-
-branches:
-- name: main
-  protection:
-    required_pull_request_reviews:
-      required_approving_review_count: 1
-      dismiss_stale_reviews: true
-      require_code_owner_reviews: true
-      dismissal_restrictions:
-        users: []
-        teams: []
-    required_status_checks:
-      strict: true
-      contexts: []
-    enforce_admins: false
-    restrictions:
-      apps: []
-      users: []
-      teams: []
+# Format and labels used aim to match those used by Ansible project
+# https://github.com/marketplace/actions/github-labeler
+- name: deprecated
+  color: "fef2c0"
+  description: "This issue/PR relates to a deprecated module."
+- name: feature
+  color: "006b75"
+  description: "This issue/PR relates to a feature request."
+- name: major
+  color: "c6476b"
+  description: "Marks an important and likely breaking change."
+- name: packaging
+  color: "4071a5"
+  description: "Packaging category"
+- name: performance
+  color: "555555"
+  description: "Relates to product or testing performance."
+- name: skip-changelog
+  color: "eeeeee"
+  description: "Can be missed from the changelog."
+- name: stale
+  color: "eeeeee"
+  description: "Not updated in long time, will be closed soon."
+- name: test
+  color: "0e8a16"
+  description: "This PR relates to tests, QA, CI."
+- name: gate
+  color: "41b6e6"
+  description: "Gate PR in Zuul CI"
+## more info https://github.com/crazy-max/ghaction-github-labeler
+- # automerge
+  name: ":bell: automerge"
+  color: "8f4fbc"
+  description: ""
+- # automerge
+  name: ":bell: approved"
+  color: "8f4fbc"
+  description: ""
+- # bot
+  name: ":robot: bot"
+  color: "69cde9"
+  description: ""
+- # automation
+  name: ":robot: ci"
+  color: "69cde9"
+  description: ""
+- # bug
+  name: ":bug: bug"
+  color: "b60205"
+  description: "This issue/PR relates to a bug."
+- # dependencies
+  name: ":game_die: dependencies"
+  color: "0366d6"
+  description: ""
+- # documentation
+  name: ":memo: documentation"
+  color: "c5def5"
+  description: "This issue/PR relates to or includes documentation."
+- name: ":memo: docs"
+  color: "4071a5"
+  description: "This issue/PR relates to or includes documentation."
+- # duplicate
+  name: ":busts_in_silhouette: duplicate"
+  color: "cccccc"
+  description: ""
+- # enhancement
+  name: ":sparkles: enhancement"
+  color: "0054ca"
+  description: "This issue/PR relates to a feature request."
+- # feature request
+  name: ":bulb: feature request"
+  color: "0e8a16"
+  description: ""
+- # feedback
+  name: ":mega: feedback"
+  color: "03a9f4"
+  description: ""
+- # future maybe
+  name: ":rocket: future maybe"
+  color: "fef2c0"
+  description: ""
+- # good first issue
+  name: ":hatching_chick: good first issue"
+  color: "7057ff"
+  description: ""
+- # help wanted
+  name: ":pray: help wanted"
+  color: "4caf50"
+  description: ""
+- # invalid
+  name: ":no_entry_sign: invalid"
+  color: "e6e6e6"
+  description: ""
+- # investigate
+  name: ":mag: investigate"
+  color: "e6625b"
+  description: ""
+- # needs more info
+  name: ":thinking: needs more info"
+  color: "795548"
+  description: ""
+- # pinned
+  name: ":pushpin: pinned"
+  color: "28008e"
+  description: ""
+- # question
+  name: ":question: question"
+  color: "3f51b5"
+  description: ""
+- # sponsor
+  name: ":sparkling_heart: sponsor"
+  color: "fedbf0"
+  description: ""
+- # stale
+  name: ":skull: stale"
+  color: "237da0"
+  description: ""
+- # upstream
+  name: ":eyes: upstream"
+  color: "fbca04"
+  description: ""
+- # wontfix
+  name: ":coffin: wontfix"
+  color: "ffffff"
+  description: ""
+# commit sizes
+- # size s
+  name: ":smiley_cat: size S"
+  color: "ffffff"
+  description: ""
+- # size M
+  name: ":nauseated_face: size M"
+  color: "ffffff"
+  description: ""
+- # size L
+  name: ":skull_and_crossbones: size L"
+  color: "ffffff"
+  description: ""
+# https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md
