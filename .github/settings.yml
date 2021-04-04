@@ -1,0 +1,134 @@
+# These settings are synced to GitHub by https://probot.github.io/apps/settings/
+
+repository:
+  # See https://developer.github.com/v3/repos/#edit for all available settings.
+
+  # The name of the repository. Changing this will rename the repository
+  name: .github
+  # A short description of the repository that will show up on GitHub
+  description: Repository used to organize everything around Organisations. 
+  # A URL with more information about the repository
+  # homepage:
+  # A comma-separated list of topics to set on the repository
+  topics: ivank, .github
+
+  # Either `true` to make the repository private, or `false` to make it public.
+  private: false
+  # Either `true` to enable issues for this repository, `false` to disable them.
+  has_issues: true
+  # Either `true` to enable projects for this repository, or `false` to disable them.
+  # If projects are disabled for the organization, passing `true` will cause an API error.
+  has_projects: false
+  # Either `true` to enable the wiki for this repository, `false` to disable it.
+  has_wiki: false
+  # Either `true` to enable downloads for this repository, `false` to disable them.
+  has_downloads: false
+  # Updates the default branch for this repository.
+  default_branch: main
+  # Either `true` to allow squash-merging pull requests, or `false` to prevent
+  # squash-merging.
+  allow_squash_merge: true
+  # Either `true` to allow merging pull requests with a merge commit, or `false`
+  # to prevent merging pull requests with merge commits.
+  allow_merge_commit: true
+  # Either `true` to allow rebase-merging pull requests, or `false` to prevent
+  # rebase-merging.
+  allow_rebase_merge: true
+  # Either `true` to enable automatic deletion of branches on merge, or `false` to disable
+  delete_branch_on_merge: true
+  # Either `true` to enable automated security fixes, or `false` to disable
+  # automated security fixes.
+  enable_automated_security_fixes: true
+  # Either `true` to enable vulnerability alerts, or `false` to disable
+  # vulnerability alerts.
+  enable_vulnerability_alerts: false
+
+# Labels: define labels for Issues and Pull Requests
+labels:
+- name: bug
+  color: CC0000
+  description: An issue with the system 🐛.
+- name: feature
+  color: '#336699'
+  description: New functionality.
+- name: good first issue
+  color: 7057ff
+- name: hackathon
+  color: 85f920
+- name: help wanted
+  color: 008672
+- name: question
+  color: D876E3
+- name: wontfix
+  color: FFFFFF
+- name: duplicate
+  color: CFD3D7
+- name: bug
+  color: D73A4A
+- name: documentation
+  color: 0e8a16
+  description: A PR that adds to documentation - used by Release Drafter
+- name: hacktoberfest
+  color: bdff3a
+  description: 'Hacktoberfest. https://jenkins.io/blog/2018/10/01/hacktoberfest/'
+- name: feature
+  color: 1d00ff
+  description: A PR that adds a feature - used by Release Drafter
+- name: bugfix
+  oldname: fix
+  color: c9e85c
+  description: A PR that fixes a bug - used by Release Drafter
+- name: chore
+  color: c9abea
+  description: a PR that adds to maintenance - used by Release Drafter
+- name: test
+  color: d6e819
+  description: A PR that adds to testing - used by Release Drafter
+- name: pinned
+  color: 5ed5e5
+  description: 'Used to avoid stale[bot] marking a issue/PR stale'
+- name: plugin-compatibility
+  color: 8425c4
+- name: stale
+  color: ffffff
+  description: 'Used by stale[bot] to mark a issue/PR stale'
+- name: skip-changelog
+  color: f44271
+  description: A PR that is excluded from Release draft - used by Release Drafter
+- name: removed
+  color: aa0f1c
+  description: A PR that removes code - used by Release Drafter
+- name: deprecated
+  color: e2b626
+  description: A PR that deprecates code - used by Release Drafter
+- name: breaking
+  color: 640910
+  description: A PR that is a breaking change - used by Release Drafter
+- name: dev-tools
+  color: 551a8b
+  description: JCasC Community Bridge Dev-Tools Project
+- name: dependencies
+  color: 0366d6
+  description: A PR that updates dependencies - used by Release Drafter
+- name: release
+  color: 640910
+  description: A PR that updates dependencies - used by Release Drafter
+
+branches:
+- name: main
+  protection:
+    required_pull_request_reviews:
+      required_approving_review_count: 1
+      dismiss_stale_reviews: true
+      require_code_owner_reviews: true
+      dismissal_restrictions:
+        users: []
+        teams: []
+    required_status_checks:
+      strict: true
+      contexts: []
+    enforce_admins: false
+    restrictions:
+      apps: []
+      users: []
+      teams: []

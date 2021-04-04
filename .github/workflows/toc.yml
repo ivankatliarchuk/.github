@@ -1,0 +1,12 @@
+name: toc generator
+
+on: push
+
+jobs:
+  generateTOC:
+    name: toc generator
+    runs-on: ubuntu-latest
+    steps:
+      - uses: technote-space/toc-generator@v2
+        with:
+          TARGET_PATHS: "CONTRIBUTING.md"

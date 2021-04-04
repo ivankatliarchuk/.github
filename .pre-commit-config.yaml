@@ -1,0 +1,71 @@
+repos:
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v3.4.0
+  hooks:
+  - id: check-added-large-files
+    args: ['--maxkb=5000']
+  - id: check-ast
+  - id: check-builtin-literals
+  - id: check-case-conflict
+  - id: check-docstring-first
+  - id: check-executables-have-shebangs
+  - id: check-json
+  - id: check-merge-conflict
+  - id: check-symlinks
+  - id: check-toml
+  - id: check-vcs-permalinks
+  - id: check-xml
+  - id: check-yaml
+  - id: debug-statements
+  - id: destroyed-symlinks
+  - id: detect-aws-credentials
+    args: ['--allow-missing-credentials']
+  - id: detect-private-key
+  - id: double-quote-string-fixer
+  - id: end-of-file-fixer
+  - id: fix-byte-order-marker
+  - id: fix-encoding-pragma
+  - id: mixed-line-ending
+    args: ['--fix=lf']
+    description: Forces to replace line ending by the UNIX 'lf' character.
+  - id: pretty-format-json
+    args: ['--autofix', '--no-sort-keys', '--indent=2']
+  - id: requirements-txt-fixer
+  - id: sort-simple-yaml
+  - id: trailing-whitespace
+- repo: https://github.com/smian/pre-commit-makefile.git
+  rev: 261f8fb4b31dfdc05d1a1d7fbde1f1462ecde66d
+  hooks:
+  - id: makefile-doc
+- repo: meta
+  hooks:
+  - id: check-useless-excludes
+- repo: https://github.com/gruntwork-io/pre-commit
+  rev: v0.1.12 # Get the latest from: https://github.com/gruntwork-io/pre-commit/releases
+  hooks:
+  - id: shellcheck
+- repo: https://github.com/ambv/black
+  rev: 19.10b0
+  hooks:
+  - id: black
+    language_version: python3.8
+- repo: https://gitlab.com/pycqa/flake8
+  rev: 3.9.0
+  hooks:
+  - id: flake8
+- repo: https://github.com/markdownlint/markdownlint
+  rev: v0.10.0
+  hooks:
+  - id: markdownlint
+    name: Markdownlint
+    description: Run markdownlint on your Markdown files
+    entry: mdl
+    language: ruby
+    files: \.(md|mdown|markdown)$
+- repo: https://github.com/adrienverge/yamllint.git
+  rev: v1.24.2
+  hooks:
+  - id: yamllint
+    files: \.(yaml|yml)$
+    types: [file, yaml]
+    entry: 'yamllint --strict -d "{extends: relaxed, rules: {line-length: {max: 200}}}"'
