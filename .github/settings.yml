@@ -6,11 +6,11 @@ repository:
   # The name of the repository. Changing this will rename the repository
   name: .github
   # A short description of the repository that will show up on GitHub
-  description: Repository used to organize everything around Organisations. 
+  description: Repository used to organize everything around Organisations.
   # A URL with more information about the repository
   # homepage:
   # A comma-separated list of topics to set on the repository
-  topics: ivank, .github
+  topics: ivank, .github, configuration
 
   # Either `true` to make the repository private, or `false` to make it public.
   private: false
