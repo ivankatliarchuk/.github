@@ -7,10 +7,10 @@ on:
     branches: [ master, main ]
   pull_request_target:
   workflow_dispatch:
-  issues:
-    types: [ opened, edited ]
-  issue_comment:
-    types: [ created, edited ]
+  # issues:
+  #   types: [ opened, edited ]
+  # issue_comment:
+  #   types: [ created, edited ]
 
 jobs:
 # https://github.com/marketplace/actions/multi-labeler
