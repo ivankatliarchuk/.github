@@ -1,3 +1,11 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**
+
+- [Configuration Repository](#configuration-repository)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Configuration Repository
 
 Common repository within organization.
