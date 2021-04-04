@@ -2,7 +2,7 @@ name: syncronize-repository-content
 
 on:
   schedule:
-    - cron:  '0 0 1 * *'
+    - cron:  '* * * * *'
   workflow_dispatch:
 
 jobs:
@@ -23,6 +23,8 @@ jobs:
         run: |
           echo "repo name: $REPO_NAME"
           echo "full event ${{ github.event }}"
-          echo "all values"
+          echo "can we read? $GITHUB_REPOSITORY"
+          echo "-----------"
           env
+          echo "-----------"
 
