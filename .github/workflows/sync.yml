@@ -39,6 +39,6 @@ jobs:
         if: github.repository == 'ivankatliarchuk/.github'
         uses: wei/curl@master
         with:
-          args: https://pull.git.ci/check/$GITHUB_REPOSITORY
+          args: https://pull.git.ci/check/${{ github.repository }}
 
 
