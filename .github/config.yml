@@ -1,0 +1,80 @@
+# https://github.com/JasonEtco/todo
+todo:
+  keyword: ["@todo", "TODO"]
+  autoAssign: true
+  blobLines: 5
+  label: true
+  reopenClosed: true
+
+blank_issues_enabled: false
+
+# https://github.com/behaviorbot/request-info
+
+# *Required* Comment to reply with
+requestInfoReplyComment: |
+  Hi there :wave:!
+  Thanks for opening this, but we'd appreciate a little more information. Could you update it with more details?
+  I noticed that this new issue/PR doesn't provide any description, so I labeled it with `needs-more-info`
+
+  PR template (if any). Ultimately, the most important question to answer in your
+  description is: *what goal do you want to achieve with this change?*.
+  Thank you! :heart:
+
+# *OPTIONAL* default titles to check against for lack of descriptiveness
+# MUST BE ALL LOWERCASE
+# requestInfoDefaultTitles:
+#   - update readme.md
+#   - updates
+
+# *OPTIONAL* Label to be added to Issues and Pull Requests with insufficient information given
+requestInfoLabelToAdd: needs-more-info
+
+###
+
+# Configuration for welcome - https://github.com/behaviorbot/welcome
+
+# Configuration for new-issue-welcome - https://github.com/behaviorbot/new-issue-welcome
+
+# Comment to be posted to on first time issues
+
+# Configuration for new-pr-welcome - https://github.com/behaviorbot/new-pr-welcome
+
+
+# Comment to be posted to on pull requests merged by a first time user
+firstPRMergeComment: >
+  Congrats on your first merged pull request in this project! :tada:
+  ![congrats](https://raw.githubusercontent.com/jupyterhub/.github/master/images/congrats.jpg)
+  Thank you for contributing, we are very proud of you! :heart:
+
+# *OPTIONAL* Only warn about insufficient information on these events type
+# Keys must be lowercase. Valid values are 'issue' and 'pullRequest'
+requestInfoOn:
+  pullRequest: true
+  issue: true
+
+# Configuration for sentiment-bot - https://github.com/behaviorbot/sentiment-bot
+# *Required* toxicity threshold between 0 and .99 with the higher numbers being the most toxic
+# Anything higher than this threshold will be marked as toxic and commented on
+sentimentBotToxicityThreshold: .9
+
+lockThreads:
+  toxicityThreshold: .7
+  numComments: 2
+  setTimeInHours: 72
+  replyComment: >
+    This thread is being locked due to exceeding the toxicity minimums. cc/ @ivankatliarchuk
+
+# *Required* Comment to reply with
+sentimentBotReplyComment: >
+  Please be sure to review the code of conduct and be respectful of other users.
+
+# Configuration for welcome - https://github.com/behaviorbot/welcome
+# Configuration for new-issue-welcome - https://github.com/behaviorbot/new-issue-welcome
+# Comment to be posted to on first time issues
+newIssueWelcomeComment: >
+  Thanks for opening this issue. A contributor should be by to give feedback soon.
+
+# Configuration for new-pr-welcome - https://github.com/behaviorbot/new-pr-welcome
+# Comment to be posted to on PRs from first time contributors in your repository
+newPRWelcomeComment: >
+  Thanks for opening this pull request! A contributor should be by to give feedback soon.
