@@ -12,6 +12,6 @@ jobs:
         with:
           TARGET_PATHS: "README.md"
           INCLUDE_LABELS: documentation
-          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CREATE_PR: true
           CHECK_ONLY_DEFAULT_BRANCH: true
