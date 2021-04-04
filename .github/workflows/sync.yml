@@ -2,7 +2,7 @@ name: syncronize-repository-content
 
 on:
   schedule:
-    - cron:  '* * * * *'
+    - cron:  '0 */12 * * *'
   workflow_dispatch:
   push:
     branches: [main]
@@ -41,7 +41,7 @@ jobs:
           ref: ${{ env.REF }}
           fetch-depth: '1'
           submodules: 'recursive'
-          
+
       # Step 2: Display a message if 'sync' step had new commits (simple test)
       - uses: tgymnich/fork-sync@v1.4
         with:
