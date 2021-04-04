@@ -1,12 +1,17 @@
 name: toc generator
 
-on: push
+on: [push,pull_request]
 
+# https://github.com/technote-space/toc-generator#condition2
 jobs:
   generateTOC:
     name: toc generator
     runs-on: ubuntu-latest
     steps:
-      - uses: technote-space/toc-generator@v2
+      - uses: technote-space/toc-generator@v4
         with:
-          TARGET_PATHS: "CONTRIBUTING.md"
+          TARGET_PATHS: "README.md"
+          INCLUDE_LABELS: documentation
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          CREATE_PR: true
+          CHECK_ONLY_DEFAULT_BRANCH: true
