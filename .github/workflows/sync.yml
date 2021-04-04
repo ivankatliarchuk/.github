@@ -17,8 +17,12 @@ jobs:
           submodules: 'true'
 
       - name: test it
-        run: |
-          echo "repo name: ${{ env.REPO_NAME }}"
-          echo "full event ${{ github.event }} "
+        shell: bash
         env:
           REPO_NAME: ${{ github.event.repository.name }}
+        run: |
+          echo "repo name: $REPO_NAME"
+          echo "full event ${{ github.event }}"
+          echo "all values"
+          env
+
