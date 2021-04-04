@@ -1,0 +1,23 @@
+---
+name: auto-label
+
+on:
+  pull_request:
+    types: [ opened, edited, synchronize, ready_for_review ]
+    branches: [ master, main ]
+  pull_request_target:
+  workflow_dispatch:
+  issues:
+    types: [ opened, edited ]
+  issue_comment:
+    types: [ created, edited ]
+
+jobs:
+# https://github.com/marketplace/actions/multi-labeler
+  labels-everything:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: fuxingloh/multi-labeler@v1
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}} # optional, default to '${{ github.token }}'
+          config-path: .github/labeler.yml # optional, default to '.github/labeler.yml'
