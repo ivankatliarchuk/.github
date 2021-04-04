@@ -8,7 +8,7 @@ Default community health files, such as CONTRIBUTING and CODE_OF_CONDUCT. Defaul
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**
 
-- [Configuration Repository](#configuration-repository)
+- [Resources](#resources)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
