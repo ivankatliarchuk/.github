@@ -1,0 +1,110 @@
+# .github/labeler.yml
+# https://github.com/marketplace/actions/multi-labeler
+# @todo: sync with other repo
+version: v1
+
+labels:
+  - label: ":sparkles: enhancemen"
+    sync: true # remove label if match failed, default: false (pull_request/issue only)
+    matcher:
+      # Matcher will match on any 7 matcher
+      title: "^feat:.*"
+      body: "/feat"
+      comment: "/feat"
+      branch: "^feat/.*"
+      commits: "^feat:.*"
+      author:
+        - github-actions
+      files:
+        any: [ "src/*" ]
+        all: [ "!app/config/**" ]
+        count:
+          gte: 1
+          lte: 1000
+
+  - label: ":bug: bug"
+    sync: true # remove label if match failed, default: false (pull_request/issue only)
+    matcher:
+      # Matcher will match on any 7 matcher
+      title: "^fix:.*"
+      # e.g. '- [x] bug'
+      body: "(\\n|.)*- \\[x\\] bug(\\n|.)*"
+      comment: "/fix"
+      branch: "^fix/.*"
+      commits: "^fix:.*"
+
+  - label: "coverage"
+    matcher:
+      comment: "# \\[Codecov\\] .*"
+
+  - label: ":skull: stale"
+    matcher:
+      comment: "/stale"
+
+  - label: "github"
+    sync: true
+    matcher:
+      # This is shorthand for any: [".github/**"]
+      files: ".github/**"
+      author:
+        - github-actions
+        - actions-bot
+        - rennovate
+        - dependabot
+        - bot
+
+  - label: ":robot: ci"
+    sync: true
+    matcher:
+      files:
+        any: [ ".github/**", ]
+        all: [ "!app/**" ]
+
+  # PR Files Count
+  - label: ":smiley_cat: size S"
+    sync: true
+    matcher:
+      files:
+        count:
+          gte: 1
+          lte: 4
+
+  - label: ":nauseated_face: size M"
+    sync: true
+    matcher:
+      files:
+        count:
+          gte: 5
+          lte: 10
+
+  - label: ":skull_and_crossbones: size L"
+    sync: true
+    matcher:
+      files:
+        count:
+          gte: 11
+
+  - label: ":memo: documentation"
+    sync: true # remove label if match failed, default: false (pull_request/issue only)
+    matcher:
+      # Matcher will match on any 7 matcher
+      title: "^docs:.*"
+      commits: "^docs:.*"
+      files:
+        any: [ "README.md'", "CHANGELOG.md" ]
+
+# Optional, if you want labels to generate a success/failure status check
+checks:
+  - context: "Status Check"
+    url: "https://go.to/detail"
+    description:
+      success: "Ready for review & merge."
+      failure: "Missing labels for release."
+    labels:
+      any:
+        - any
+        - have
+      all:
+        - all
+        - must
+        - have

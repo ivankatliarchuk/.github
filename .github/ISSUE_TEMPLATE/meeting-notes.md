@@ -8,4 +8,3 @@ labels:
 
 ### Monday, {{ date | date('MMM Do') }}
 <!-- - https://jasonet.co/posts/scheduled-actions -->
-

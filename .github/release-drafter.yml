@@ -8,15 +8,16 @@ template: |
 
   <summary of changes here>
 
-  ## CHANGELOG
+  ## What’s Changed
 
   $CHANGES
 
-  For full changes, see the [comparison between $PREVIOUS_TAG and v$RESOLVED_VERSION](https://github.com/accelerator-blueprints/base-blueprint/compare/$PREVIOUS_TAG...v$RESOLVED_VERSION)
-
   ### Contributors
 
-  ❤️ A big thanks to $CONTRIBUTORS
+  👏 A big thanks to $CONTRIBUTORS
+
+  The format is based on [Keep a Changelog](http://keepachangelog.com/)
+  and this project adheres to [Semantic Versioning](http://semver.org/).
 
 no-changes-template: |
   <!-- Optional: add a release summary here -->
@@ -31,23 +32,28 @@ categories:
     labels:
       - major-enhancement
       - major-rfe
-  - title: '🚀 New features and improvements'
+  - title: '🚀 Features'
     labels:
       - feature
       - enhancement
+      - 'kind/feature'
   - title: '🐛 Bug Fixes'
     label:
       - 'type: bug'
       - 'fix'
       - 'bugfix'
       - regression
+      - 'kind/fix'
   - title: 🐛 Major bug fixes
     labels:
       - major-bug
-  - title: '👻 Maintenance'
+  - title: '🧰  Maintenance'
     label:
       - 'type: maintenance'
       - 'chore'
+      - 'kind/refactor'
+      - 'kind/chore'
+      - 'kind/docs'
   - title: 'Documentation'
     label: 'type: docs'
   - title: 'Dependency Updates'
@@ -80,12 +86,11 @@ version-resolver:
     labels:
       - 'type: breaking'
       - 'major'
-
   minor:
     labels:
       - 'type: feature'
       - 'minor'
-
+      - 'kind/feature'
   patch:
     labels:
       - 'type: bug'
@@ -96,6 +101,10 @@ version-resolver:
       - 'patch'
       - 'chore'
       - 'fix'
+      - 'kind/refactor'
+      - 'kind/chore'
+      - 'kind/docs'
+      - 'kind/fix'
   default: patch
 
 exclude-labels:

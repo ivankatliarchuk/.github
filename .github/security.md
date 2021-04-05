@@ -1,5 +1,6 @@
+# Security Policy
 
-## Security
+If you’ve found a vulnerability, please submit it privately.
 
 ## Reporting Security Issues
 
