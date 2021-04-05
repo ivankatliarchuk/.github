@@ -18,14 +18,19 @@
 ## Resources
 
 - [Probot: configuration](https://github.com/probot/probot-config)
-- [Github: configuration][1]
+- [Probot: todo](https://github.com/settings/installations/15936645)
 - [Probot: pull requried to be set](https://wei.github.io/pull/)
+- [Renovate](https://renovate.whitesourcesoftware.com)
+- [Dependabot](https://dependabot.com/)
+- [Github: configuration][1]
+
+- [Check Installations](https://github.com/settings/installations)
 
 - [Streamlink: great issue setup](https://github.com/streamlink/streamlink/issues/new/choose)
 - [Cron: crontab examples](https://crontab.guru5)
 
 ## TODO
 
-- [ ] Sync files with other repositories
+- [ ] Sync files with other repositories(dependabot,renovate etc)
 
 [1]: https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/creating-a-default-community-health-file
