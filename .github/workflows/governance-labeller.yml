@@ -5,6 +5,9 @@ on:
   pull_request_target:
     branches: [master, main]
     types: [synchronize, opened, labeled, unlabeled]
+  pull_request:
+    types: [ opened, edited, synchronize, ready_for_review ]
+    branches: [ master, main ]
   workflow_dispatch:
 
 jobs:
@@ -14,5 +17,5 @@ jobs:
     steps:
       - uses: fuxingloh/multi-labeler@v1
         with:
-          github-token: ${{secrets.GITHUB_TOKEN}} # optional, default to '${{ github.token }}'
+          github-token: ${{ secrets.GITHUB_TOKEN }} # optional, default to '${{ github.token }}'
           config-path: .github/labeler.yml # optional, default to '.github/labeler.yml'
