@@ -39,5 +39,5 @@
 [governance-action]: https://github.com/ivankatliarchuk/.github/actions/workflows/governance-bot.yml
 [toc-badge]: https://github.com/ivankatliarchuk/.github/actions/workflows/toc.yml/badge.svg
 [toc-action]: https://github.com/ivankatliarchuk/.github/actions/workflows/toc.yml
-[sync-badge]: https://github.com/ivankatliarchuk/.github/actions/workflows/sync.yml/badge.svg
-[sync-action]: https://github.com/ivankatliarchuk/.github/actions/workflows/sync.yml
+[sync-badge]: https://github.com/ivankatliarchuk/.github/actions/workflows/fork-sync.yml/badge.svg
+[sync-action]: https://github.com/ivankatliarchuk/.github/actions/workflows/fork-sync.yml
