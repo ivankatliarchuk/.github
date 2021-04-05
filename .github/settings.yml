@@ -6,11 +6,11 @@ repository:
   # The name of the repository. Changing this will rename the repository
   # name: .github
   # A short description of the repository that will show up on GitHub
-  description: Repository used to organize everything around Organisations.
+  description: ":atom: Repository used to organize everything around Organisations."
   # A URL with more information about the repository
   # homepage:
   # A comma-separated list of topics to set on the repository
-  topics: ivank, .github, configuration
+  topics: "ivank, .github, configuration"
 
   # Either `true` to make the repository private, or `false` to make it public.
   private: false
@@ -50,15 +50,13 @@ branches:
       required_approving_review_count: 1
       dismiss_stale_reviews: true
       require_code_owner_reviews: true
-      dismissal_restrictions:
-        users: []
-        teams: []
     required_status_checks:
       strict: true
       contexts: []
     enforce_admins: false
     restrictions:
-      apps: []
+      apps:
+        - "dependabot-preview"
       users: []
       teams: []
 
@@ -166,7 +164,7 @@ labels:
   name: ":bell: automerge"
   color: "8f4fbc"
   description: ""
-- # automerge
+- # approve
   name: ":bell: approved"
   color: "8f4fbc"
   description: ""

@@ -1,0 +1,26 @@
+# @todo: sync with other repositories
+---
+name: check-markdown-links
+
+# Run action on pull request event
+on:
+  push:
+    branches:
+      - main  # Set a branch to deploy
+  pull_request:
+    types: [opened, edited]
+  # schedule:
+  # - cron: "0 9 * * *"
+  workflow_dispatch:
+    inputs:
+      tags:
+        description: 'manual trigger'
+
+jobs:
+  markdown-link-check:
+    runs-on: ubuntu-latest
+    steps:
+    # checkout to latest commit
+      - uses: actions/checkout@main
+    # run markdown linter
+      - uses: gaurav-nelson/github-action-markdown-link-check@v1

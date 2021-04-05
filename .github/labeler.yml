@@ -96,7 +96,7 @@ labels:
 # Optional, if you want labels to generate a success/failure status check
 checks:
   - context: "Status Check"
-    url: "https://go.to/detail"
+    url: "https://docs.github.com/en/rest/reference/checks"
     description:
       success: "Ready for review & merge."
       failure: "Missing labels for release."
