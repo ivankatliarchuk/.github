@@ -5,7 +5,7 @@ on:
     branches: [master,main]
 
 jobs:
-  main:
+  draft-a-release:
     runs-on: ubuntu-latest
     if: github.repository == 'ivankatliarchuk/.github'
     steps:
