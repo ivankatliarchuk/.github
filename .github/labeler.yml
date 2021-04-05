@@ -1,6 +1,6 @@
 # .github/labeler.yml
 # https://github.com/marketplace/actions/multi-labeler
-
+# @todo: sync with other repo
 version: v1
 
 labels:

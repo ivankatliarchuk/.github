@@ -1,5 +1,5 @@
 # https://dependabot.com/docs/config-file/
-# todo: should be synced
+# @todo: should be synced
 version: 2
 updates:
   - package-ecosystem: pip

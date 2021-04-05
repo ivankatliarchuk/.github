@@ -1,15 +1,11 @@
 ---
-name: labeller
+name: governance-labeller
 
 on:
-  pull_request:
-    types: [ opened, edited, synchronize, ready_for_review ]
   pull_request_target:
+    branches: [master, main]
+    types: [synchronize, opened, labeled, unlabeled]
   workflow_dispatch:
-  # issues:
-  #   types: [ opened, edited ]
-  # issue_comment:
-  #   types: [ created, edited ]
 
 jobs:
 # https://github.com/marketplace/actions/multi-labeler

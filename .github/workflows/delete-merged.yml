@@ -1,4 +1,7 @@
-name: delete-branch-on-close-pr
+# @todo: sync with other repositories
+---
+name: delete-merged-branch-or-closed-pr
+
 on:
   pull_request:
     types: [closed]
