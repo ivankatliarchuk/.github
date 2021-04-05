@@ -83,12 +83,11 @@ version-resolver:
     labels:
       - 'type: breaking'
       - 'major'
-
   minor:
     labels:
       - 'type: feature'
       - 'minor'
-
+      - 'kind/feature'
   patch:
     labels:
       - 'type: bug'
@@ -99,6 +98,10 @@ version-resolver:
       - 'patch'
       - 'chore'
       - 'fix'
+      - 'kind/refactor'
+      - 'kind/chore'
+      - 'kind/docs'
+      - 'kind/fix'
   default: patch
 
 exclude-labels:
