@@ -8,7 +8,7 @@ template: |
 
   <summary of changes here>
 
-  ## CHANGELOG
+  ## What’s Changed
 
   $CHANGES
 
@@ -29,23 +29,28 @@ categories:
     labels:
       - major-enhancement
       - major-rfe
-  - title: '🚀 New features and improvements'
+  - title: '🚀 Features'
     labels:
       - feature
       - enhancement
+      - 'kind/feature'
   - title: '🐛 Bug Fixes'
     label:
       - 'type: bug'
       - 'fix'
       - 'bugfix'
       - regression
+      - 'kind/fix'
   - title: 🐛 Major bug fixes
     labels:
       - major-bug
-  - title: '👻 Maintenance'
+  - title: '🧰  Maintenance'
     label:
       - 'type: maintenance'
       - 'chore'
+      - 'kind/refactor'
+      - 'kind/chore'
+      - 'kind/docs'
   - title: 'Documentation'
     label: 'type: docs'
   - title: 'Dependency Updates'

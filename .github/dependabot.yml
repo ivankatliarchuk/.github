@@ -1,3 +1,4 @@
+# https://dependabot.com/docs/config-file/
 version: 2
 updates:
 - package-ecosystem: pip
@@ -11,6 +12,8 @@ updates:
     - ":robot: bot"
   commit-message:
     prefix: deps
+  default_reviewers:
+    - ivankatliarchuk
 
 - package-ecosystem: "github-actions"
   directory: "/"
@@ -23,6 +26,8 @@ updates:
   labels:
     - ":game_die: dependencies"
     - ":robot: bot"
+  default_reviewers:
+    - ivankatliarchuk
 
 - package-ecosystem: "gitsubmodule"
   directory: "/"
@@ -31,6 +36,8 @@ updates:
   labels:
   - "dependencies"
   - "automerge"
+  default_reviewers:
+    - ivankatliarchuk
 
 - package-ecosystem: "gomod"
   directory: "/"
@@ -39,6 +46,8 @@ updates:
   labels:
     - ":game_die: dependencies"
     - ":robot: bot"
+  default_reviewers:
+    - ivankatliarchuk
 
 - package-ecosystem: "docker"
   directory: "/"
@@ -47,6 +56,8 @@ updates:
   labels:
     - ":game_die: dependencies"
     - ":robot: bot"
+  default_reviewers:
+    - ivankatliarchuk
 
 - package-ecosystem: "npm" # See documentation for possible values
   directory: "/" # Location of package manifests
@@ -55,3 +66,5 @@ updates:
   labels:
     - ":game_die: dependencies"
     - ":robot: bot"
+  default_reviewers:
+    - ivankatliarchuk

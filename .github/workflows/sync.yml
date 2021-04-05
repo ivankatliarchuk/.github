@@ -15,6 +15,7 @@ jobs:
   fetch-repo-info:
     name: extract repository data
     runs-on: ubuntu-latest
+    if: github.repository != 'ivankatliarchuk/.github'
     steps:
       # Step 1: run a standard checkout action, provided by github
       - uses: actions/checkout@v2
@@ -42,7 +43,12 @@ jobs:
           fetch-depth: '1'
           submodules: 'recursive'
 
-      # Step 2: Display a message if 'sync' step had new commits (simple test)
+      # Step 2: Print a helpful timestamp for your records (not required, just nice)
+      - name: timestamp
+        id: envs
+        run: echo "::set-output name=CURRENT_DATE::$(date -u +'%Y-%m-%dT%H-%M')"
+
+      # Step 3: Display a message if 'sync' step had new commits (simple test)
       - uses: tgymnich/fork-sync@v1.4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -50,13 +56,9 @@ jobs:
           base: main
           head: main
           auto_approve: true
-          pr_title: "fork: Forked from upstream [skip ci]"
+          pr_title: "fork: Forked from upstream ${{steps.envs.outputs.current_date}} [skip ci]"
           pr_message: |
             ## Update current repository
 
             github actions:
             > https://github.com/tgymnich/fork-sync
-
-      # Step 3: Print a helpful timestamp for your records (not required, just nice)
-      - name: Timestamp
-        run: date
