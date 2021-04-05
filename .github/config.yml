@@ -1,10 +1,11 @@
 # https://github.com/JasonEtco/todo
 todo:
-  keyword: ["@todo", "TODO"]
+  keyword: ["@todo", ":TODO:", ":todo:"]
   autoAssign: true
   blobLines: 5
   label: true
   reopenClosed: true
+  caseSensitive: true
 
 blank_issues_enabled: false
 
