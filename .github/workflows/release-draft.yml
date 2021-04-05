@@ -7,7 +7,7 @@ on:
 jobs:
   main:
     runs-on: ubuntu-latest
-    if: github.repository != 'ivankatliarchuk/.github'
+    if: github.repository == 'ivankatliarchuk/.github'
     steps:
       - uses: release-drafter/release-drafter@v5
         env:
