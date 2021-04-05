@@ -54,11 +54,7 @@ branches:
       strict: true
       contexts: []
     enforce_admins: false
-    restrictions:
-      apps:
-        - "dependabot-preview"
-      users: []
-      teams: []
+
 
 # Labels: define labels for Issues and Pull Requests
 labels:
