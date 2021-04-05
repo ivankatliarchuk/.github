@@ -1,0 +1,15 @@
+name: test
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: calculate date
+        id: envs
+        run: echo "::set-output name=CURRENT_DATE::$(date -u +'%Y-%m-%dT%H-%M')"
+
+      - name: show date
+        run: echo "${{steps.envs.outputs.current_date}}"
