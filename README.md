@@ -1,8 +1,9 @@
 
 # Configuration Repository
 
-[![syncronize-repository-content](https://github.com/ivankatliarchuk/.github/actions/workflows/sync.yml/badge.svg)](https://github.com/ivankatliarchuk/.github/actions/workflows/sync.yml)
-[![toc generator](https://github.com/ivankatliarchuk/.github/actions/workflows/toc.yml/badge.svg)](https://github.com/ivankatliarchuk/.github/actions/workflows/toc.yml)
+[![syncronize-repository-content][sync-badge]][sync-action]
+[![governance][governance-badge]][governance-action]
+[![toc generator][toc-badge]][toc-action]
 
 > Default community health files, such as CONTRIBUTING and CODE_OF_CONDUCT. Default files will be used for any public repository owned by the account that does not contain its own file of that type.
 
@@ -34,3 +35,9 @@
 - [ ] Sync files with other repositories(dependabot,renovate etc)
 
 [1]: https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/creating-a-default-community-health-file
+[governance-badge]: https://github.com/ivankatliarchuk/.github/actions/workflows/governance-bot.yml/badge.svg
+[governance-action]: https://github.com/ivankatliarchuk/.github/actions/workflows/governance-bot.yml
+[toc-badge]: https://github.com/ivankatliarchuk/.github/actions/workflows/toc.yml/badge.svg
+[toc-action]: https://github.com/ivankatliarchuk/.github/actions/workflows/toc.yml
+[sync-badge]: https://github.com/ivankatliarchuk/.github/actions/workflows/sync.yml/badge.svg
+[sync-action]: https://github.com/ivankatliarchuk/.github/actions/workflows/sync.yml

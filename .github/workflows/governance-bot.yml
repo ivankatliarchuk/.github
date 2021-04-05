@@ -11,8 +11,9 @@ on:
 
 jobs:
   main:
-    name: Governance
+    name: governance
     runs-on: ubuntu-latest
+    if: github.repository != 'ivankatliarchuk/.github'
     steps:
       - uses: DeFiCh/oss-governance-bot@v2
         with:
