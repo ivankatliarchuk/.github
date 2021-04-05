@@ -1,0 +1,21 @@
+# Repository to extend settings from
+_extends: .github
+
+template: |
+  <!-- Optional: add a release summary here -->
+  **Disclaimer**: This is an automatically generated changelog draft
+
+  <summary of changes here>
+
+  ## What’s Changed
+
+  $CHANGES
+
+  For full changes, see the [comparison between $PREVIOUS_TAG and v$RESOLVED_VERSION](https://github.com/#{ORG}##{REPO}#/$PREVIOUS_TAG...v$RESOLVED_VERSION)
+
+  ### Contributors
+
+  👏 A big thanks to $CONTRIBUTORS
+
+  The format is based on [Keep a Changelog](http://keepachangelog.com/)
+  and this project adheres to [Semantic Versioning](http://semver.org/).

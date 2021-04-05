@@ -5,6 +5,7 @@ name: 'welcome-new-contributors'
 on:
   issues:
     types: [opened]
+  pull_request:
   pull_request_target:
     types: [opened]
   workflow_dispatch:
@@ -21,5 +22,7 @@ jobs:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           issue-message: |-
             'Thanks for opening this issue. A contributor should be by to give feedback soon. cc/ @${{ secrets.GITHUB_USER }}'
+            'Happy coding! :rocket:'
           pr-message: |-
             'Thanks for opening this pull request! A contributor should be by to give feedback soon. cc/ @${{ secrets.GITHUB_USER }}'
+            'Happy coding! :rocket:'
