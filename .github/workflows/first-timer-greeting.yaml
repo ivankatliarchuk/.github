@@ -1,0 +1,25 @@
+# @todo: sync with other repositories
+---
+name: 'welcome-new-contributors'
+
+on:
+  issues:
+    types: [opened]
+  pull_request_target:
+    types: [opened]
+  workflow_dispatch:
+
+jobs:
+
+  welcome-new-contributor:
+    runs-on: ubuntu-latest
+    steps:
+    # https://github.com/actions/first-interaction
+      - name: 'Greet the contributor'
+        uses: actions/first-interaction@v1.1.0
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          issue-message: |-
+            'Thanks for opening this issue. A contributor should be by to give feedback soon. cc/ @${{ secrets.GITHUB_USER }}'
+          pr-message: |-
+            'Thanks for opening this pull request! A contributor should be by to give feedback soon. cc/ @${{ secrets.GITHUB_USER }}'
