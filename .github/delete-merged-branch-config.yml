@@ -1,4 +1,5 @@
 # https://github.com/SvanBoxel/delete-merged-branch
+# @todo: sync with other repositories
 exclude:
   - gh-pages
 delete_closed_pr: true
