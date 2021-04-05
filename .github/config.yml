@@ -1,6 +1,6 @@
 # https://github.com/JasonEtco/todo
 todo:
-  keyword: ["@todo", ":TODO:", ":todo:", "@fixme", ":FIXME:", ":fixme:", "@makeAnIssue"]
+  keyword: ["@todo", "@todo:", ":TODO:", ":todo:", "@fixme", ":FIXME:", ":fixme:", "@makeAnIssue"]
   autoAssign: true
   blobLines: 5
   label: true
