@@ -1,0 +1,40 @@
+name: fyles-sync
+
+on:
+  workflow_dispatch:
+
+jobs:
+  show:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: calculate date
+        id: envs
+        run: echo "::set-output name=CURRENT_DATE::$(date -u +'%Y-%m-%dT%H-%M')"
+      - name: show date
+        run: echo "${{steps.envs.outputs.current_date}}"
+
+  replace-values:
+    needs: [ show ]
+    runs-on: ubuntu-latest
+    # environment variables not yet supported here
+    # running this job only for master branch
+
+    steps:
+    - uses: actions/checkout@v2.3.4
+      with:
+        fetch-depth: '2'
+        submodules: 'true'
+
+    - uses: cschleiden/replace-tokens@v1
+      with:
+        files: '[".github/templates/release-drafter.yml"]'
+      env:
+        OTHER_CHANGES: |
+          test this changes
+        CALLBACK: 'https://google.com'
+
+    - name: read file
+      run: |
+        cat .github/templates/release-drafter.yml

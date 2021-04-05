@@ -30,6 +30,8 @@
 - [Streamlink: great issue setup](https://github.com/streamlink/streamlink/issues/new/choose)
 - [Cron: crontab examples](https://crontab.guru5)
 
+- [Org sync](https://github.com/marketplace/actions/github-organization-sync-er)
+
 ## TODO
 
 - [ ] Sync files with other repositories(dependabot,renovate etc)
