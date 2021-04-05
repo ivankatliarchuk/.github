@@ -12,8 +12,6 @@ template: |
 
   $CHANGES
 
-  For full changes, see the [comparison between $PREVIOUS_TAG and v$RESOLVED_VERSION](https://github.com/accelerator-blueprints/base-blueprint/compare/$PREVIOUS_TAG...v$RESOLVED_VERSION)
-
   ### Contributors
 
   ❤️ A big thanks to $CONTRIBUTORS
