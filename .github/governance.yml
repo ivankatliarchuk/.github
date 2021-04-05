@@ -1,6 +1,6 @@
 # https://github.com/DeFiCh/oss-governance-bot
 # https://github.com/DeFiCh/app/blob/master/.github/governance.yml
-
+# todo: should be synced
 version: v1
 
 issue:
@@ -30,13 +30,15 @@ issue:
         collaborator: true
         member: true
         owner: true
+        first_timer: false
+        first_time_contributor: false
       needs:
         comment: |
           @$AUTHOR: Thanks for opening an issue, it is currently awaiting triage.
           The triage/accepted label can be added by foundation members by writing `/triage accepted` in a comment.
 
     - prefix: kind
-      list: ['feature', 'bug']
+      list: ['feature', 'bug', 'question']
       multiple: true
       needs: true
       author_association:
@@ -44,6 +46,18 @@ issue:
         collaborator: true
         member: true
         owner: true
+
+    - prefix: area
+      list: [ "ui-ux", "semantics", "translation", "security" ]
+      multiple: true
+      needs:
+        comment: |
+          @$AUTHOR: There are no area labels on this issue. Adding an appropriate label will greatly expedite the process for us. You can add as many area as you see fit. **If you are unsure what to do you can ignore this!**
+
+          * `/area ui-ux`
+          * `/area semantics`
+          * `/area translation`
+          * `/area security`
 
     - prefix: os
       list: ['mac', 'win', 'linux']
@@ -109,6 +123,12 @@ issue:
         member: true
         owner: true
 
+    - cmd: /comment issue
+      type: comment
+      comment: |
+        @$ISSUE_AUTHOR: Hey this is comment issue example for issue/pr author.
+        @$AUTHOR: Hey this is comment issue example for sender author.
+
 pull_request:
   labels:
     - prefix: kind
@@ -161,3 +181,8 @@ pull_request:
         collaborator: true
         member: true
         owner: true
+
+    - cmd: /comment pr
+      type: comment
+      comment: |
+        @$AUTHOR: Hey this is comment pr example.
