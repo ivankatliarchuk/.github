@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  prepare:
+  show:
     runs-on: ubuntu-latest
 
     steps:
@@ -19,7 +19,7 @@ jobs:
 
       - name: show some values
         run:
-          echo " ${{ toJson(github) }}"
           echo "----"
           env
-          echo "--"
+          echo "---"
+          echo " ${{ toJson(github) }}"
