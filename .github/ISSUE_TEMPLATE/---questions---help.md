@@ -8,8 +8,8 @@ assignees: ''
 ---
 
 Confirm by changing [ ] to [x] below:
-- [ ] I've gone though the [User Guide](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html) and the [API reference](https://docs.aws.amazon.com/cli/latest/reference/)
-- [ ] I've searched for [previous similar issues](https://github.com/aws/aws-cli/issues) and didn't find any solution
+- [ ] I've gone though the [User Guide](https://google.com)
+- [ ] I've searched for and didn't find any solution
 
 Issue is about usage on:
 - [ ] Service API : I want to do X using Y service, what should I do?
@@ -25,4 +25,3 @@ What are you running the cli on?
 **Logs/output**
 Get full traceback and error logs by adding `--debug` to the command.
 
-[soure]: https://github.com/aws/aws-cli/blob/develop/.github/ISSUE_TEMPLATE/---questions---help.md
