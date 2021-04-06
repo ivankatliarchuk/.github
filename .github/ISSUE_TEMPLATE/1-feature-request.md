@@ -1,6 +1,6 @@
 ---
 name: Feature Request
-about: Discuss adding new functionality to Streamlink
+about: Discuss adding new functionality to CloudKats
 title: "[A very brief summary of your request]"
 labels: feature request
 ---
@@ -10,12 +10,12 @@ Thanks for filing a feature request!
 USE THE TEMPLATE. Otherwise your feature request may be rejected.
 
 First, see the contribution guidelines:
-https://github.com/streamlink/streamlink/blob/master/CONTRIBUTING.md#contributing-to-streamlink
+https://github.com/CloudKats/CloudKats/blob/master/CONTRIBUTING.md#contributing-to-CloudKats
 
 Open a plugin request if you're requesting a new plugin instead of a new feature.
 
 Also check the list of open and closed feature requests:
-https://github.com/streamlink/streamlink/issues?q=is%3Aissue+label%3A%22feature+request%22
+https://github.com/CloudKats/CloudKats/issues?q=is%3Aissue+label%3A%22feature+request%22
 
 Please see the text preview to avoid unnecessary formatting errors.
 -->
@@ -30,7 +30,7 @@ Please see the text preview to avoid unnecessary formatting errors.
 
 ### Description
 
-<!-- Explain the feature as clearly as you can. What is it, how would you expect it to work, and what value does it bring to Streamlink? -->
+<!-- Explain the feature as clearly as you can. What is it, how would you expect it to work, and what value does it bring to CloudKats? -->
 
 
 
