@@ -5,5 +5,5 @@ labels: kind/question
 ---
 
 <!--
-If the matter is security related, please disclose it privately via oss@defichain.com
+If the matter is security related, please disclose it privately via cloudcats@gmail.com
 -->

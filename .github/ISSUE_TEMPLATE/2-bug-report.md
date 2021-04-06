@@ -1,6 +1,6 @@
 ---
 name: Bug Report
-about: A core functionality of Streamlink is broken
+about: A core functionality of CloudKats is broken
 title: "[A very brief summary of what's broken]"
 labels: bug
 ---
@@ -10,12 +10,12 @@ Thanks for reporting a bug!
 USE THE TEMPLATE. Otherwise your bug report may be rejected.
 
 First, see the contribution guidelines:
-https://github.com/streamlink/streamlink/blob/master/CONTRIBUTING.md#contributing-to-streamlink
+https://github.com/CloudKats/CloudKats/blob/master/CONTRIBUTING.md#contributing-to-CloudKats
 
-Bugs are the result of broken functionality within Streamlink's main code base. Use the plugin issue template if your report is about a broken plugin.
+Bugs are the result of broken functionality within CloudKats's main code base. Use the plugin issue template if your report is about a broken plugin.
 
 Also check the list of open and closed bug reports:
-https://github.com/streamlink/streamlink/issues?q=is%3Aissue+label%3A%22bug%22
+https://github.com/CloudKats/CloudKats/issues?q=is%3Aissue+label%3A%22bug%22
 
 Please see the text preview to avoid unnecessary formatting errors.
 -->
@@ -55,7 +55,7 @@ INCLUDE THE ENTIRE COMMAND LINE and make sure to **remove usernames and password
 
 Use the `--loglevel debug` parameter and avoid using parameters which suppress log output.
 Debug log includes important details about your platform. Don't remove it.
-https://streamlink.github.io/latest/cli.html#cmdoption-loglevel
+https://CloudKats.github.io/latest/cli.html#cmdoption-loglevel
 
 You can copy the output to https://gist.github.com/ or paste it below.
 

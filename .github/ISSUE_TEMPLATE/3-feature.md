@@ -1,6 +1,6 @@
 ---
 name: Feature request
-about: Suggest a feature for DeFiChain
+about: Suggest a feature for CloudKats
 labels: kind/feature
 ---
 

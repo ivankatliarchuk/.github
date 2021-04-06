@@ -2,7 +2,7 @@
 
 ## Installation
 
-See the detailed [installation instructions](https://google.com) on Streamlink's website.
+See the detailed [installation instructions](https://google.com) on CloudKats's website.
 
 ## Supporting Project
 
