@@ -310,5 +310,9 @@ labels:
   name: os/linux
 - color: 0d1d49
   name: os/mac
+
+# TODO
+- name: 'todo :spiral_notepad:'
+  color: 00B0D8
 # https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md
 # https://github.com/DeFiCh/oss-governance-bot/blob/main/.github/labels.yml
