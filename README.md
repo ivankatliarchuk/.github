@@ -32,6 +32,8 @@
 
 - [Org sync](https://github.com/marketplace/actions/github-organization-sync-er)
 
+- [Awesome Github Templates](https://github.com/devspace/awesome-github-templates)
+
 ## TODO
 
 - [ ] Sync files with other repositories(dependabot,renovate etc)
