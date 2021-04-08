@@ -10,7 +10,7 @@ repository:
   # A URL with more information about the repository
   # homepage:
   # A comma-separated list of topics to set on the repository
-  topics: "ivank, .github, configuration"
+  topics: ivank, .github, configuration
 
   # Either `true` to make the repository private, or `false` to make it public.
   private: false
@@ -310,5 +310,9 @@ labels:
   name: os/linux
 - color: 0d1d49
   name: os/mac
+
+# TODO
+- name: 'todo :spiral_notepad:'
+  color: 00B0D8
 # https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md
 # https://github.com/DeFiCh/oss-governance-bot/blob/main/.github/labels.yml
