@@ -1,6 +1,17 @@
+# @todo: sync with other repositories
 name: renovate
+
 on:
-  - push
+  workflow_dispatch:
+    branches:
+      - $default-branch
+  schedule:
+    - cron: '0 6,12,18 * * *'
+  pull_request_target:
+    branches:
+      - $default-branch
+    types:
+      - closed
 
 jobs:
   validate:
@@ -14,3 +25,9 @@ jobs:
         uses: rinchsan/renovate-config-validator@v0.0.2
         with:
           pattern: 'renovate.json'
+
+      - name: run renovate bot
+        uses: renovatebot/github-action@v23.44.8
+        with:
+          configurationFile: .github/renovate.json
+          token: ${{ secrets.RENOVATE_BOT }}
