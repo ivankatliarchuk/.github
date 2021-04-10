@@ -24,8 +24,10 @@ jobs:
   automerge:
     runs-on: ubuntu-latest
     steps:
-      - name: Test Helm container
+      
+      - name: sleep
         run: sleep 30
+
       - name: automerge
         uses: pascalgn/automerge-action@v0.13.1
         env:
