@@ -34,7 +34,8 @@ For more information, please see the article on [creating a default community he
 - [Cron: crontab examples](https://crontab.guru5)
 
 - [Org sync](https://github.com/marketplace/actions/github-organization-sync-er)
-- [Org workflow templates](https://docs.github.com/en/actions/learn-github-actions/sharing-workflows-with-your-organization)
+- [How to setup: org workflow templates][how-to-org-template]
+- [Actions workflow](https://github.com/actions/starter-workflows)
 
 - [Awesome: github templates](https://github.com/devspace/awesome-github-templates)
 - [Awesome: github](https://github.com/phillipadsmith/awesome-github)
@@ -63,3 +64,5 @@ For more information, please see the article on [creating a default community he
 [sync-action]: https://github.com/ivankatliarchuk/.github/actions/workflows/fork-sync.yml
 [auto-approve]: https://github.com/search?o=desc&q=hmarr%2Fauto-approve-action+path%3A.github%2Fworkflows+language%3AYAML&s=&type=Code
 [self-merge]: https://github.com/search?o=desc&q=orta%2Fcode-owner-self-merge+path%3A.github%2Fworkflows+language%3AYAML&s=&type=Code
+[how-to-org-template]: https://docs.github.com/en/actions/learn-github-actions/sharing-workflows-with-your-organization
+

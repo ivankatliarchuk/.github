@@ -1,13 +1,8 @@
 {
-  "name": "Octo Organization Workflow",
-  "description": "Octo Organization CI workflow template.",
-  "iconName": "example-icon",
+  "name": "Example Organization Workflow",
+  "description": "Organization CI workflow example template. (org)",
+  "iconName": "octicon clock",
   "categories": [
-    "Go"
-  ],
-  "filePatterns": [
-    "package.json$",
-    "^Dockerfile",
-    ".*\\.md$"
+    "Automation"
   ]
 }
