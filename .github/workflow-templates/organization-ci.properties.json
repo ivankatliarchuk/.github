@@ -1,7 +1,7 @@
 {
   "name": "Example Organization Workflow",
   "description": "Organization CI workflow example template. (org)",
-  "iconName": "octicon clock",
+  "iconName": "ant",
   "categories": [
     "Automation"
   ]

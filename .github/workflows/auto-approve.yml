@@ -17,3 +17,16 @@ jobs:
         github.actor == 'dependabot[bot]' || github.actor == 'dependabot-preview[bot]' || github.actor == ${{ env.ACTOR }}
       with:
         github-token: "${{ secrets.GITHUB_TOKEN }}"
+
+    - name: add-label-on-approve
+      uses: actions/github-script@0.9.0
+      if: success()
+      with:
+        github-token: ${{secrets.GITHUB_TOKEN}}
+        script: |
+          github.issues.addLabels({
+            issue_number: context.payload.pull_request.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            labels: [':bell: approved','✅ Approved']
+          })

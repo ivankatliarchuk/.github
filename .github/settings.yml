@@ -162,7 +162,11 @@ labels:
   description: ""
 - # approve
   name: ":bell: approved"
-  color: "8f4fbc"
+  color: "44d84c"
+  description: ""
+- # approve
+  name: "✅ Approved"
+  color: "44b5d8"
   description: ""
 - # bot
   name: ":robot: bot"
