@@ -61,6 +61,7 @@ For more information, please see the article on [creating a default community he
 - [ ] Add [self merge][self-merge] to org template
 - [ ] Add renovate action to self repo
 - [ ] Add renovate action to org template
+- [ ] Setup [file sync action][file-sync-aciton]:
 
 [1]: https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/creating-a-default-community-health-file
 [governance-badge]: https://github.com/ivankatliarchuk/.github/actions/workflows/governance-bot.yml/badge.svg
@@ -72,3 +73,4 @@ For more information, please see the article on [creating a default community he
 [auto-approve]: https://github.com/search?o=desc&q=hmarr%2Fauto-approve-action+path%3A.github%2Fworkflows+language%3AYAML&s=&type=Code
 [self-merge]: https://github.com/search?o=desc&q=orta%2Fcode-owner-self-merge+path%3A.github%2Fworkflows+language%3AYAML&s=&type=Code
 [how-to-org-template]: https://docs.github.com/en/actions/learn-github-actions/sharing-workflows-with-your-organization
+[file-sync-aciton]: https://github.com/marketplace/actions/file-sync

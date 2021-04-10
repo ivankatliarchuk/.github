@@ -4,10 +4,9 @@
 version: v1
 
 labels:
-  - label: ":sparkles: enhancemen"
+  - label: "kind/feature"
     sync: true # remove label if match failed, default: false (pull_request/issue only)
     matcher:
-      # Matcher will match on any 7 matcher
       title: "^feat:.*"
       body: "/feat"
       comment: "/feat"
@@ -22,7 +21,7 @@ labels:
           gte: 1
           lte: 1000
 
-  - label: ":bug: bug"
+  - label: "kind/bug"
     sync: true # remove label if match failed, default: false (pull_request/issue only)
     matcher:
       # Matcher will match on any 7 matcher
@@ -32,6 +31,15 @@ labels:
       comment: "/fix"
       branch: "^fix/.*"
       commits: "^fix:.*"
+
+  - label: "kind/chore"
+    sync: true # remove label if match failed, default: false (pull_request/issue only)
+    matcher:
+      title: "^chore:.*"
+      body: "(\\n|.)*- \\[x\\] chore(\\n|.)*"
+      comment: "/chore"
+      branch: "^chore/.*"
+      commits: "^chore:.*"
 
   - label: "coverage"
     matcher:
