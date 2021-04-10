@@ -24,7 +24,7 @@ jobs:
   automerge:
     runs-on: ubuntu-latest
     steps:
-      
+
       - name: sleep
         run: sleep 30
 
@@ -36,3 +36,12 @@ jobs:
           MERGE_RETRY_SLEEP: "60000"
           MERGE_DELETE_BRANCH: "true"
           MERGE_METHOD: squash
+
+
+      - uses: reitermarkus/automerge@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          merge-method: rebase
+          required-labels: 'auto-merge,!wip,!work in progress,!do-not-merge,approved,:bell: automerge,:bell: approved,✅ Approved'
+          pull-request: ${{ github.event.inputs.pull-request }}
+          dry-run: true
