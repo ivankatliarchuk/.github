@@ -34,6 +34,7 @@ For more information, please see the article on [creating a default community he
 
 - [Org sync](https://github.com/marketplace/actions/github-organization-sync-er)
 - [How to setup: org workflow templates][how-to-org-template]
+- [Actions workflow](https://github.com/actions/starter-workflows)
 
 - [Awesome: github templates](https://github.com/devspace/awesome-github-templates)
 - [Awesome: github](https://github.com/phillipadsmith/awesome-github)
