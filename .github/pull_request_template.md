@@ -36,8 +36,10 @@ Put an `x` into the [ ] to show you have filled the information
 <!--- Go over all the following points, and put an `x` in all the boxes that apply. -->
 <!--- If you're unsure about any of these, don't hesitate to ask. We're here to help! -->
 - [ ] My code follows the code style of this project.
-- [ ] My change requires a change to the documentation.
-- [ ] I have updated the documentation accordingly.
-- [ ] I have read the [**CONTRIBUTING** document]().
+- [ ] I have read the [**CONTRIBUTING** document](https://github.com/ivankatliarchuk/.github/blob/main/contributing.md).
 - [ ] I have added tests to cover my changes.
 - [ ] I have tested the changes and verified that they work and don't break anything (as well as I can manage).
+- [ ] I have also tested the proposed changes in combination with various popular addons and can confirm my changes do not break them.
+- [ ] I followed the existing code standards and didn't mess up the formatting.
+- [ ] My change requires a change to the documentation.
+- [ ] I did my best to add documentation to any public classes or methods I added.
