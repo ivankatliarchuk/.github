@@ -14,6 +14,7 @@ For more information, please see the article on [creating a default community he
 **Table of Contents**
 
 - [Resources](#resources)
+- [Blogs](#blogs)
 - [TODO](#todo)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
