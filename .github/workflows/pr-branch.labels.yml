@@ -1,6 +1,6 @@
 
 name: pull request branch labels
-
+# todo: should only run if branch not named as it should
 on:
   pull_request:
     types:
@@ -14,13 +14,11 @@ jobs:
     if: github.actor != 'dependabot[bot]' || github.actor != 'dependabot-preview[bot]'
 
     steps:
-
-      - uses: thollander/actions-comment-pull-request@1.0.1
-        name: leave a comment about our branch naming convention
-        # if: ${{ steps.labeller.outputs.applied == 0 }}
+      - name: validate branch name
+        uses: AlbertHernandez/branch-name-action@v1
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          message: |
+          branch_pattern: 'feature|fix|bug|chore|hotfix|docs'
+          comment_for_invalid_branch_name: |
             **Pro Tip!**
             You can help us label your Pull Requests by using the following branch naming convention next time you create a pull request.
             Branch naming convention | Label
@@ -28,7 +26,30 @@ jobs:
             `feature/**`             | kind/feature
             `fix/**`                  | kind/fix
             `chore/**`               | kind/chore
+            `stable/**`              | kind/stable
             `docs/**`                | kind/docs
             <hr>
             If your changes do not fall into any of these categories, don't worry.
             You can just ignore this message in that case! 👀
+
+      # - name: leave a comment about our branch naming convention
+      #   uses: thollander/actions-comment-pull-request@1.0.1
+      #   # if: ${{ steps.labeller.outputs.applied == 0 }}
+      #   with:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #     message: |
+      #       **Pro Tip!**
+      #       You can help us label your Pull Requests by using the following branch naming convention next time you create a pull request.
+      #       Branch naming convention | Label
+      #       ------------------------ | ------
+      #       `feature/**`             | kind/feature
+      #       `fix/**`                  | kind/fix
+      #       `chore/**`               | kind/chore
+      #       `stable/**`              | kind/stable
+      #       `docs/**`                | kind/docs
+      #       <hr>
+      #       If your changes do not fall into any of these categories, don't worry.
+      #       You can just ignore this message in that case! 👀
+
+      #       Min branch name: ${{ env.MIN_LENGTH }}
+      #       Max branch name length: ${{ env.MAX_LENGTH }}

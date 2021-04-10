@@ -322,3 +322,6 @@ labels:
 - name: 'kind/refactor'
   color: 1e92bb
   escription: Non feature refactor change
+- name: 'kind/stable'
+  color: 1e92bb
+  escription: Everything is working fine
