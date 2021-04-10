@@ -6,6 +6,13 @@ labels: enhancement
 ---
 <!-- Thank you for contributing. These HTML comments will not render in the issue, but you can delete them once you've read them if you prefer! -->
 
+Do the checklist before filing an issue:
+
+ * [ ] Is this related to the project?
+       If you think it's a problem related to Github Actions in general, use GitHub Community forum instead: https://github.community
+ * [ ] You've read the Contributing section about feature requests: https://github.com/ivankatliarchuk/.github/blob/main/contributing.md
+ * [ ] Is this something you can debug and fix? Send a pull request! Bug fixes and documentation fixes are welcome.
+
 ### Proposed change
 <!-- Use this section to describe the feature you'd like to be added. -->
 

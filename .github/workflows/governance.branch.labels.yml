@@ -3,7 +3,7 @@ name: pull-request-branch-labels
 # todo: should only run if branch not named as it should
 on:
   pull_request:
-    types: [opened,edited,assigned,synchronize,ready_for_review]
+    types: [opened,assigned,synchronize,ready_for_review]
 
 jobs:
   pr-labeler:
@@ -16,7 +16,7 @@ jobs:
       - name: validate branch name
         uses: AlbertHernandez/branch-name-action@v1.0.2
         with:
-          branch_pattern: 'feature|fix|bug|chore|hotfix|docs'
+          branch_pattern: 'feature|fix|bug|chore|hotfix|docs|renovate'
           comment_for_invalid_branch_name: |
             **Pro Tip!**
             You can help us label your Pull Requests by using the following branch naming convention next time you create a pull request.

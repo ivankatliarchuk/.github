@@ -101,6 +101,14 @@ labels:
       files:
         any: [ "README.md'", "CHANGELOG.md" ]
 
+  - label: 'kind/refactor'
+    matcher:
+      title: '^refactor(\(|:)'
+
+  - label: 'kind/common'
+    matcher:
+      title: '\(.*common.*\):'
+
 # Optional, if you want labels to generate a success/failure status check
 checks:
   - context: "Status Check"

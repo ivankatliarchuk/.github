@@ -114,6 +114,9 @@ labels:
 - name: performance
   color: "555555"
   description: "Relates to product or testing performance."
+- name: seo
+  color: "2596be"
+  description: "Relates to product or testing performance."
 - name: skip-changelog
   color: "eeeeee"
   description: "Can be missed from the changelog."
