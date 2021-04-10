@@ -2,8 +2,11 @@
 ---
 name: automerge
 on:
+  pull_request_target:
+    branches: [$default-branch]
+    types: [synchronize, opened, labeled, unlabeled]
   pull_request:
-    types: [opened, synchronize, reopened]
+    types: [synchronize, labeled, unlabeled]
   check_suite:
     types:
       - completed

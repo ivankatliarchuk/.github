@@ -4,7 +4,7 @@ name: governance
 
 on:
   pull_request_target:
-    branches: [master, main, $default-branch]
+    branches: [$default-branch]
     types: [synchronize, opened, labeled, unlabeled]
   issues:
     types: [opened, labeled, unlabeled]
