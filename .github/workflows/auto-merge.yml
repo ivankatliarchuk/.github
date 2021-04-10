@@ -23,11 +23,11 @@ on:
 jobs:
   automerge:
     runs-on: ubuntu-latest
+    if: github.event.review.state == 'approved' || !github.event.review
     steps:
 
       - name: automerge
         uses: pascalgn/automerge-action@v0.13.1
-        if: github.event.review.state == 'approved' || !github.event.review
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
           MERGE_LABELS: 'auto-merge,!wip,!work in progress,!do-not-merge,approved,:bell: automerge,:bell: approved,✅ Approved'
@@ -43,4 +43,4 @@ jobs:
           required-labels: 'auto-merge,!wip,!work in progress,,approved,:bell: automerge,:bell: approved,✅ Approved'
           do-not-merge-labels: ':warning: do-not-merge,:warning: wip'
           pull-request: ${{ github.event.inputs.pull-request }}
-          dry-run: true
+          dry-run: false
