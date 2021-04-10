@@ -322,6 +322,12 @@ labels:
   color: Bf811c
 - name: ':warning: wip'
   color: A49ca3
+- name: ':warning: wip'
+  color: A49ca3
+- name: 'wip'
+  color: A49ca3
+- name: 'work in progress'
+  color: A49ca3
 
 # Kinds
 - name: 'kind/bug'

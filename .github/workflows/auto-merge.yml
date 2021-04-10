@@ -36,11 +36,12 @@ jobs:
           MERGE_METHOD: squash
 
 
-      - uses: reitermarkus/automerge@v1
+      - name: automerge2
+        uses: reitermarkus/automerge@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           merge-method: rebase
-          required-labels: 'auto-merge,!wip,!work in progress,,approved,:bell: automerge,:bell: approved,✅ Approved'
+          required-labels: 'auto-merge,approved,:bell: automerge,:bell: approved,✅ Approved'
           do-not-merge-labels: ':warning: do-not-merge,:warning: wip'
           pull-request: ${{ github.event.inputs.pull-request }}
           dry-run: false
