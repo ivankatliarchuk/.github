@@ -28,5 +28,5 @@ jobs:
             issue_number: context.payload.pull_request.number,
             owner: context.repo.owner,
             repo: context.repo.repo,
-            labels: [':bell: approved','✅ Approved']
+            labels: [':bell: automerge','✅ Approved']
           })
