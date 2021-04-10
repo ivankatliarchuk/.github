@@ -2,10 +2,12 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:base",
-    "github>renovatebot/.github"
+    "github>renovatebot/.github",
+    ":disableRateLimiting"
   ],
   "reviewersFromCodeOwners": true,
-  "semanticCommits": true,
+  "semanticCommits": "enabled",
+  "rebaseWhen": "conflicted",
   "labels": [
     "dependencies"
   ],
