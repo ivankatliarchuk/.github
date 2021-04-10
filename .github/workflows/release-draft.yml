@@ -2,7 +2,7 @@ name: release-drafter
 
 on:
   push:
-    branches: [master,main]
+    branches: [$default-branch]
 
 jobs:
   draft-a-release:

@@ -1,7 +1,7 @@
 {
   "name": "Codowners Merge Organization Workflow",
   "description": "Codowners merge CI template. (org)",
-  "iconName": "octicon smiley",
+  "iconName": "circle",
   "categories": [
     "Automation"
   ]

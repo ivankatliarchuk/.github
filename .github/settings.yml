@@ -57,6 +57,8 @@ branches:
 
 
 # Labels: define labels for Issues and Pull Requests
+# https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md
+# https://github.com/DeFiCh/oss-governance-bot/blob/main/.github/labels.yml
 labels:
 - name: bug
   color: CC0000
@@ -162,7 +164,11 @@ labels:
   description: ""
 - # approve
   name: ":bell: approved"
-  color: "8f4fbc"
+  color: "44d84c"
+  description: ""
+- # approve
+  name: "✅ Approved"
+  color: "44b5d8"
   description: ""
 - # bot
   name: ":robot: bot"
@@ -254,15 +260,15 @@ labels:
 # commit sizes
 - # size s
   name: ":smiley_cat: size S"
-  color: "ffffff"
+  color: "72cee3"
   description: ""
 - # size M
   name: ":nauseated_face: size M"
-  color: "ffffff"
+  color: "e28743"
   description: ""
 - # size L
   name: ":skull_and_crossbones: size L"
-  color: "ffffff"
+  color: "A82789"
   description: ""
 # Kind
 - color: e7e9eb
@@ -314,5 +320,16 @@ labels:
 # TODO
 - name: 'todo :spiral_notepad:'
   color: 00B0D8
-# https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md
-# https://github.com/DeFiCh/oss-governance-bot/blob/main/.github/labels.yml
+
+# Semantiv Versioning
+- name: 'patch'
+  color: 27A89F
+  description: when you make backwards compatible bug fixes
+
+- name: 'minor'
+  color: 2729A8
+  description: when you add functionality in a backwards compatible manner
+
+- name: 'major'
+  color: A827A3
+  description: when you make incompatible API changes
