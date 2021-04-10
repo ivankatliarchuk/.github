@@ -1,6 +1,6 @@
 # @todo: sync with other repositories
 ---
-name: automerge
+name: auto-merge
 on:
   pull_request_target:
     branches: [$default-branch]
@@ -22,6 +22,7 @@ on:
 
 jobs:
   automerge:
+    if: github.event.review.state == 'approved' || !github.event.review
     runs-on: ubuntu-latest
     steps:
 

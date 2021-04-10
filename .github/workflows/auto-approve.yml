@@ -1,6 +1,6 @@
 # @todo: sync with other repositories
 ---
-name: auto approve
+name: auto-approve
 
 on:
   pull_request_target
