@@ -2,7 +2,13 @@
 name: pull-request-branch-labels
 # todo: should only run if branch not named as it should
 on:
-  pull_request_target
+  pull_request:
+    types: [opened]
+  workflow_dispatch:
+    inputs:
+      pull-request:
+        description: pull request number
+        required: false
 
 jobs:
   pr-labeler:
