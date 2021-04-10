@@ -12,6 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: assignee to reviewer
-        uses: pullreminders/assignee-to-reviewer-action@v1.0.4
+        uses: pullreminders/assignee-to-reviewer-action@v1.0.7
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
