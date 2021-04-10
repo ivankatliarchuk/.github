@@ -13,7 +13,7 @@ jobs:
 
     steps:
       - name: validate branch name
-        uses: AlbertHernandez/branch-name-action@v1
+        uses: AlbertHernandez/branch-name-action@v1.0.2
         with:
           branch_pattern: 'feature|fix|bug|chore|hotfix|docs'
           comment_for_invalid_branch_name: |
