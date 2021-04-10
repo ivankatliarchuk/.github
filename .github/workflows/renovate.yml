@@ -28,7 +28,7 @@ jobs:
           pattern: 'renovate.json'
       # https://github.com/renovatebot/github-action install renovate app
       - name: run renovate bot
-        uses: renovatebot/github-action@v23.44.8
+        uses: renovatebot/github-action@v23.100.5
         with:
           configurationFile: .github/renovate-config.js
           token: ${{ secrets.RENOVATE_TOKEN }}
