@@ -322,3 +322,21 @@ labels:
   color: Bf811c
 - name: ':warning: wip'
   color: A49ca3
+
+# Kinds
+- name: 'kind/bug'
+  color: 873e23
+- name: 'kind/fix'
+  color: 76b5c5
+- name: 'kind/chore'
+  color: 154f79
+- name: 'kind/dependencies'
+  color: 2673aa
+- name: 'kind/docs'
+  color: 26aa8a
+- name: 'kind/feature'
+  color: 15791e
+- name: 'kind/question'
+  color: 757915
+- name: 'kind/refactor'
+  color: 1e92bb
