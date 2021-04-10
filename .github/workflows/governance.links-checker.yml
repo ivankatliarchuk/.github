@@ -1,6 +1,6 @@
 # @todo: sync with other repositories
 ---
-name: check-markdown-links
+name: governance.markdown-links
 
 # Run action on pull request event
 on:
@@ -22,5 +22,8 @@ jobs:
     steps:
     # checkout to latest commit
       - uses: actions/checkout@main
+        with:
+          fetch-depth: '1'
+          submodules: 'recursive'
     # run markdown linter
       - uses: gaurav-nelson/github-action-markdown-link-check@v1

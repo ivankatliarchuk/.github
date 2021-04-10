@@ -5,7 +5,9 @@ on:
     - cron:  '0 */12 * * *'
   workflow_dispatch:
   push:
-    branches: [main]
+    branches:
+      - main
+      - $default-branch
 
 env:
   OWNER: ivankatliarchuk
@@ -18,7 +20,7 @@ jobs:
     if: github.repository != 'ivankatliarchuk/.github'
     steps:
       # Step 1: run a standard checkout action, provided by github
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2.3.4
         with:
           fetch-depth: '1'
           submodules: 'recursive'
@@ -37,7 +39,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # Step 1: run a standard checkout action, provided by github
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2.3.4
         with:
           ref: ${{ env.REF }}
           fetch-depth: '1'

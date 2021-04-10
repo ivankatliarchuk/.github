@@ -2,45 +2,20 @@
 
 repository:
   # See https://developer.github.com/v3/repos/#edit for all available settings.
-
-  # The name of the repository. Changing this will rename the repository
   # name: .github
-  # A short description of the repository that will show up on GitHub
   description: ":atom: Repository used to organize everything around Organisations."
-  # A URL with more information about the repository
-  # homepage:
-  # A comma-separated list of topics to set on the repository
-  topics: ivank, .github, configuration
-
-  # Either `true` to make the repository private, or `false` to make it public.
+  topics: ivank, github, configuration, sync, org, organisation
   private: false
-  # Either `true` to enable issues for this repository, `false` to disable them.
   has_issues: true
-  # Either `true` to enable projects for this repository, or `false` to disable them.
-  # If projects are disabled for the organization, passing `true` will cause an API error.
   has_projects: false
-  # Either `true` to enable the wiki for this repository, `false` to disable it.
   has_wiki: false
-  # Either `true` to enable downloads for this repository, `false` to disable them.
   has_downloads: false
-  # Updates the default branch for this repository.
   default_branch: main
-  # Either `true` to allow squash-merging pull requests, or `false` to prevent
-  # squash-merging.
   allow_squash_merge: true
-  # Either `true` to allow merging pull requests with a merge commit, or `false`
-  # to prevent merging pull requests with merge commits.
   allow_merge_commit: true
-  # Either `true` to allow rebase-merging pull requests, or `false` to prevent
-  # rebase-merging.
   allow_rebase_merge: true
-  # Either `true` to enable automatic deletion of branches on merge, or `false` to disable
   delete_branch_on_merge: true
-  # Either `true` to enable automated security fixes, or `false` to disable
-  # automated security fixes.
   enable_automated_security_fixes: true
-  # Either `true` to enable vulnerability alerts, or `false` to disable
-  # vulnerability alerts.
   enable_vulnerability_alerts: false
 
 branches:
@@ -57,13 +32,12 @@ branches:
 
 
 # Labels: define labels for Issues and Pull Requests
+# https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md
+# https://github.com/DeFiCh/oss-governance-bot/blob/main/.github/labels.yml
 labels:
 - name: bug
   color: CC0000
   description: An issue with the system 🐛.
-- name: feature
-  color: '#336699'
-  description: New functionality.
 - name: good first issue
   color: 7057ff
 - name: hackathon
@@ -84,9 +58,6 @@ labels:
 - name: hacktoberfest
   color: bdff3a
   description: 'Hacktoberfest. https://jenkins.io/blog/2018/10/01/hacktoberfest/'
-- name: feature
-  color: 1d00ff
-  description: A PR that adds a feature - used by Release Drafter
 - name: bugfix
   oldname: fix
   color: c9e85c
@@ -131,7 +102,7 @@ labels:
 - name: deprecated
   color: "fef2c0"
   description: "This issue/PR relates to a deprecated module."
-- name: feature
+- name: '🎈 Feature'
   color: "006b75"
   description: "This issue/PR relates to a feature request."
 - name: major
@@ -162,7 +133,11 @@ labels:
   description: ""
 - # approve
   name: ":bell: approved"
-  color: "8f4fbc"
+  color: "44d84c"
+  description: ""
+- # approve
+  name: "✅ Approved"
+  color: "44b5d8"
   description: ""
 - # bot
   name: ":robot: bot"
@@ -196,7 +171,7 @@ labels:
   color: "0054ca"
   description: "This issue/PR relates to a feature request."
 - # feature request
-  name: ":bulb: feature request"
+  name: "✨ Fix"
   color: "0e8a16"
   description: ""
 - # feedback
@@ -251,44 +226,21 @@ labels:
   name: ":coffin: wontfix"
   color: "ffffff"
   description: ""
+
 # commit sizes
 - # size s
   name: ":smiley_cat: size S"
-  color: "ffffff"
+  color: "72cee3"
   description: ""
 - # size M
   name: ":nauseated_face: size M"
-  color: "ffffff"
+  color: "e28743"
   description: ""
+
 - # size L
   name: ":skull_and_crossbones: size L"
-  color: "ffffff"
+  color: "A82789"
   description: ""
-# Kind
-- color: e7e9eb
-  name: kind/bug
-  description: Something isn't working
-- color: e7e9eb
-  name: kind/feature
-  description: New feature request
-- color: e7e9eb
-  name: kind/question
-  description: Generic question
-- color: e7e9eb
-  name: kind/chore
-  description: Non feature change
-- color: e7e9eb
-  name: kind/fix
-  description: Fix a bug
-- color: e7e9eb
-  name: kind/docs
-  description: Non feature documentation change
-- color: e7e9eb
-  name: kind/refactor
-  description: Non feature refactor change
-- color: e7e9eb
-  name: kind/dependencies
-  description: Pull requests that update a dependency file
 
 # Priority
 - color: d93f0b
@@ -314,5 +266,62 @@ labels:
 # TODO
 - name: 'todo :spiral_notepad:'
   color: 00B0D8
-# https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md
-# https://github.com/DeFiCh/oss-governance-bot/blob/main/.github/labels.yml
+
+# Semantiv Versioning
+- name: 'patch'
+  color: 27A89F
+  description: when you make backwards compatible bug fixes
+
+- name: 'minor'
+  color: 2729A8
+  description: when you add functionality in a backwards compatible manner
+
+- name: 'major'
+  color: A827A3
+  description: when you make incompatible API changes
+
+# Actors
+- name: 'github'
+  color: 9ca49e
+  description: software development and version control
+
+# Do not merge stuff
+- name: ':warning: do-not-merge'
+  color: Bf811c
+- name: ':warning: wip'
+  color: A49ca3
+- name: ':warning: wip'
+  color: A49ca3
+- name: 'wip'
+  color: A49ca3
+- name: 'work in progress'
+  color: A49ca3
+
+# Kinds
+- name: 'kind/bug'
+  color: 873e23
+  description: Something isn't working
+- name: 'kind/fix'
+  color: 76b5c5
+  description: Fix a bug
+- name: 'kind/chore'
+  color: 154f79
+  description: Non feature change
+- name: 'kind/dependencies'
+  color: 2673aa
+  description: Pull requests that update a dependency file
+- name: 'kind/docs'
+  color: 26aa8a
+  description: Non feature documentation change
+- name: 'kind/feature'
+  color: 15791e
+  description: New feature request
+- name: 'kind/question'
+  color: 757915
+  description: Generic question
+- name: 'kind/refactor'
+  color: 1e92bb
+  escription: Non feature refactor change
+- name: 'kind/stable'
+  color: 1e92bb
+  escription: Everything is working fine

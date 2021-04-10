@@ -1,0 +1,35 @@
+# @todo: sync with other repositories
+name: renovate
+
+on:
+  workflow_dispatch:
+    branches:
+      - $default-branch
+  schedule:
+    - cron: '0 6 * * *'
+  pull_request_target:
+    branches:
+      - $default-branch
+    types:
+      - closed
+
+jobs:
+  renovate:
+    runs-on: ubuntu-latest
+    if: github.repository == 'ivankatliarchuk/.github'
+    steps:
+      - uses: actions/checkout@v2.3.4
+        with:
+          fetch-depth: '1'
+
+      - name: validate config
+        uses: rinchsan/renovate-config-validator@v0.0.2
+        with:
+          pattern: 'renovate.json'
+      # https://github.com/renovatebot/github-action install renovate app
+      - name: run renovate bot
+        uses: renovatebot/github-action@v23.44.8
+        with:
+          configurationFile: .github/renovate-config.js
+          token: ${{ secrets.RENOVATE_TOKEN }}
+

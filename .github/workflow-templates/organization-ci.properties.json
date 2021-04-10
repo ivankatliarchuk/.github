@@ -1,0 +1,8 @@
+{
+  "name": "Example Organization Workflow",
+  "description": "Organization CI workflow example template. (org)",
+  "iconName": "ant",
+  "categories": [
+    "Automation"
+  ]
+}

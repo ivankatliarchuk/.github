@@ -1,25 +1,29 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:base"
+    "config:base",
+    "github>renovatebot/.github"
   ],
   "reviewersFromCodeOwners": true,
   "semanticCommits": true,
+  "automergeType": "pr",
+
   "labels": [
     "dependencies"
   ],
   "baseBranches": [
-    "main"
+    "main","master"
   ],
+  "stabilityDays": 3,
   "major": { "automerge": false, "labels": [ "dependencies", "minor" ] },
   "minor": { "automerge": true, "labels": [ "dependencies", "minor" ] },
   "patch": { "automerge": true },
   "packageRules": [
-    { "updateTypes": ["major"], "addLabels": ["SemVer Major"] },
-    { "updateTypes": ["minor"], "addLabels": ["SemVer Minor"] },
-    { "updateTypes": ["patch", "digest", "bump"], "addLabels": ["SemVer Patch"] },
-    { "languages": ["php"], "addLabels": ["Lang PHP"] },
-    { "languages": ["js"], "addLabels": ["Lang JS"] },
-    { "languages": ["python"], "addLabels": ["Lang Python"] }
+    { "updateTypes": ["major"], "labels": ["major"] },
+    { "updateTypes": ["minor"], "labels": ["minor"] },
+    { "updateTypes": ["patch", "digest", "bump"], "labels": ["patch"] },
+    { "languages": ["php"], "labels": ["Lang PHP"] },
+    { "languages": ["js"], "labels": ["Lang JS"] },
+    { "languages": ["python"], "labels": ["Lang Python"] }
   ]
 }
