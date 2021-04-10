@@ -20,6 +20,8 @@ jobs:
     steps:
       - name: validate branch name
         uses: AlbertHernandez/branch-name-action@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           branch_pattern: 'feature|fix|bug|chore|hotfix|docs'
           comment_for_invalid_branch_name: |
