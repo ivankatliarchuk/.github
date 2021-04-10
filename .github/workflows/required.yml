@@ -10,12 +10,12 @@ on:
   check_suite:
     types:
       - completed
-      
+
 jobs:
   show:
     runs-on: ubuntu-latest
-
+    if: github.event.review.state == 'approved' || !github.event.review
     steps:
 
-      - name: show github vars
+      - name: just a dummy job to protect branch
         run: echo "This status check is required"
