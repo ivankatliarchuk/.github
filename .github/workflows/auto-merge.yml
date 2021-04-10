@@ -19,7 +19,10 @@ on:
       pull-request:
         description: pull request number
         required: false
-
+  # Try merging all open pull requests.
+  schedule:
+    - cron: 0 * * * *
+      
 jobs:
   automerge:
     runs-on: ubuntu-latest
