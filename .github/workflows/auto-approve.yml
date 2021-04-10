@@ -1,0 +1,19 @@
+# @todo: sync with other repositories
+---
+name: auto approve
+
+on:
+  pull_request_target
+
+env:
+  ACTOR: ivankatliarchuk
+
+jobs:
+  auto-approve:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: hmarr/auto-approve-action@v2
+      if: >
+        github.actor == 'dependabot[bot]' || github.actor == 'dependabot-preview[bot]' || github.actor == ${{ env.ACTOR }}
+      with:
+        github-token: "${{ secrets.GITHUB_TOKEN }}"

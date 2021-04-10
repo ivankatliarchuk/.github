@@ -35,7 +35,12 @@ For more information, please see the article on [creating a default community he
 - [Org sync](https://github.com/marketplace/actions/github-organization-sync-er)
 - [Org workflow templates](https://docs.github.com/en/actions/learn-github-actions/sharing-workflows-with-your-organization)
 
-- [Awesome Github Templates](https://github.com/devspace/awesome-github-templates)
+- [Awesome: github templates](https://github.com/devspace/awesome-github-templates)
+- [Awesome: github](https://github.com/phillipadsmith/awesome-github)
+
+## Blogs
+
+- [Workflows: tooling](https://github.com/anna-money/workflow-tools)
 
 ## TODO
 
@@ -45,6 +50,8 @@ For more information, please see the article on [creating a default community he
 - [ ] Add [auto approve][auto-approve]
 - [X] Add [self merge][self-merge] to self repo
 - [ ] Add [self merge][self-merge] to org template
+- [ ] Add renovate action to self repo
+- [ ] Add renovate action to org template
 
 [1]: https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/creating-a-default-community-health-file
 [governance-badge]: https://github.com/ivankatliarchuk/.github/actions/workflows/governance-bot.yml/badge.svg
