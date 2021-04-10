@@ -1,6 +1,6 @@
 # @todo: sync with other repositories
 ---
-name: check-markdown-links
+name: governance.markdown-links
 
 # Run action on pull request event
 on:
