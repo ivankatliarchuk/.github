@@ -2,10 +2,13 @@
 ---
 name: auto-merge
 on:
+  # Try merging a pull request when it is approved.
   pull_request_review: { types: submitted }
+  # Try merging a pull request when a draft is marked as “ready for review”
   pull_request_target:
     branches: [$default-branch]
     types: [ready_for_review, labeled, unlabeled]
+  # Try merging pull requests belonging to a check suite.
   check_suite:
     types:
       - completed
@@ -19,15 +22,12 @@ on:
 
 jobs:
   automerge:
-    if: github.event.review.state == 'approved' || !github.event.review
     runs-on: ubuntu-latest
     steps:
 
-      - name: sleep
-        run: sleep 30
-
       - name: automerge
         uses: pascalgn/automerge-action@v0.13.1
+        if: github.event.review.state == 'approved' || !github.event.review
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
           MERGE_LABELS: 'auto-merge,!wip,!work in progress,!do-not-merge,approved,:bell: automerge,:bell: approved,✅ Approved'
