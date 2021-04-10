@@ -16,6 +16,7 @@ on:
 jobs:
   validate:
     runs-on: ubuntu-latest
+    if: github.repository != 'ivankatliarchuk/.github'
     steps:
       - uses: actions/checkout@v2
         with:

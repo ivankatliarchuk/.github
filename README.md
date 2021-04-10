@@ -32,7 +32,7 @@ For more information, please see the article on [creating a default community he
 - [Check Installations](https://github.com/settings/installations)
 
 - [Streamlink: great issue setup](https://github.com/streamlink/streamlink/issues/new/choose)
-- [Cron: crontab examples](https://crontab.guru5)
+- [Cron: crontab examples](https://crontab.guru)
 
 - [Org sync](https://github.com/marketplace/actions/github-organization-sync-er)
 - [How to setup: org workflow templates][how-to-org-template]
