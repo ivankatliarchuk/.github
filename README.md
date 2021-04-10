@@ -14,6 +14,7 @@ For more information, please see the article on [creating a default community he
 **Table of Contents**
 
 - [Resources](#resources)
+  - [Helpers](#helpers)
 - [Blogs](#blogs)
 - [TODO](#todo)
 
