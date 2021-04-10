@@ -5,6 +5,8 @@ on:
   push:
     branches:
       - main
+      - $default-branch
+      - v.*
     paths:
       - .github/labels.yml
 

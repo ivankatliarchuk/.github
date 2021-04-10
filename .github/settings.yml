@@ -10,7 +10,7 @@ repository:
   # A URL with more information about the repository
   # homepage:
   # A comma-separated list of topics to set on the repository
-  topics: ivank, .github, configuration
+  topics: ivank, github, configuration, sync, org, organisation
 
   # Either `true` to make the repository private, or `false` to make it public.
   private: false

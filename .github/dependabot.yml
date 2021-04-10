@@ -47,6 +47,8 @@ updates:
     labels:
       - ":game_die: dependencies"
       - ":robot: bot"
+      - "go"
+      - "misc"
     default_reviewers:
       - ivankatliarchuk
 

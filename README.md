@@ -7,6 +7,8 @@
 
 > Default community health files, such as CONTRIBUTING and CODE_OF_CONDUCT. Default files will be used for any public repository owned by the account that does not contain its own file of that type.
 
+For more information, please see the article on [creating a default community health file for your organization](https://help.github.com/en/articles/creating-a-default-community-health-file-for-your-organization).
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**
@@ -31,13 +33,18 @@
 - [Cron: crontab examples](https://crontab.guru5)
 
 - [Org sync](https://github.com/marketplace/actions/github-organization-sync-er)
+- [Org workflow templates](https://docs.github.com/en/actions/learn-github-actions/sharing-workflows-with-your-organization)
 
 - [Awesome Github Templates](https://github.com/devspace/awesome-github-templates)
 
 ## TODO
 
+- [X] Setup workflow templates
 - [ ] Sync files with other repositories(dependabot,renovate etc)
 - [ ] Syhc workflow files (https://github.com/varunsridharan/action-github-workflow-sync)
+- [ ] Add [auto approve][auto-approve]
+- [X] Add [self merge][self-merge] to self repo
+- [ ] Add [self merge][self-merge] to org template
 
 [1]: https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/creating-a-default-community-health-file
 [governance-badge]: https://github.com/ivankatliarchuk/.github/actions/workflows/governance-bot.yml/badge.svg
@@ -46,3 +53,5 @@
 [toc-action]: https://github.com/ivankatliarchuk/.github/actions/workflows/toc.yml
 [sync-badge]: https://github.com/ivankatliarchuk/.github/actions/workflows/fork-sync.yml/badge.svg
 [sync-action]: https://github.com/ivankatliarchuk/.github/actions/workflows/fork-sync.yml
+[auto-approve]: https://github.com/search?o=desc&q=hmarr%2Fauto-approve-action+path%3A.github%2Fworkflows+language%3AYAML&s=&type=Code
+[self-merge]: https://github.com/search?o=desc&q=orta%2Fcode-owner-self-merge+path%3A.github%2Fworkflows+language%3AYAML&s=&type=Code
