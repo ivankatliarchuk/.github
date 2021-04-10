@@ -4,9 +4,17 @@ name: automerge
 on:
   pull_request_target:
     branches: [$default-branch]
-    types: [synchronize, opened, labeled, unlabeled]
-  pull_request:
     types: [synchronize, labeled, unlabeled]
+  pull_request:
+    types:
+      - labeled
+      - unlabeled
+      - synchronize
+      - opened
+      - edited
+      - ready_for_review
+      - reopened
+      - unlocked
   check_suite:
     types:
       - completed
@@ -16,8 +24,10 @@ jobs:
   automerge:
     runs-on: ubuntu-latest
     steps:
+      - name: Test Helm container
+        run: sleep 30
       - name: automerge
-        uses: "pascalgn/automerge-action@v0.13.1"
+        uses: pascalgn/automerge-action@v0.13.1
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
           MERGE_LABELS: 'auto-merge,!wip,!work in progress,!do-not-merge,approved,:bell: automerge,:bell: approved,✅ Approved'

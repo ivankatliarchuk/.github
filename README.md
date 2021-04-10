@@ -40,7 +40,11 @@ For more information, please see the article on [creating a default community he
 - [Awesome: github templates](https://github.com/devspace/awesome-github-templates)
 - [Awesome: github](https://github.com/phillipadsmith/awesome-github)
 
+### Helpers
+
 - [Cheat sheet: emoji](https://github.com/ikatyang/emoji-cheat-sheet)
+- [Cheat sheet: emoji](https://gist.github.com/rxaviers/7360908)
+- [Color picker](https://imagecolorpicker.com/color-code/9ca49e)
 
 ## Blogs
 

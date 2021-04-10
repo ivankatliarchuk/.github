@@ -311,5 +311,5 @@ labels:
 
 # Actors
 - name: 'github'
-  color: A3a827
+  color: 9ca49e
   description: software development and version control
