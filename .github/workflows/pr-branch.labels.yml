@@ -1,5 +1,5 @@
 
-name: pull request branch labels
+name: pull-request-branch-labels
 # todo: should only run if branch not named as it should
 on:
   pull_request:
