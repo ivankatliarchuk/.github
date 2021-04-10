@@ -6,9 +6,9 @@ name: governance.markdown-links
 on:
   push:
     branches:
-      - main  # Set a branch to deploy
+      - $default-branch  # Set a branch to deploy
   pull_request:
-    types: [opened, edited]
+    types: [opened]
   # schedule:
   # - cron: "0 9 * * *"
   workflow_dispatch:
