@@ -6,8 +6,6 @@
   ],
   "reviewersFromCodeOwners": true,
   "semanticCommits": true,
-  "automergeType": "pr",
-
   "labels": [
     "dependencies"
   ],
