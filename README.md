@@ -40,6 +40,8 @@ For more information, please see the article on [creating a default community he
 - [Awesome: github templates](https://github.com/devspace/awesome-github-templates)
 - [Awesome: github](https://github.com/phillipadsmith/awesome-github)
 
+- [Cheat sheet: emoji](https://github.com/ikatyang/emoji-cheat-sheet)
+
 ## Blogs
 
 - [Workflows: tooling](https://github.com/anna-money/workflow-tools)
@@ -65,4 +67,3 @@ For more information, please see the article on [creating a default community he
 [auto-approve]: https://github.com/search?o=desc&q=hmarr%2Fauto-approve-action+path%3A.github%2Fworkflows+language%3AYAML&s=&type=Code
 [self-merge]: https://github.com/search?o=desc&q=orta%2Fcode-owner-self-merge+path%3A.github%2Fworkflows+language%3AYAML&s=&type=Code
 [how-to-org-template]: https://docs.github.com/en/actions/learn-github-actions/sharing-workflows-with-your-organization
-
