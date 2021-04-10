@@ -43,6 +43,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           merge-method: rebase
-          required-labels: 'auto-merge,!wip,!work in progress,!do-not-merge,approved,:bell: automerge,:bell: approved,✅ Approved'
+          required-labels: 'auto-merge,!wip,!work in progress,,approved,:bell: automerge,:bell: approved,✅ Approved'
+          do-not-merge-labels: ':warning: do-not-merge,:warning: wip'
           pull-request: ${{ github.event.inputs.pull-request }}
           dry-run: true

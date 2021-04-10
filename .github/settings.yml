@@ -232,6 +232,7 @@ labels:
   name: ":coffin: wontfix"
   color: "ffffff"
   description: ""
+
 # commit sizes
 - # size s
   name: ":smiley_cat: size S"
@@ -241,10 +242,12 @@ labels:
   name: ":nauseated_face: size M"
   color: "e28743"
   description: ""
+
 - # size L
   name: ":skull_and_crossbones: size L"
   color: "A82789"
   description: ""
+
 # Kind
 - color: e7e9eb
   name: kind/bug
@@ -313,3 +316,9 @@ labels:
 - name: 'github'
   color: 9ca49e
   description: software development and version control
+
+# Do not merge stuff
+- name: ':warning: do-not-merge'
+  color: Bf811c
+- name: ':warning: wip'
+  color: A49ca3
