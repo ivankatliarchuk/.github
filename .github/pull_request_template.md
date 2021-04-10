@@ -7,7 +7,7 @@
 Put an `x` into the [ ] to show you have filled the information
 -->
 
-- [ ] Make sure you are opening from a **topic/feature/bugfix branch** (right side) and not your master branch!
+- [ ] Make sure you are opening from a **topic/feature/feat/docs/bug/bugfix/fix branch** (right side) and not your master branch!
 - [ ] Ensure that the pull request title represents the desired changelog entry
 
 ## Description
@@ -38,6 +38,6 @@ Put an `x` into the [ ] to show you have filled the information
 - [ ] My code follows the code style of this project.
 - [ ] My change requires a change to the documentation.
 - [ ] I have updated the documentation accordingly.
-- [ ] I have read the [**CONTRIBUTING** document](https://docs.qmk.fm/#/contributing).
+- [ ] I have read the [**CONTRIBUTING** document]().
 - [ ] I have added tests to cover my changes.
 - [ ] I have tested the changes and verified that they work and don't break anything (as well as I can manage).
