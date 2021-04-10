@@ -14,9 +14,9 @@ on:
       - closed
 
 jobs:
-  validate:
+  renovate:
     runs-on: ubuntu-latest
-    if: github.repository != 'ivankatliarchuk/.github'
+    if: github.repository == 'ivankatliarchuk/.github'
     steps:
       - uses: actions/checkout@v2
         with:
@@ -26,7 +26,7 @@ jobs:
         uses: rinchsan/renovate-config-validator@v0.0.2
         with:
           pattern: 'renovate.json'
-
+      # https://github.com/renovatebot/github-action install renovate app
       - name: run renovate bot
         uses: renovatebot/github-action@v23.44.8
         with:
