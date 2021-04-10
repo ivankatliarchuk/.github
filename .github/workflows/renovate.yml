@@ -6,7 +6,7 @@ on:
     branches:
       - $default-branch
   schedule:
-    - cron: '0 6,12,18 * * *'
+    - cron: '0 6 * * *'
   pull_request_target:
     branches:
       - $default-branch
@@ -30,4 +30,5 @@ jobs:
         uses: renovatebot/github-action@v23.44.8
         with:
           configurationFile: .github/renovate.json
-          token: ${{ secrets.RENOVATE_BOT }}
+          token: ${{ secrets.RENOVATE_TOKEN }}
+
