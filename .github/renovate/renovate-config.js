@@ -25,6 +25,7 @@ module.exports = {
   onboardingBranch: `${branchName}/configure`,
   platform: 'github',
   dryRun: false,
+  printConfig: true,
   username: process.env.USER_NAME,
   repositories: JSON.parse(fs.readFileSync(`${FOLDER}/repositories.json`), 'utf8'),
 };
