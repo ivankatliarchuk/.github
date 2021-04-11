@@ -16,7 +16,10 @@ const cfg = {
 }
 
 const repo = [
-  "ivankatliarchuk/.github"
+  "ivankatliarchuk/.github",
+  'ivankatliarchuk/ivankatliarchuk.github.io',
+  'ivankatliarchuk/knowledge-base',
+  'ivankatliarchuk/dotfiles'
 ]
 
 module.exports = {
