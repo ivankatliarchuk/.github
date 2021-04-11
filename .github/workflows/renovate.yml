@@ -35,4 +35,3 @@ jobs:
           USER_NAME: ${{ github.repository_owner }}
           RENOVATE_CONFIG_FOLDER: ${{ env.RENOVATE_CONFIG_FOLDER }}
           LOG_LEVEL: debug
-

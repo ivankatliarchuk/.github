@@ -4,6 +4,7 @@ const branchName = 'github-renovate';
 
 const fs = require('fs');
 const FOLDER = process.env.RENOVATE_CONFIG_FOLDER
+console.log(process.env);
 
 if (!fs.existsSync(`${FOLDER}/repositories.json`)) {
   const err = `missing "${FOLDER}/repositories.json" file`
