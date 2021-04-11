@@ -45,7 +45,6 @@ module.exports = {
   username: cfg.username,
   repositories: repo,
   prHourlyLimit: 20,
-  baseBranches: cfg.baseBranches,
   stabilityDays: 3,
   semanticCommits: "enabled",
   onboardingConfig: {
