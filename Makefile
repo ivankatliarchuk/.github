@@ -4,6 +4,7 @@ SHELL := /bin/bash
 MAKEFLAGS += --warn-undefined-variables
 MAKEFLAGS += --no-builtin-rules
 
+export DRY_RUN ?= true
 renovate ?= renovate/renovate:23.100.5-slim
 
 help:
@@ -31,5 +32,6 @@ renovate: ## Run renovate
 	--user ubuntu:121 \
 	-e RENOVATE_CONFIG_FILE=/github-action/renovate-config.js \
 	-e RENOVATE_TOKEN \
+    -e DRY_RUN \
 	${renovate}
 
