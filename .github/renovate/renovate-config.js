@@ -5,6 +5,8 @@ const branchName = 'github-renovate';
 const fs = require('fs');
 const FOLDER = process.env.RENOVATE_CONFIG_FOLDER
 
+console.log('test')
+
 if (!fs.existsSync(`${FOLDER}/repositories.json`)) {
   throw Error(`Missing "repositories.json" file in fodler ${FOLDER}`)
 }
@@ -15,6 +17,7 @@ module.exports = {
     "github>renovatebot/.github",
     ":disableRateLimiting"
   ],
+  logLevel: process.env.LOG_LEVEL,
   branchPrefix: `${branchName}/`,
   dependencyDashboardTitle: 'Dependency Dashboard self-hosted',
   gitAuthor: 'Renovate Bot <bot@renovateapp.com>',
