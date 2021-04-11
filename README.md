@@ -8,6 +8,7 @@
 
 ![Repository Size](https://img.shields.io/github/repo-size/ivankatliarchuk/.github)
 ![Lines of Codes](https://img.shields.io/tokei/lines/github/ivankatliarchuk/.github)
+[![](https://img.shields.io/github/license/ivankatliarchuk/.github)](https://github.com/ivankatliarchuk/.github/LICENCE)
 
 [![GitHub forks][forks.badge]][forks.url]
 
