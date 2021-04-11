@@ -56,6 +56,16 @@ For more information, please see the article on [creating a default community he
 
 - [Workflows: tooling](https://github.com/anna-money/workflow-tools)
 
+## Renovate
+
+Add the following to your renovate.json config
+
+```json
+{
+  "extends": ["github>ivankatliarchuk/.github"]
+}
+```
+
 ## Issues
 
 > Renovate actions does not support extra files
