@@ -55,6 +55,29 @@ For more information, please see the article on [creating a default community he
 
 - [Workflows: tooling](https://github.com/anna-money/workflow-tools)
 
+## Issues
+
+> Renovate actions does not support extra files
+
+```js
+const fs = require('fs');
+const config_folder = '.github/renovate'
+
+if (!fs.existsSync(`${config_folder}/repositories.json`)) {
+  const err = `missing "${config_folder}/repositories.json" file`
+  console.log(`error: ${err}. exit...`)
+  throw Error(err)
+}
+
+if (!fs.existsSync(`${config_folder}/config.json`)) {
+  const err = `missing "${config_folder}/config.json" file`
+  console.log(`error: ${err}. exit...`)
+  throw Error(err)
+}
+
+repositories: JSON.parse(fs.readFileSync(`${config_folder}/repositories.json`), 'utf8'),
+```
+
 ## TODO
 
 - [X] Setup workflow templates
