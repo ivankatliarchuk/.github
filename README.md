@@ -20,6 +20,7 @@ For more information, please see the article on [creating a default community he
 - [Resources](#resources)
   - [Helpers](#helpers)
 - [Blogs](#blogs)
+- [Issues](#issues)
 - [TODO](#todo)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
