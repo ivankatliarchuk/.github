@@ -20,6 +20,7 @@ For more information, please see the article on [creating a default community he
 - [Resources](#resources)
   - [Helpers](#helpers)
 - [Blogs](#blogs)
+- [Renovate](#renovate)
 - [Issues](#issues)
 - [TODO](#todo)
 
