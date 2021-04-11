@@ -10,7 +10,7 @@ const cfg = {
   "asignees": [
     "ivankatliarchuk"
   ],
-  "labels": ["renovate", "dependencies", "automated"],
+  "labels": ["renovate", "dependencies", ":robot: bot", ':game_die: dependencies'],
   "logLevel": "info",
   "gitAuthor": 'Renovate Bot <bot@renovateapp.com>',
   "dashboardTitle": 'Dependency Dashboard self-hosted',
@@ -28,46 +28,54 @@ const repo = [
 ]
 
 module.exports = {
-  extends: [
-    'config:base',
-    ":disableRateLimiting"
+  "extends": ["config:base", ":disableRateLimiting"],
+  "assigneesFromCodeOwners": true,
+  "assignees": ["ivankatliarchuk"],
+  "labels": ["renovate", "dependencies", "automated"],
+  "dependencyDashboardTitle": "Dependency Dashboard self-hosted",
+  "commitMessagePrefix": "⬆️",
+  "gitAuthor": "Renovate Bot <bot@renovateapp.com>",
+  "onboarding": true,
+  "platform": "github",
+  "dryRun": false,
+  "printConfig": false,
+  "pruneStaleBranches": false,
+  "username": "ivankatliarchuk",
+  "repositories": [
+    "ivankatliarchuk/.github",
+    "ivankatliarchuk/ivankatliarchuk.github.io",
+    "ivankatliarchuk/knowledge-base",
+    "ivankatliarchuk/dotfiles"
   ],
-  reviewersFromCodeOwners: true,
-  assigneesFromCodeOwners: true,
-  assignees: cfg.asignees,
-  logLevel: cfg.logLevel,
-  labels: cfg.labels,
-  dependencyDashboardTitle: cfg.dashboardTitle,
-  commitMessagePrefix: "⬆️",
-  gitAuthor: cfg.gitAuthor,
-  onboarding: true,
-  platform: 'github',
-  dryRun: dry_run,
-  printConfig: false,
-  pruneStaleBranches: false,
-  username: cfg.username,
-  repositories: repo,
-  prHourlyLimit: 20,
-  stabilityDays: 3,
-  semanticCommits: "enabled",
-  onboardingConfig: {
-    extends: ["github>ivankatliarchuk/.github"]
-  },
-  // Ensure that major is never automerged
-  major: { "automerge": false, "labels": ["dependencies", "major"] },
-  minor: { "automerge": false, "labels": ["dependencies", "minor"] },
-  patch: { "automerge": false },
-  packageRules: [
-    { "updateTypes": ["major"], "labels": ["major", "dependencies"] },
-    { "updateTypes": ["minor"], "labels": ["minor", "dependencies"], "groupName": "devDependencies(non-major)" },
-    { "updateTypes": ["patch", "digest", "bump"], "labels": ["patch", "dependencies"], "groupName": "devDependencies(non-major)" },
-    { "languages": ["php"], "labels": ["php"] },
-    { "languages": ["js"], "labels": ["js"] },
-    { "languages": ["python"], "labels": ["python"] },
-    { "packagePatterns": ["*"] },
-    { "depTypeList": ["dependencies"], "groupName": "dependencies" },
-    { "depTypeList": ["devDependencies"], "groupName": "devDependencies" },
-    { "depTypeList": ["devDependencies(non-major)"], "groupName": "devDependencies(non-major)" },
+  "prHourlyLimit": 20,
+  "stabilityDays": 3,
+  "semanticCommits": "enabled",
+  "onboardingConfig": { "extends": ["github>ivankatliarchuk/.github"] },
+  "major": { "automerge": false, "labels": ["dependencies", "major"] },
+  "minor": { "automerge": false, "labels": ["dependencies", "minor"] },
+  "patch": { "automerge": false },
+  "packageRules": [
+    { "labels": ["major", "dependencies"], "matchUpdateTypes": ["major"] },
+    {
+      "labels": ["minor", "dependencies"],
+      "groupName": "devDependencies(non-major)",
+      "matchUpdateTypes": ["minor"]
+    },
+    {
+      "labels": ["patch", "dependencies"],
+      "groupName": "devDependencies(non-major)",
+      "matchUpdateTypes": ["patch", "digest", "bump"]
+    },
+    { "labels": ["php"], "matchLanguages": ["php"] },
+    { "labels": ["js"], "matchLanguages": ["js"] },
+    { "labels": ["python"], "matchLanguages": ["python"] },
+    { "matchPackagePatterns": ["*"] },
+    { "groupName": "dependencies", "matchDepTypes": ["dependencies"] },
+    { "groupName": "devDependencies", "matchDepTypes": ["devDependencies"] },
+    {
+      "groupName": "devDependencies(non-major)",
+      "matchDepTypes": ["devDependencies(non-major)"]
+    },
     {
       "automerge": false,
       "requiredStatusChecks": null,
@@ -89,26 +97,30 @@ module.exports = {
       "groupName": "docker"
     },
     {
-      'packageNames': ["node", "@types/node"],
-      'allowedVersions': "^12.0.0",
-      "groupName": "node"
+      "allowedVersions": "^12.0.0",
+      "groupName": "node",
+      "matchPackageNames": ["node", "@types/node"]
     },
     {
-      'packageNames': ["npm"],
-      'allowedVersions': "^6.0.0",
-      "groupName": "node"
+      "allowedVersions": "^6.0.0",
+      "groupName": "node",
+      "matchPackageNames": ["npm"]
     },
     {
-      "packageNames": ["actions/*"],
       "versioning": "regex:^v(?<major>\\d+)(\\.(?<minor>\\d+))?(\\.(?<patch>\\d+))?",
-      "groupName": "actions"
+      "groupName": "actions",
+      "matchPackageNames": ["actions/*"]
     },
-    { 'managers': ["github-actions"], 'enabled': true, "groupName": "actions" },
     {
-      'datasources': 'go',
-      'managers': ['gomod'],
-      'updateTypes': ['pin', 'digest'],
-      'versioning': 'semver'
+      "enabled": true,
+      "groupName": "actions",
+      "matchManagers": ["github-actions"]
+    },
+    {
+      "versioning": "semver",
+      "matchDatasources": "go",
+      "matchManagers": ["gomod"],
+      "matchUpdateTypes": ["pin", "digest"]
     },
     {
       "matchDepTypes": ["devDependencies"],
@@ -137,7 +149,10 @@ module.exports = {
       "versioningTemplate": "{{#if versioning}}{{versioning}}{{else}}semver{{/if}}"
     },
     {
-      "fileMatch": [".github/workflows/blank.yml", ".github/workflows/takeover-output.yml"],
+      "fileMatch": [
+        ".github/workflows/blank.yml",
+        ".github/workflows/takeover-output.yml"
+      ],
       "matchStrings": ["uses: (?<depName>.*?)@(?<currentValue>.*?)\n"],
       "datasourceTemplate": "github-releases"
     }

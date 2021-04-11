@@ -5,7 +5,7 @@ MAKEFLAGS += --warn-undefined-variables
 MAKEFLAGS += --no-builtin-rules
 
 export DRY_RUN ?= true
-renovate ?= renovate/renovate:23.100.5-slim
+renovate ?= renovate/renovate:24.110.3-slim
 
 help:
 	@printf "Usage: make [target] [VARIABLE=value]\nTargets:\n"
