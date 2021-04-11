@@ -48,9 +48,9 @@ module.exports = {
   semanticCommits: "enabled",
   requireConfig: false,
   timezone: ctx.timezone,
-  onboardingConfig: {
-    extends: ["github>ivankatliarchuk/.github"]
-  },
+  // onboardingConfig: {
+  //   extends: ["github>ivankatliarchuk/.github"]
+  // },
   // Ensure that major is never automerged
   major: { "automerge": false, "labels": ["dependencies", "major"] },
   minor: { "automerge": true, "labels": ["dependencies", "minor"] },
@@ -94,6 +94,10 @@ module.exports = {
     {
       "packagePatterns": ["eslint"],
       "masterIssueApproval": true
+    },
+    {
+      "packageNames": ["actions/*"],
+      "versioning": "regex:^v(?<major>\\d+)(\\.(?<minor>\\d+))?(\\.(?<patch>\\d+))?"
     }
   ],
   "regexManagers": [
@@ -103,6 +107,23 @@ module.exports = {
         "registryUrl=(?<registryUrl>.*?)\n *chart: (?<depName>.*?)\n *version: (?<currentValue>.*)\n"
       ],
       "datasourceTemplate": "helm"
+    },
+    {
+      "fileMatch": ["sample.yml"],
+      "matchStrings": ["version: (?<depName>.*?)@(?<currentValue>.*?)\n"],
+      "datasourceTemplate": "github-tags"
+    },
+    {
+      "fileMatch": ["versions.yml"],
+      "matchStrings": [
+        "datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\n.*?_version: (?<currentValue>.*)\n"
+      ],
+      "versioningTemplate": "{{#if versioning}}{{versioning}}{{else}}semver{{/if}}"
+    },
+    {
+      "fileMatch": [".github/workflows/blank.yml", ".github/workflows/takeover-output.yml"],
+      "matchStrings": ["uses: (?<depName>.*?)@(?<currentValue>.*?)\n"],
+      "datasourceTemplate": "github-releases"
     }
   ]
 };
