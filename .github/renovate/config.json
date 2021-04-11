@@ -1,0 +1,7 @@
+{
+  "asignees": [
+    "ivankatliarchuk"
+  ],
+  "labels": ["renovate", "dependencies", "automated"],
+  "logLevel": "info"
+}
