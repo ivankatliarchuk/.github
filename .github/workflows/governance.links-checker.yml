@@ -25,6 +25,7 @@ env:
 jobs:
   markdown-link-check:
     runs-on: ubuntu-latest
+    if: github.repository == 'ivankatliarchuk/.github'
     steps:
     # checkout to latest commit
     - uses: actions/checkout@v2
