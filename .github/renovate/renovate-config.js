@@ -39,5 +39,19 @@ module.exports = {
   printConfig: true,
   username: cfg.username,
   repositories: repo,
-  baseBranches: cfg.baseBranches
+  baseBranches: cfg.baseBranches,
+  stabilityDays: 3,
+  semanticCommits: "enabled",
+  requireConfig: false,
+  major: { "automerge": false, "labels": ["dependencies", "minor"] },
+  minor: { "automerge": true, "labels": ["dependencies", "minor"] },
+  patch: { "automerge": true },
+  packageRules: [
+    { "updateTypes": ["major"], "labels": ["major"] },
+    { "updateTypes": ["minor"], "labels": ["minor"] },
+    { "updateTypes": ["patch", "digest", "bump"], "labels": ["patch"] },
+    { "languages": ["php"], "labels": ["Lang PHP"] },
+    { "languages": ["js"], "labels": ["Lang JS"] },
+    { "languages": ["python"], "labels": ["Lang Python"] }
+  ]
 };
