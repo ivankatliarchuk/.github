@@ -9,6 +9,8 @@
 ![Repository Size](https://img.shields.io/github/repo-size/ivankatliarchuk/.github)
 ![Lines of Codes](https://img.shields.io/tokei/lines/github/ivankatliarchuk/.github)
 
+[![GitHub forks][forks.badge]][forks.url]
+
 > Default community health files, such as CONTRIBUTING and CODE_OF_CONDUCT. Default files will be used for any public repository owned by the account that does not contain its own file of that type.
 
 For more information, please see the article on [creating a default community health file for your organization](https://help.github.com/en/articles/creating-a-default-community-health-file-for-your-organization).
@@ -118,4 +120,5 @@ repositories: JSON.parse(fs.readFileSync(`${config_folder}/repositories.json`), 
 [file-sync-aciton]: https://github.com/marketplace/actions/file-sync
 [governance.link-checker.badge]: https://github.com/ivankatliarchuk/.github/actions/workflows/governance.links-checker.yml/badge.svg
 [governance.link-checker.status]: https://github.com/ivankatliarchuk/.github/actions/workflows/governance.links-checker.yml
-
+[forks.badge]: https://img.shields.io/github/forks/ivankatliarchuk/.github.svg?style=social&label=Fork
+[forks.url]: https://github.com/ivankatliarchuk/.github/network/members
