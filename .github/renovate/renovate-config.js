@@ -11,7 +11,8 @@ const cfg = {
   "gitAuthor": 'Renovate Bot <bot@renovateapp.com>',
   "dashboardTitle": 'Dependency Dashboard self-hosted',
   "username": "ivankatliarchuk",
-  "branchName": 'github-renovate'
+  "branchName": 'github-renovate',
+  "baseBranches": ['master','main']
 }
 
 const repo = [
@@ -27,7 +28,6 @@ module.exports = {
   assignees: cfg.asignees,
   logLevel: cfg.logLevel,
   labels: cfg.labels,
-  branchName: '{{{branchPrefix}}}{{{branchTopic}}}',
   dependencyDashboardTitle: cfg.dashboardTitle,
   gitAuthor: cfg.gitAuthor,
   onboarding: true,
@@ -36,4 +36,5 @@ module.exports = {
   printConfig: true,
   username: cfg.username,
   repositories: repo,
+  baseBranches: cfg.baseBranches
 };
