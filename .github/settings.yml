@@ -329,3 +329,11 @@ labels:
 - name: 'kind/stable'
   color: 1e92bb
   escription: Everything is working fine
+
+# Needs
+- name: 'needs/area'
+  color: 8a3b94
+- name: 'needs/triage'
+  color: 3b7f94
+- name: 'needs/kind'
+  color: baaf4c

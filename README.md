@@ -6,6 +6,9 @@
 [![governance.link-checker][governance.link-checker.badge]][governance.link-checker.status]
 [![toc generator][toc-badge]][toc-action]
 
+![Repository Size](https://img.shields.io/github/repo-size/ivankatliarchuk/.github)
+![Lines of Codes](https://img.shields.io/tokei/lines/github/ivankatliarchuk/.github)
+
 > Default community health files, such as CONTRIBUTING and CODE_OF_CONDUCT. Default files will be used for any public repository owned by the account that does not contain its own file of that type.
 
 For more information, please see the article on [creating a default community health file for your organization](https://help.github.com/en/articles/creating-a-default-community-health-file-for-your-organization).
@@ -17,6 +20,8 @@ For more information, please see the article on [creating a default community he
 - [Resources](#resources)
   - [Helpers](#helpers)
 - [Blogs](#blogs)
+- [Renovate](#renovate)
+- [Issues](#issues)
 - [TODO](#todo)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -52,18 +57,54 @@ For more information, please see the article on [creating a default community he
 
 - [Workflows: tooling](https://github.com/anna-money/workflow-tools)
 
+## Renovate
+
+Add the following to your renovate.json config
+
+```json
+{
+  "extends": ["github>@ivankatliarchuk/.github"]
+}
+```
+
+Configuration examples `https://github.com/ng-easy/renovate-config`
+
+## Issues
+
+> Renovate actions does not support extra files
+
+```js
+const fs = require('fs');
+const config_folder = '.github/renovate'
+
+if (!fs.existsSync(`${config_folder}/repositories.json`)) {
+  const err = `missing "${config_folder}/repositories.json" file`
+  console.log(`error: ${err}. exit...`)
+  throw Error(err)
+}
+
+if (!fs.existsSync(`${config_folder}/config.json`)) {
+  const err = `missing "${config_folder}/config.json" file`
+  console.log(`error: ${err}. exit...`)
+  throw Error(err)
+}
+
+repositories: JSON.parse(fs.readFileSync(`${config_folder}/repositories.json`), 'utf8'),
+```
+
 ## TODO
 
 - [X] Setup workflow templates
-- [ ] Sync files with other repositories(dependabot,renovate etc)
-- [ ] Syhc workflow files (https://github.com/varunsridharan/action-github-workflow-sync)
-- [ ] Add [auto approve][auto-approve]
+- [X] Add [auto approve][auto-approve]
 - [X] Add [self merge][self-merge] to self repo
 - [ ] Add [self merge][self-merge] to org template
-- [ ] Add renovate action to self repo
-- [ ] Add renovate action to org template
+- [X] Add renovate action to self repo
+- [ ] Renovate to work with mutliple repositories
 - [ ] Setup [file sync action][file-sync-aciton]:
+- [ ] Sync files with other repositories(dependabot,renovate etc)
+- [ ] Syhc workflow files (https://github.com/varunsridharan/action-github-workflow-sync)
 
+<!-- resources -->
 [1]: https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/creating-a-default-community-health-file
 [governance-badge]: https://github.com/ivankatliarchuk/.github/actions/workflows/governance-bot.yml/badge.svg
 [governance-action]: https://github.com/ivankatliarchuk/.github/actions/workflows/governance-bot.yml
