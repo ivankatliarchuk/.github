@@ -55,7 +55,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
-    - name: read '${{ env.LYCHEE_OUT }}'
+    - name: read output
       id: readfile
       uses: juliangruber/read-file-action@v1
       if: ${{ steps.lychee.outputs.exit_code > 0 }}
