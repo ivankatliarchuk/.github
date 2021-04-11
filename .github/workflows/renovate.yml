@@ -15,7 +15,7 @@ on:
 
 env:
   RENOVATE_CONFIG_FOLDER: .github/renovate
-  LOG_LEVEL: debug
+  LOG_LEVEL: info
 
 jobs:
   renovate:

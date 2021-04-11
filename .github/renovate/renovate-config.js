@@ -7,7 +7,7 @@ const FOLDER = process.env.RENOVATE_CONFIG_FOLDER
 
 if (!fs.existsSync(`${FOLDER}/repositories.json`)) {
   const err = `missing "${FOLDER}/repositories.json" file`
-  console.log(`error: ${err}`)
+  console.log(`error: ${err}. exit...`)
   throw Error(err)
 }
 
@@ -26,7 +26,5 @@ module.exports = {
   platform: 'github',
   dryRun: false,
   username: process.env.USER_NAME,
-  repositories: [
-    'ivankatliarchuk/.github',
-  ],
+  repositories: JSON.parse(fs.readFileSync(`${FOLDER}/repositories.json`), 'utf8'),
 };
