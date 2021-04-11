@@ -32,6 +32,7 @@ module.exports = {
     'config:base',
     ":disableRateLimiting"
   ],
+  reviewers: ctx.asignees
   reviewersFromCodeOwners: true,
   assignees: cfg.asignees,
   logLevel: cfg.logLevel,
