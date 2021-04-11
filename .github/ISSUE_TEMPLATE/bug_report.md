@@ -1,47 +1,24 @@
 ---
 name: Bug report
-about: Create a report to help us improve
+about: Report a problem/bug to help us improve
 title: ''
 labels: bug
 assignees: ''
 
 ---
 
-Do the checklist before filing an issue:
+**Description of the problem**
 
- * [ ] Is this related to the `actions-rs` Actions?
-       If you think it's a problem related to Github Actions in general, use GitHub Community forum instead: https://github.community
- * [ ] You've read the Contributing section about bugs reporting: https://github.com/actions-rs/.github/blob/master/CONTRIBUTING.md#reporting-bugs
- * [ ] Is this something you can debug and fix? Send a pull request! Bug fixes and documentation fixes are welcome.
+<!-- Please be as detailed as you can when describing an issue. The more information we have, the easier it will be for us to track this down. -->
 
-## Description
+**Full code that generated the error**
 
-A clear and concise description of what the bug is.
-
-## Workflow code
-
-```yaml
-Paste that part of your workflow yaml file that causes the bug in here.
-
-Alternatively you can remove that code block and insert direct link to your workflow file.
-Ensure that link points to the specific commit, and not just to the master branch.
+```python
+PASTE CODE HERE
 ```
 
-## Action output
+**Full error message**
 
 ```
-Copy and paste Action output logs in here.
-
-How else can you help on that step:
-1. Enable debug logs first: https://github.com/actions/toolkit/blob/master/docs/action-debugging.md
-2. Re-run the job
-2. Download logs archive for job run and attach it to this issue
+PASTE ERROR MESSAGE HERE
 ```
-
-## Expected behavior
-
-A clear and concise description of what you expected to happen.
-
-## Additional context
-
-Add any other context about the problem here.

@@ -10,6 +10,8 @@ repository:
   has_projects: false
   has_wiki: false
   has_downloads: false
+  has_pages: false
+  is_template: false
   default_branch: main
   allow_squash_merge: true
   allow_merge_commit: true
@@ -29,7 +31,6 @@ branches:
       strict: true
       contexts: []
     enforce_admins: false
-
 
 # Labels: define labels for Issues and Pull Requests
 # https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md

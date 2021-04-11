@@ -1,29 +1,90 @@
 # @todo: sync with other repositories
 ---
-name: governance.markdown-links
+name: governance.link-checker
 
 # Run action on pull request event
 on:
   push:
     branches:
-      - $default-branch  # Set a branch to deploy
+      - $default-branch
+    paths:
+      - '*.md'
   pull_request:
-    types: [opened]
-  # schedule:
-  # - cron: "0 9 * * *"
+    types: [opened, edited]
+    paths:
+      - '*.md'
+  schedule:
+  - cron: "0 9 * * 1"
   workflow_dispatch:
-    inputs:
-      tags:
-        description: 'manual trigger'
+
+env:
+  TEMPLATE: .github/templates/issue.links.md
+  LYCHEE_OUT: out.md
+  USER_AGENT: "Mozilla/5.0 (X11; Linux x86_64; rv:84.0) Gecko/20100101 Firefox/84.0"
 
 jobs:
   markdown-link-check:
     runs-on: ubuntu-latest
     steps:
     # checkout to latest commit
-      - uses: actions/checkout@main
-        with:
-          fetch-depth: '1'
-          submodules: 'recursive'
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 1
     # run markdown linter
-      - uses: gaurav-nelson/github-action-markdown-link-check@v1
+    # - uses: gaurav-nelson/github-action-markdown-link-check@v1
+    # todo https://github.com/peter-evans/link-checker
+    - name: link checker
+      id: lychee
+      uses: lycheeverse/lychee-action@v1.0.6
+      # if: failure()
+      with:
+        args: >
+          --exclude="^(javascript|chrome):.*"
+          --exclude "^git"
+          --exclude "^file://"
+          --verbose
+          --no-progress
+          --accept=200,403,429
+          --timeout 20
+          "*.md"
+          "**/*.md"
+          "README.md"
+          "*.toml"
+          "**/*.toml"
+      env:
+        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+    - name: read '${{ env.LYCHEE_OUT }}'
+      id: readfile
+      uses: juliangruber/read-file-action@v1
+      if: ${{ steps.lychee.outputs.exit_code > 0 }}
+      with:
+        path: ${{ env.LYCHEE_OUT }}
+
+    - name: results
+      id: read
+      run: |
+        echo "exit code: ${{ steps.lychee.outputs.exit_code  }}"
+
+    - name: update issue template
+      uses: DamianReeves/write-file-action@master
+      if: ${{ steps.lychee.outputs.exit_code > 0 }}
+      with:
+        path: .github/templates/issue.links.md
+        contents: ${{ steps.readfile.outputs.content }}
+        write-mode: append
+
+    - name: create issue from file
+      uses: JasonEtco/create-an-issue@v2.5.0
+      id: issue
+      if: ${{ steps.lychee.outputs.exit_code > 0 }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        TITLE: 'Markdwon links checker'
+      with:
+        filename: ${{ env.TEMPLATE }}
+        assignees: ${{ github.repository_owner }}
+        update_existing: true
+
+    - name: fail if there were link errors
+      run: exit ${{ steps.lychee.outputs.exit_code }}
