@@ -1,0 +1,53 @@
+# @todo: do not really need this
+---
+name: Automate dist compilation
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+    branches:
+      - master
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal token
+        fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
+    - uses: dorny/pr-changed-files-filter@v1
+      id: filter
+      with:
+        filters: |
+          dist:
+            - 'dist/**'
+    # Run only if ‘dist' files were not changed
+    - name: Setup node
+      if: steps.filter.outputs.dist == 'false'
+      uses: actions/setup-node@v1
+      with:
+        node-version: 14.x
+
+    - name: Install dependencies
+      if: steps.filter.outputs.dist == 'false'
+      run: npm install
+
+    - name: Compile action into a single file in the dist folder
+      if: steps.filter.outputs.dist == 'false'
+      run: npm run build
+
+    - name: Commit files
+      if: steps.filter.outputs.dist == 'false'
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git commit -m "Update dist" -a
+
+    - name: Push changes
+      if: steps.filter.outputs.dist == 'false'
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ github.head_ref }}

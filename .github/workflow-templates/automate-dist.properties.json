@@ -1,0 +1,8 @@
+{
+  "name": "Automate JavaScript action dist",
+  "description": "Automatically keep the dist folder up to date on pull requests.",
+  "iconName": "octicon smiley",
+  "filePatterns": [
+    "action.yml"
+  ]
+}

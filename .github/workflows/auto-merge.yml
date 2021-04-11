@@ -40,7 +40,7 @@ jobs:
 
 
       - name: automerge2
-        uses: reitermarkus/automerge@v1
+        uses: reitermarkus/automerge@v1.5.1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           merge-method: merge
