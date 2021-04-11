@@ -15,7 +15,7 @@ on:
 
 env:
   RENOVATE_CONFIG_FOLDER: .github/renovate
-  LOG_LEVEL: info
+  LOG_LEVEL: debug
 
 jobs:
   renovate:
@@ -29,7 +29,7 @@ jobs:
       - name: run renovate bot
         uses: renovatebot/github-action@v23.100.5
         with:
-          configurationFile: .github/renovate/renovate-config.js
+          configurationFile: ${{ env.RENOVATE_CONFIG_FOLDER }}/renovate-config.js
           token: ${{ secrets.RENOVATE_TOKEN }}
         env:
           USER_NAME: ${{ github.repository_owner }}

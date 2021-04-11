@@ -5,10 +5,10 @@ const branchName = 'github-renovate';
 const fs = require('fs');
 const FOLDER = process.env.RENOVATE_CONFIG_FOLDER
 
-console.log('test')
-
 if (!fs.existsSync(`${FOLDER}/repositories.json`)) {
-  throw Error(`Missing "repositories.json" file in fodler ${FOLDER}`)
+  const err = `missing "${FOLDER}/repositories.json" file`
+  console.log(`error: ${err}`)
+  throw Error(err)
 }
 
 module.exports = {
