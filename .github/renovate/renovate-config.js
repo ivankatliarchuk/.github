@@ -32,8 +32,8 @@ module.exports = {
     'config:base',
     ":disableRateLimiting"
   ],
-  reviewers: ctx.asignees
   reviewersFromCodeOwners: true,
+  assigneesFromCodeOwners: true,
   assignees: cfg.asignees,
   logLevel: cfg.logLevel,
   labels: cfg.labels,
@@ -58,9 +58,9 @@ module.exports = {
   minor: { "automerge": false, "labels": ["dependencies", "minor"] },
   patch: { "automerge": false },
   packageRules: [
-    { "updateTypes": ["major"], "labels": ["major"] },
-    { "updateTypes": ["minor"], "labels": ["minor"], "groupName": "devDependencies(non-major)" },
-    { "updateTypes": ["patch", "digest", "bump"], "labels": ["patch"], "groupName": "devDependencies(non-major)" },
+    { "updateTypes": ["major"], "labels": ["major", "dependencies"] },
+    { "updateTypes": ["minor"], "labels": ["minor", "dependencies"], "groupName": "devDependencies(non-major)" },
+    { "updateTypes": ["patch", "digest", "bump"], "labels": ["patch", "dependencies"], "groupName": "devDependencies(non-major)" },
     { "languages": ["php"], "labels": ["php"] },
     { "languages": ["js"], "labels": ["js"] },
     { "languages": ["python"], "labels": ["python"] },
