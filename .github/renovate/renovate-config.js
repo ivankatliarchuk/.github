@@ -43,7 +43,7 @@ module.exports = {
   platform: 'github',
   dryRun: dry_run,
   printConfig: false,
-  pruneStaleBranches: true,
+  pruneStaleBranches: false,
   username: cfg.username,
   repositories: repo,
   prHourlyLimit: 20,
@@ -66,46 +66,54 @@ module.exports = {
     { "packagePatterns": ["*"] },
     { "depTypeList": ["dependencies"], "groupName": "dependencies" },
     { "depTypeList": ["devDependencies"], "groupName": "devDependencies" },
+    { "depTypeList": ["devDependencies(non-major)"], "groupName": "devDependencies(non-major)" },
     {
       "automerge": false,
       "requiredStatusChecks": null,
       "matchDatasources": ["docker"],
-      "matchUpdateTypes": ["patch"]
+      "matchUpdateTypes": ["patch"],
+      "groupName": "devDependencies(non-major)"
     },
     {
       "commitMessageTopic": "Helm chart {{depName}}",
       "separateMinorPatch": true,
-      "matchDatasources": ["helm"]
+      "matchDatasources": ["helm"],
+      "groupName": "helm"
     },
     {
       "labels": ["renovate/image-release", "dependency/major"],
       "enabled": true,
       "matchDatasources": ["docker"],
-      "matchUpdateTypes": ["major"]
+      "matchUpdateTypes": ["major"],
+      "groupName": "docker"
     },
     {
       'packageNames': ["node", "@types/node"],
       'allowedVersions': "^12.0.0",
+      "groupName": "node"
     },
     {
       'packageNames': ["npm"],
       'allowedVersions': "^6.0.0",
-    },
-    {
-      "packagePatterns": ["eslint"],
-      "masterIssueApproval": true
+      "groupName": "node"
     },
     {
       "packageNames": ["actions/*"],
-      "versioning": "regex:^v(?<major>\\d+)(\\.(?<minor>\\d+))?(\\.(?<patch>\\d+))?"
+      "versioning": "regex:^v(?<major>\\d+)(\\.(?<minor>\\d+))?(\\.(?<patch>\\d+))?",
+      "groupName": "actions"
     },
-    { 'managers': ["github-actions"], 'enabled': true },
+    { 'managers': ["github-actions"], 'enabled': true, "groupName": "actions" },
     {
       'datasources': 'go',
       'managers': ['gomod'],
       'updateTypes': ['pin', 'digest'],
       'versioning': 'semver'
     },
+    {
+      "matchDepTypes": ["devDependencies"],
+      "matchUpdateTypes": ["patch", "minor"],
+      "groupName": "devDependencies (non-major)"
+    }
   ],
   "regexManagers": [
     {
