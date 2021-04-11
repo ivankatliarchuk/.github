@@ -32,6 +32,7 @@ module.exports = {
     'config:base',
     ":disableRateLimiting"
   ],
+  reviewersFromCodeOwners: true,
   assignees: cfg.asignees,
   logLevel: cfg.logLevel,
   labels: cfg.labels,
@@ -41,7 +42,8 @@ module.exports = {
   onboarding: true,
   platform: 'github',
   dryRun: dry_run,
-  printConfig: true,
+  printConfig: false,
+  pruneStaleBranches: true,
   username: cfg.username,
   repositories: repo,
   prHourlyLimit: 20,
@@ -52,8 +54,8 @@ module.exports = {
   },
   // Ensure that major is never automerged
   major: { "automerge": false, "labels": ["dependencies", "major"] },
-  minor: { "automerge": true, "labels": ["dependencies", "minor"] },
-  patch: { "automerge": true },
+  minor: { "automerge": false, "labels": ["dependencies", "minor"] },
+  patch: { "automerge": false },
   packageRules: [
     { "updateTypes": ["major"], "labels": ["major"] },
     { "updateTypes": ["minor"], "labels": ["minor"] },
@@ -98,12 +100,6 @@ module.exports = {
       "versioning": "regex:^v(?<major>\\d+)(\\.(?<minor>\\d+))?(\\.(?<patch>\\d+))?"
     },
     { 'managers': ["github-actions"], 'enabled': true },
-    {
-      "description": "lockFileMaintenance",
-      "updateTypes": ["pin", "digest", "patch", "minor", "major", "lockFileMaintenance"],
-      "masterIssueApproval": false,
-      "stabilityDays": 3
-    },
     {
       'datasources': 'go',
       'managers': ['gomod'],
