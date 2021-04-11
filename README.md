@@ -63,9 +63,11 @@ Add the following to your renovate.json config
 
 ```json
 {
-  "extends": ["github>ivankatliarchuk/.github"]
+  "extends": ["github>@ivankatliarchuk/.github"]
 }
 ```
+
+Configuration examples `https://github.com/ng-easy/renovate-config`
 
 ## Issues
 

@@ -26,7 +26,6 @@ const repo = [
 module.exports = {
   extends: [
     'config:base',
-    "github>renovatebot/.github",
     ":disableRateLimiting",
     ':gitSignOff',
     ':docker'
@@ -55,7 +54,6 @@ module.exports = {
   major: { "automerge": false, "labels": ["dependencies", "major"] },
   minor: { "automerge": true, "labels": ["dependencies", "minor"] },
   patch: { "automerge": true },
-
   packageRules: [
     { "updateTypes": ["major"], "labels": ["major"] },
     { "updateTypes": ["minor"], "labels": ["minor"] },
@@ -84,12 +82,12 @@ module.exports = {
       "matchUpdateTypes": ["major"]
     },
     {
-      packageNames: ["node", "@types/node"],
-      allowedVersions: "^12.0.0",
+      'packageNames': ["node", "@types/node"],
+      'allowedVersions': "^12.0.0",
     },
     {
-      packageNames: ["npm"],
-      allowedVersions: "^6.0.0",
+      'packageNames': ["npm"],
+      'allowedVersions': "^6.0.0",
     },
     {
       "packagePatterns": ["eslint"],
@@ -98,7 +96,20 @@ module.exports = {
     {
       "packageNames": ["actions/*"],
       "versioning": "regex:^v(?<major>\\d+)(\\.(?<minor>\\d+))?(\\.(?<patch>\\d+))?"
-    }
+    },
+    { 'managers': ["github-actions"], 'enabled': true },
+    {
+      "description": "lockFileMaintenance",
+      "updateTypes": ["pin", "digest", "patch", "minor", "major", "lockFileMaintenance"],
+      "masterIssueApproval": false,
+      "stabilityDays": 3
+    },
+    {
+      'datasources': 'go',
+      'managers': ['gomod'],
+      'updateTypes': ['pin', 'digest'],
+      'versioning': 'semver'
+    },
   ],
   "regexManagers": [
     {

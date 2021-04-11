@@ -3,27 +3,7 @@
   "extends": [
     "config:base",
     "github>renovatebot/.github",
-    ":disableRateLimiting"
-  ],
-  "reviewersFromCodeOwners": true,
-  "semanticCommits": "enabled",
-  "rebaseWhen": "conflicted",
-  "labels": [
-    "dependencies"
-  ],
-  "baseBranches": [
-    "main","master"
-  ],
-  "stabilityDays": 3,
-  "major": { "automerge": false, "labels": [ "dependencies", "minor" ] },
-  "minor": { "automerge": true, "labels": [ "dependencies", "minor" ] },
-  "patch": { "automerge": true },
-  "packageRules": [
-    { "updateTypes": ["major"], "labels": ["major"] },
-    { "updateTypes": ["minor"], "labels": ["minor"] },
-    { "updateTypes": ["patch", "digest", "bump"], "labels": ["patch"] },
-    { "languages": ["php"], "labels": ["Lang PHP"] },
-    { "languages": ["js"], "labels": ["Lang JS"] },
-    { "languages": ["python"], "labels": ["Lang Python"] }
+    ":disableRateLimiting",
+    ":assignee(ivankatliarchuk)",
   ]
 }
