@@ -3,6 +3,7 @@
 
 [![syncronize-repository-content][sync-badge]][sync-action]
 [![governance][governance-badge]][governance-action]
+[![governance.link-checker][governance.link-checker.badge]][governance.link-checker.status]
 [![toc generator][toc-badge]][toc-action]
 
 > Default community health files, such as CONTRIBUTING and CODE_OF_CONDUCT. Default files will be used for any public repository owned by the account that does not contain its own file of that type.
@@ -74,3 +75,6 @@ For more information, please see the article on [creating a default community he
 [self-merge]: https://github.com/search?o=desc&q=orta%2Fcode-owner-self-merge+path%3A.github%2Fworkflows+language%3AYAML&s=&type=Code
 [how-to-org-template]: https://docs.github.com/en/actions/learn-github-actions/sharing-workflows-with-your-organization
 [file-sync-aciton]: https://github.com/marketplace/actions/file-sync
+[governance.link-checker.badge]: https://github.com/ivankatliarchuk/.github/actions/workflows/governance.links-checker.yml/badge.svg
+[governance.link-checker.status]: https://github.com/ivankatliarchuk/.github/actions/workflows/governance.links-checker.yml
+
