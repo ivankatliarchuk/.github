@@ -1,5 +1,5 @@
 'use strict';
-
+// https://github.com/renovatebot/github-action/blob/main/.github/renovate.json
 const branchName = 'github-renovate';
 
 const fs = require('fs');
