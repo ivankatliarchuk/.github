@@ -2,7 +2,7 @@ name: syncronize-repository-content
 
 on:
   schedule:
-    - cron:  '0 */12 * * *'
+    - cron:  '15 1 * * 5'
   workflow_dispatch:
 
 env:
