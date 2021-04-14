@@ -21,8 +21,8 @@ on:
         required: false
   # Try merging all open pull requests.
   schedule:
-    - cron: 0 * * * *
-      
+    - cron: 0 4 * * 1
+
 jobs:
   automerge:
     runs-on: ubuntu-latest
