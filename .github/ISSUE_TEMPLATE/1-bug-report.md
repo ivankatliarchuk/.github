@@ -1,6 +1,6 @@
 ---
 name: 🐞 Bug report
-about: Report bugs so we can squash them
+about: Report bugs
 title: "[A very brief summary of a bug]"
 labels: kind/bug,bug
 ---

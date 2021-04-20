@@ -8,13 +8,13 @@ Please note that this project is released with a Contributor Code of Conduct. By
 
 ## Submitting a pull request
 
-0. Fork and clone the repository
-0. Configure and install the dependencies
-0. Make sure the tests pass on your machine
-0. Create a new branch: `git checkout -b {feat|bug|docs}/my-branch-name`
-0. Make your change, add tests, and make sure the tests still pass
-0. Push to your fork and submit a pull request
-0. Pat your self on the back and wait for your pull request to be reviewed and merged.
+1. Fork and clone the repository
+1. Configure and install the dependencies
+1. Make sure the tests pass on your machine
+1. Create a new branch: `git checkout -b {feat|bug|docs}/my-branch-name`
+1. Make your change, add tests, and make sure the tests still pass
+1. Push to your fork and submit a pull request
+1. Pat your self on the back and wait for your pull request to be reviewed and merged.
 
 Here are a few things you can do that will increase the likelihood of your pull request being accepted:
 

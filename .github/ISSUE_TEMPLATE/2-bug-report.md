@@ -1,6 +1,6 @@
 ---
-name: 🐞 Bug report
-about: Create a report to help us improve
+name: 🦠 Bug report
+about: Report github action bugs
 title: "[A very brief summary of a github action bug]"
 labels: bug,kind/bug,kind/github-action
 assignees: ''

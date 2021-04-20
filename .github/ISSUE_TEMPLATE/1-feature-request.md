@@ -1,5 +1,5 @@
 ---
-name: Feature Request
+name: "☘️ Feature Request"
 about: Discuss adding new functionality
 title: "[A very brief summary of your request]"
 labels: kind/feature
