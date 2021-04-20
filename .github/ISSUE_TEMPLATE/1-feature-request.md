@@ -1,6 +1,6 @@
 ---
 name: Feature Request
-about: Discuss adding new functionality to CloudKats
+about: Discuss adding new functionality
 title: "[A very brief summary of your request]"
 labels: kind/feature
 ---
@@ -18,5 +18,16 @@ labels: kind/feature
 
 ### ⭐️ Why do you want this?
 <!-- Let us know what is the use case that this improvement solves -->
+
+### Proposed change
+<!-- Use this section to describe the feature you'd like to be added. -->
+
+
+### Alternative options
+<!-- Use this section to describe alternative options and why you've decided on the proposed feature above. -->
+
+
+### Who would use this feature?
+<!-- Describe who would benefit from using this feature. -->
 
 ### Additional comments, etc.

@@ -329,6 +329,9 @@ labels:
 - name: 'kind/stable'
   color: 1e92bb
   escription: Everything is working fine
+- name: 'kind/github-action'
+  color: 9adae7
+  escription: Github action related label
 
 # Needs
 - name: 'needs/area'

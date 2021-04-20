@@ -27,3 +27,19 @@ Do the checklist before filing an issue:
 
 ### (Optional): Suggest a solution
 <!-- Describe what you think needs to be done. Doing that is an excellent first step to get the feature implemented. -->
+
+### Are you willing to resolve this issue by submitting a Pull Request?
+
+<!--
+  Remember that first-time contributors are welcome! 🙌
+-->
+
+- [ ] Yes, I have the time, and I know how to start.
+- [ ] Yes, I have the time, but I don't know how to start. I would need guidance.
+- [ ] No, I don't have the time, although I believe I could do it if I had the time...
+- [ ] No, I don't have the time and I wouldn't even know how to start.
+
+
+<!--
+  👋 Have a great day and thank you for the documentation problem report!
+-->
