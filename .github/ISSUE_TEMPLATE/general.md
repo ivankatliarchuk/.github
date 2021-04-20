@@ -1,5 +1,5 @@
 ---
-name: General Question
+name: "⁉️ General Question"
 about: General question about this project
 labels: kind/question
 ---

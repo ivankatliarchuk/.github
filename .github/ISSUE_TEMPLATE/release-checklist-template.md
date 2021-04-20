@@ -1,8 +1,8 @@
 ---
-name: Release Checklist Template
+name: "🎉 Release Checklist Template"
 about: A checklist for release preparation
 title: Release X.X.X
-labels: ''
+labels: 'release'
 assignees: ''
 
 ---

@@ -1,8 +1,8 @@
 ---
-name: Feature request 1
-about: Suggest an idea for this project
-title: ''
-labels: enhancement
+name: '\U0001F680 Feature Request'
+about: Discuss adding new functionality for github actions
+title: "[A very brief summary of your request]"
+labels: "kind/feature,:sparkles: enhancement,kind/github-action"
 assignees: ''
 
 ---
