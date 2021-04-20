@@ -10,15 +10,17 @@ Put an `x` into the [ ] to show you have filled the information
 - [ ] Make sure you are opening from a **topic/feature/feat/docs/bug/bugfix/fix branch** (right side) and not your master branch!
 - [ ] Ensure that the pull request title represents the desired changelog entry
 
-## Description
+## 📒 Description
 
 <!--- Describe your changes in detail here. -->
-- [ ] Please describe what you did
 
-
-## Types of Changes
+## 🕶️ Types of changes
 
 <!--- What types of changes does your code introduce? Put an `x` in all the boxes that apply. -->
+<!-- - **Bug fix** (non-breaking change which fixes an issue) -->
+<!-- - **New feature** (non-breaking change which adds functionality) -->
+<!-- - **Breaking change** (fix or feature that would cause existing functionality to change) -->
+
 - [ ] Core
 - [ ] Bugfix
 - [ ] New feature
@@ -27,9 +29,19 @@ Put an `x` into the [ ] to show you have filled the information
 - [ ] Keymap/layout/userspace (addition or update)
 - [ ] Documentation
 
-## Issues Fixed or Closed by This PR
+### 🤯 List of changes
+<!-- The changelog of this PR. It's useful for bigger PR-s -->
 
-*
+### 👫 Relationships
+<!-- Mention your Issue or other PR, which connects with this PR -->
+
+<!-- If you want to close the main issue automatically after PR is merged -->
+<!-- https://help.github.com/articles/closing-issues-using-keywords/ -->
+
+<!-- Closes #your_issue_number -->
+
+### 🔎 Review hints
+<!-- Tips to the reviewer about how this should be tested -->
 
 ## Checklist
 
