@@ -19,7 +19,7 @@ jobs:
         github-token: "${{ secrets.GITHUB_TOKEN }}"
 
     - name: add-label-on-approve
-      uses: actions/github-script@v4.0.1
+      uses: actions/github-script@v4.0.2
       if: success()
       with:
         github-token: ${{secrets.GITHUB_TOKEN}}
