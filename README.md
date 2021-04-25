@@ -70,7 +70,7 @@ Add the following to your renovate.json config
 }
 ```
 
-Configuration examples `https://github.com/ng-easy/renovate-config`
+[Configuration examples](https://github.com/ng-easy/renovate-config)
 
 ## Issues
 
@@ -107,7 +107,7 @@ repositories: JSON.parse(fs.readFileSync(`${config_folder}/repositories.json`), 
 - [ ] Renovate to work with mutliple repositories
 - [ ] Setup [file sync action][file-sync-aciton]:
 - [ ] Sync files with other repositories(dependabot,renovate etc)
-- [ ] Syhc workflow files (https://github.com/varunsridharan/action-github-workflow-sync)
+- [ ] Syhc [workflow files](https://github.com/varunsridharan/action-github-workflow-sync)
 
 <!-- resources -->
 [1]: https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/creating-a-default-community-health-file

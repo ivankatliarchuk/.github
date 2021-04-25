@@ -34,4 +34,3 @@ renovate: ## Run renovate
 	-e RENOVATE_TOKEN \
     -e DRY_RUN \
 	${renovate}
-
