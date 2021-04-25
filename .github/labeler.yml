@@ -91,6 +91,14 @@ labels:
       files:
         count:
           gte: 11
+          lte: 20
+
+  - label: ":hourglass_flowing_sand: size XL"
+    sync: true
+    matcher:
+      files:
+        count:
+          gte: 20
 
   - label: ":memo: documentation"
     sync: true # remove label if match failed, default: false (pull_request/issue only)

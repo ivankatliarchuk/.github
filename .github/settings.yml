@@ -246,6 +246,11 @@ labels:
   color: "A82789"
   description: ""
 
+- # size XL
+  name: ":hourglass_flowing_sand: size XL"
+  color: "5e03fc"
+  description: ""
+
 # Priority
 - color: d93f0b
   name: priority/urgent-now
