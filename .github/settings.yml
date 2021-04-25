@@ -303,7 +303,7 @@ labels:
 
 # Kinds
 - name: 'kind/bug'
-  color: 873e23
+  color: 94213b
   description: Something isn't working
 - name: 'kind/fix'
   color: 76b5c5
@@ -329,6 +329,9 @@ labels:
 - name: 'kind/stable'
   color: 1e92bb
   escription: Everything is working fine
+- name: 'kind/github-action'
+  color: 9adae7
+  escription: Github action related label
 
 # Needs
 - name: 'needs/area'

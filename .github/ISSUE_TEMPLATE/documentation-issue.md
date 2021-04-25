@@ -1,21 +1,10 @@
 ---
 name: 📝 Documentation Issue
 about: Documentation is unclear or otherwise insufficient.
-title: ''
-labels: documentation, requires triage
+title: '[A very brief summary of a documentation required]'
+labels: kind/docs
 assignees: ''
-
 ---
-
-<!--
-  Please follow the template.  If you don't, your issue may be closed.
-
-  Have a question?  This is the TypeORM issue tracker - and not the right place
-  for general support or questions.  Instead, check the "Support" Documentation
-  on the best places to ask questions!
-
-  https://github.com/typeorm/typeorm/blob/master/docs/support.md
--->
 
 ## Documentation Issue
 
@@ -45,32 +34,6 @@ assignees: ''
 <!--
   Add any other context about the documentation issue here.
 -->
-
-
-### Relevant Database Driver(s)
-
-<!--
-  Please include the relevant database drivers to your feature, if any.
--->
-
-- [ ] `aurora-data-api`
-- [ ] `aurora-data-api-pg`
-- [ ] `better-sqlite3`
-- [ ] `cockroachdb`
-- [ ] `cordova`
-- [ ] `expo`
-- [ ] `mongodb`
-- [ ] `mysql`
-- [ ] `nativescript`
-- [ ] `oracle`
-- [ ] `postgres`
-- [ ] `react-native`
-- [ ] `sap`
-- [ ] `sqlite`
-- [ ] `sqlite-abstract`
-- [ ] `sqljs`
-- [ ] `sqlserver`
-
 
 ### Are you willing to resolve this issue by submitting a Pull Request?
 

@@ -3,7 +3,7 @@ repos:
   rev: v3.4.0
   hooks:
   - id: check-added-large-files
-    args: ['--maxkb=5000']
+    args: ['--maxkb=500']
   - id: check-ast
   - id: check-builtin-literals
   - id: check-case-conflict
@@ -50,7 +50,7 @@ repos:
   - id: black
     language_version: python3.8
 - repo: https://gitlab.com/pycqa/flake8
-  rev: 3.9.0
+  rev: 3.9.1
   hooks:
   - id: flake8
 - repo: https://github.com/markdownlint/markdownlint

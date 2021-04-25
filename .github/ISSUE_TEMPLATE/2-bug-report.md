@@ -1,71 +1,64 @@
 ---
-name: Bug Report
-about: A core functionality of CloudKats is broken
-title: "[A very brief summary of what's broken]"
-labels: bug
+name: 🦠 Bug report
+about: Report github action bugs
+title: "[A very brief summary of a github action bug]"
+labels: bug,kind/bug,kind/github-action
+assignees: ''
+
 ---
+<!-- Before submitting a new issue, please make sure that the same issue has not been created already -->
 
-<!--
-Thanks for reporting a bug!
-USE THE TEMPLATE. Otherwise your bug report may be rejected.
+Do the checklist before filing an issue:
 
-First, see the contribution guidelines:
-https://github.com/CloudKats/CloudKats/blob/master/CONTRIBUTING.md#contributing-to-CloudKats
+ * [ ] Is this related to the `github actions`?
+       If you think it's a problem related to Github Actions in general, use GitHub Community forum instead: https://github.community
+ * [ ] You've read the Contributing section about bugs reporting: https://github.com/ivankatliarchuk/.github/blob/main/contributing.md
+ * [ ] Is this something you can debug and fix? Send a pull request! Bug fixes and documentation fixes are welcome.
 
-Bugs are the result of broken functionality within CloudKats's main code base. Use the plugin issue template if your report is about a broken plugin.
+## Description
 
-Also check the list of open and closed bug reports:
-https://github.com/CloudKats/CloudKats/issues?q=is%3Aissue+label%3A%22bug%22
+A clear and concise description of what the bug is.
 
-Please see the text preview to avoid unnecessary formatting errors.
--->
+## Workflow code
 
+```yaml
+Paste that part of your workflow yaml file that causes the bug in here.
 
-## Bug Report
-
-<!-- Replace the space character between the square brackets with an x in order to check the boxes -->
-- [ ] This is a bug report and I have read the contribution guidelines.
-- [ ] I am using the latest development version from the master branch.
-
-
-### Description
-
-<!-- Explain the bug as thoroughly as you can. Don't leave out information which is necessary for us to reproduce and debug this issue. -->
-
-
-### Expected / Actual behavior
-
-<!-- What do you expect to happen, and what is actually happening? -->
-
-
-### Reproduction steps / Explicit stream URLs to test
-
-<!-- How can we reproduce this? Please note the exact steps below using the list format supplied. If you need more steps please add them. -->
-
-1. ...
-2. ...
-3. ...
-
-
-### Log output
-
-<!--
-DEBUG LOG OUTPUT IS REQUIRED for a bug report!
-INCLUDE THE ENTIRE COMMAND LINE and make sure to **remove usernames and passwords**
-
-Use the `--loglevel debug` parameter and avoid using parameters which suppress log output.
-Debug log includes important details about your platform. Don't remove it.
-https://CloudKats.github.io/latest/cli.html#cmdoption-loglevel
-
-You can copy the output to https://gist.github.com/ or paste it below.
-
-Don't post screenshots of the log output and instead copy the text from your terminal application.
--->
-
-```
-REPLACE THIS TEXT WITH THE LOG OUTPUT
-All log output should go between two blocks of triple backticks (grave accents) for proper formatting.
+Alternatively you can remove that code block and insert direct link to your workflow file.
+Ensure that link points to the specific commit, and not just to the master branch.
 ```
 
+## Action output
 
-### Additional comments, etc.
+```
+Copy and paste Action output logs in here.
+
+How else can you help on that step:
+1. Enable debug logs first: https://github.com/actions/toolkit/blob/master/docs/action-debugging.md
+2. Re-run the job
+2. Download logs archive for job run and attach it to this issue
+```
+
+## Expected behavior
+
+A clear and concise description of what you expected to happen.
+
+### Are you willing to resolve this issue by submitting a Pull Request?
+
+<!--
+  Remember that first-time contributors are welcome! 🙌
+-->
+
+- [ ] Yes, I have the time, and I know how to start.
+- [ ] Yes, I have the time, but I don't know how to start. I would need guidance.
+- [ ] No, I don't have the time, although I believe I could do it if I had the time...
+- [ ] No, I don't have the time and I wouldn't even know how to start.
+
+
+<!--
+  👋 Have a great day and thank you for the documentation problem report!
+-->
+
+## Additional context
+
+<!-- Add any other context about the problem here. -->

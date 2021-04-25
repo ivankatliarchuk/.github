@@ -95,6 +95,8 @@ if (!fs.existsSync(`${config_folder}/config.json`)) {
 repositories: JSON.parse(fs.readFileSync(`${config_folder}/repositories.json`), 'utf8'),
 ```
 
+[GitHub Labels](https://github.com/ivankatliarchuk/.github/labels)
+
 ## TODO
 
 - [X] Setup workflow templates

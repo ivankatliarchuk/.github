@@ -1,80 +1,63 @@
 ---
-name: "\U0001F41B Bug report"
-about: Create a report to help us repair something that is currently broken
-labels: bug
-
+name: 🐞 Bug report
+about: Report any bug
+title: "[A very brief summary of a bug]"
+labels: kind/bug,bug
 ---
-<!-- Thank you for contributing. These HTML comments will not render in the issue, but you can delete them once you've read them if you prefer! -->
+<!-- Before submitting a new issue, please make sure that the same issue has not been created already -->
+
+### 💻 Environment
+<!-- Info about the platform and Toggl Version. It helps us narrow down the issue to smaller section of our project -->
+
+- Platform: <!-- macOS/Windows/Linux -->
+- OS:  <!-- [e.g. ubuntu 20.04, macOS 11.0] -->
+- Version(s):  <!-- python --version, node --version -->
 
 ### Bug description
 <!-- Use this section to clearly and concisely describe the bug. -->
 
-#### Expected behaviour
-<!-- Tell us what you thought would happen. -->
+### 🐞 Actual behavior
+<!-- A clear and concise description of what happened -->
 
-#### Actual behaviour
-<!-- Tell us what actually happens. -->
+**Full code that generated the error**
 
-### How to reproduce
-<!-- Use this section to describe the steps that a user would take to experience this bug. -->
+```js
+PASTE CODE HERE
+```
+
+**Full error message**
+
+```
+PASTE ERROR MESSAGE HERE
+```
+
+### 💯 Expected behavior
+<!-- A clear and concise description of what you expected to happen -->
+
+
+### 🔨 Steps to reproduce
+<!-- Clear steps to reproduce the issue -->
 
 1. Go to '...'
 2. Click on '....'
 3. Scroll down to '....'
 4. See error
 
-### Your personal set up
+### Are you willing to resolve this issue by submitting a Pull Request?
+
 <!--
-Tell us a little about the system you're using.
-Please include information about how you installed,
-e.g. are you using a distribution such as zero-to-jupyterhub or the-littlest-jupyterhub.
- -->
-
- - OS:
- <!-- [e.g. ubuntu 20.04, macOS 11.0] -->
- - Version(s):
- <!-- e.g. jupyterhub --version, python --version --->
-
-- <details><summary>Full environment</summary>
-<!-- For reproduction, it's useful to have the full environment. For example, the output of `pip freeze` or `conda list` --->
-
-```
-# paste output of `pip freeze` or `conda list` here
-```
-</details>
-
-- <details><summary>Configuration</summary>
-<!--
-For JupyterHub, especially include information such as what Spawner and Authenticator are being used.
-Be careful not to share any sensitive information.
-You can paste jupyterhub_config.py below.
-To exclude lots of comments and empty lines from auto-generated jupyterhub_config.py, you can do:
-    grep -v '\(^#\|^[[:space:]]*$\)' jupyterhub_config.py
+  Remember that first-time contributors are welcome! 🙌
 -->
 
-```python
-# jupyterhub_config.py
-```
-</details>
+- [ ] Yes, I have the time, and I know how to start.
+- [ ] Yes, I have the time, but I don't know how to start. I would need guidance.
+- [ ] No, I don't have the time, although I believe I could do it if I had the time...
+- [ ] No, I don't have the time and I wouldn't even know how to start.
 
-- <details><summary>Logs</summary>
+
 <!--
-Errors are often logged by jupytehub. How you get logs depends on your deployment.
-With kubernetes it might be:
-
-    kubectl get pod # hub pod name starts with hub...
-    kubectl logs hub-...
-    # or for a single-user server
-    kubectl logs jupyter-username
-
-Or the-littlest-jupyterhub:
-
-    journalctl -u jupyterhub
-    # or for a single-user server
-    journalctl -u jupyter-username
+  👋 Have a great day and thank you for the documentation problem report!
 -->
 
-```
-# paste relevant logs here, if any
-```
-</details>
+### 📦 Additional info
+<!-- Error messages, logs and screenshots -->
