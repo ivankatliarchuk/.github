@@ -2,7 +2,7 @@ name: syncronize-repository-content
 
 on:
   schedule:
-    - cron:  '15 1 * * 5'
+    - cron: '15 1 * * 5'
   workflow_dispatch:
 
 env:
@@ -51,6 +51,7 @@ jobs:
         with:
           base: main
           head: main
+          owner: ${{ env.OWNER }}
           auto_approve: false
           pr_title: |
             'fork: Forked from upstream "${{ github.workflow }} #${{ github.run_number }} #${{steps.envs.outputs.current_date}}" [skip ci]'
