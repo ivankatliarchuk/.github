@@ -16,8 +16,7 @@ template: |
 
   👏 A big thanks to $CONTRIBUTORS
 
-  The format is based on [Keep a Changelog](http://keepachangelog.com/)
-  and this project adheres to [Semantic Versioning](http://semver.org/).
+  The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
 no-changes-template: |
   <!-- Optional: add a release summary here -->
