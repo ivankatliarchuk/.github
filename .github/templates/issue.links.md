@@ -10,4 +10,3 @@ labels:
 **Updated: {{ date | date('YYYY Do') }} of {{ date | date('MMMM') }}**
 
 ## Links Audit 🚫 Errors
-
