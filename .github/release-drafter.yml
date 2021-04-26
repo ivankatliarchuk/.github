@@ -8,7 +8,7 @@ template: |
 
   <summary of changes here>
 
-  ## What’s Changed in $MAJOR.$MINOR.$PATCH since $PREVIOUS_TAG
+  ## What’s Changed since $PREVIOUS_TAG
 
   $CHANGES
 
