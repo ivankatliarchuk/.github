@@ -15,10 +15,8 @@ jobs:
         run: echo "::set-output name=CURRENT_DATE::$(date -u +'%Y-%m-%dT%H-%M')"
 
       - name: show date
-        run: echo "${{steps.envs.outputs.current_date}}"
+        run: |
+          echo "${{steps.envs.outputs.current_date}}"
 
       - name: show github vars
         run: echo " ${{ toJson(github) }}"
-
-      - name: show env vars
-        run: env

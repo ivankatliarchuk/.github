@@ -2,7 +2,7 @@ name: syncronize-repository-content
 
 on:
   schedule:
-    - cron:  '15 1 * * 5'
+    - cron: '15 1 * * 5'
   workflow_dispatch:
 
 env:
@@ -49,11 +49,10 @@ jobs:
       # Step 3: Display a message if 'sync' step had new commits (simple test)
       - uses: tgymnich/fork-sync@v1.4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          owner: ${{ env.OWNER }}
           base: main
           head: main
-          auto_approve: true
+          owner: ${{ env.OWNER }}
+          auto_approve: false
           pr_title: |
             'fork: Forked from upstream "${{ github.workflow }} #${{ github.run_number }} #${{steps.envs.outputs.current_date}}" [skip ci]'
           pr_message: |

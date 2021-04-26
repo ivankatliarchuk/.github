@@ -13,6 +13,7 @@ repos:
   - id: check-merge-conflict
   - id: check-symlinks
   - id: check-toml
+    files: ^templates/
   - id: check-vcs-permalinks
   - id: check-xml
   - id: check-yaml
@@ -30,6 +31,11 @@ repos:
     description: Forces to replace line ending by the UNIX 'lf' character.
   - id: pretty-format-json
     args: ['--autofix', '--no-sort-keys', '--indent=2']
+    exclude: |
+      (?x)(
+          ^templates/|
+          ^.github/renovate/
+      )
   - id: requirements-txt-fixer
   - id: sort-simple-yaml
   - id: trailing-whitespace
