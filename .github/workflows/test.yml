@@ -17,8 +17,5 @@ jobs:
       - name: show date
         run: echo "${{steps.envs.outputs.current_date}}"
 
-      - name: show github vars
-        run: echo " ${{ toJson(github) }}"
-
-      - name: show env vars
-        run: env
+      # - name: show github vars
+      #   run: echo " ${{ toJson(github) }}"
