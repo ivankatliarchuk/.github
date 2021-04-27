@@ -36,7 +36,6 @@ categories:
       - feature
       - enhancement
       - 'kind/feature'
-      - ''
   - title: '🐛 Bug Fixes'
     label:
       - 'type: bug'
@@ -78,6 +77,8 @@ categories:
       - 'kind/documentation'
       - 'kind/docs'
       - ':memo: docs'
+
+  - title: 📦 features
 
 change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
 change-title-escapes: '\<*_&' # You can add # and @ to disable mentions, and add ` to disable code blocks.
