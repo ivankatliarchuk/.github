@@ -97,7 +97,7 @@ labels:
   description: A PR that updates dependencies - used by Release Drafter
 - name: release
   color: 640910
-  description: A PR that updates dependencies - used by Release Drafter
+  description: A release
 # Format and labels used aim to match those used by Ansible project
 # https://github.com/marketplace/actions/github-labeler
 - name: deprecated
