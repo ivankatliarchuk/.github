@@ -107,6 +107,7 @@ repositories: JSON.parse(fs.readFileSync(`${config_folder}/repositories.json`), 
 - [X] Add [self merge][self-merge] to self repo
 - [ ] Add [self merge][self-merge] to org template
 - [X] Add renovate action to self repo
+- [ ] Use [GitDown](https://github.com/gajus/gitdown) for markdown pre-process
 - [ ] Renovate to work with mutliple repositories
 - [ ] Setup [file sync action][file-sync-aciton]:
 - [ ] Sync files with other repositories(dependabot,renovate etc)
@@ -114,12 +115,12 @@ repositories: JSON.parse(fs.readFileSync(`${config_folder}/repositories.json`), 
 
 <!-- resources -->
 [1]: https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/creating-a-default-community-health-file
-[governance-badge]: actions/workflows/governance-bot.yml/badge.svg
-[governance-action]: actions/workflows/governance-bot.yml
-[toc-badge]: actions/workflows/toc.yml/badge.svg
-[toc-action]: actions/workflows/toc.yml
-[sync-badge]: actions/workflows/fork-sync.yml/badge.svg
-[sync-action]: actions/workflows/fork-sync.yml
+[governance-badge]: https://github.com/ivankatliarchuk/.github/actions/workflows/governance-bot.yml/badge.svg
+[governance-action]: https://github.com/ivankatliarchuk/.github/actions/workflows/governance-bot.yml
+[toc-badge]: https://github.com/ivankatliarchuk/.github/actions/workflows/toc.yml/badge.svg
+[toc-action]: https://github.com/ivankatliarchuk/.github/actions/workflows/toc.yml
+[sync-badge]: https://github.com/ivankatliarchuk/.github/actions/workflows/fork-sync.yml/badge.svg
+[sync-action]: https://github.com/ivankatliarchuk/.github/actions/workflows/fork-sync.yml
 [auto-approve]: https://github.com/search?o=desc&q=hmarr%2Fauto-approve-action+path%3A.github%2Fworkflows+language%3AYAML&s=&type=Code
 [self-merge]: https://github.com/search?o=desc&q=orta%2Fcode-owner-self-merge+path%3A.github%2Fworkflows+language%3AYAML&s=&type=Code
 [how-to-org-template]: https://docs.github.com/en/actions/learn-github-actions/sharing-workflows-with-your-organization
