@@ -25,17 +25,21 @@ no-changes-template: |
 categories:
   - title: '💥 Breaking'
     label: 'type: breaking'
-  - title: 'New'
-    label: 'type: feature'
-  - title: "🎉 Major features and improvements"
+  - title: "🎉 Major Features and improvements"
     labels:
       - major-enhancement
       - major-rfe
+      - major
   - title: '🚀 Features'
     labels:
       - feature
       - enhancement
-      - 'kind/feature'
+      - kind/feature
+      - minor
+      - patch
+      - python
+      - node
+      - go
   - title: '🐛 Bug Fixes'
     label:
       - 'type: bug'
@@ -43,15 +47,13 @@ categories:
       - 'bugfix'
       - regression
       - 'kind/fix'
-      - major-bug
+      - bug
   - title: '🧰  Maintenance'
     label:
       - 'type: maintenance'
       - 'chore'
       - 'kind/refactor'
       - 'kind/chore'
-  - title: 'Documentation'
-    label: 'type: docs'
   - title: 🚨 Removed
     label: removed
   - title: ⚠️ Deprecated
@@ -77,6 +79,7 @@ categories:
       - 'kind/documentation'
       - 'kind/docs'
       - ':memo: docs'
+      - 'type: docs'
 
 change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
 change-title-escapes: '\<*_&' # You can add # and @ to disable mentions, and add ` to disable code blocks.
