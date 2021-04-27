@@ -50,6 +50,9 @@ For more information, please see the article on [creating a default community he
 - [Awesome: github templates](https://github.com/devspace/awesome-github-templates)
 - [Awesome: github](https://github.com/phillipadsmith/awesome-github)
 
+- [Dependabot: validator](https://dependabot.com/docs/config-file/validator)
+- [Dependabot: docs][dependabot.docs]
+
 ### Helpers
 
 - [Cheat sheet: emoji](https://github.com/ikatyang/emoji-cheat-sheet)
@@ -111,12 +114,12 @@ repositories: JSON.parse(fs.readFileSync(`${config_folder}/repositories.json`), 
 
 <!-- resources -->
 [1]: https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/creating-a-default-community-health-file
-[governance-badge]: https://github.com/ivankatliarchuk/.github/actions/workflows/governance-bot.yml/badge.svg
-[governance-action]: https://github.com/ivankatliarchuk/.github/actions/workflows/governance-bot.yml
-[toc-badge]: https://github.com/ivankatliarchuk/.github/actions/workflows/toc.yml/badge.svg
-[toc-action]: https://github.com/ivankatliarchuk/.github/actions/workflows/toc.yml
-[sync-badge]: https://github.com/ivankatliarchuk/.github/actions/workflows/fork-sync.yml/badge.svg
-[sync-action]: https://github.com/ivankatliarchuk/.github/actions/workflows/fork-sync.yml
+[governance-badge]: actions/workflows/governance-bot.yml/badge.svg
+[governance-action]: actions/workflows/governance-bot.yml
+[toc-badge]: actions/workflows/toc.yml/badge.svg
+[toc-action]: actions/workflows/toc.yml
+[sync-badge]: actions/workflows/fork-sync.yml/badge.svg
+[sync-action]: actions/workflows/fork-sync.yml
 [auto-approve]: https://github.com/search?o=desc&q=hmarr%2Fauto-approve-action+path%3A.github%2Fworkflows+language%3AYAML&s=&type=Code
 [self-merge]: https://github.com/search?o=desc&q=orta%2Fcode-owner-self-merge+path%3A.github%2Fworkflows+language%3AYAML&s=&type=Code
 [how-to-org-template]: https://docs.github.com/en/actions/learn-github-actions/sharing-workflows-with-your-organization
@@ -125,3 +128,4 @@ repositories: JSON.parse(fs.readFileSync(`${config_folder}/repositories.json`), 
 [governance.link-checker.status]: https://github.com/ivankatliarchuk/.github/actions/workflows/governance.links-checker.yml
 [forks.badge]: https://img.shields.io/github/forks/ivankatliarchuk/.github.svg?style=social&label=Fork
 [forks.url]: https://github.com/ivankatliarchuk/.github/network/members
+[dependabot.docs]: https://docs.github.com/en/code-security/supply-chain-security/configuration-options-for-dependency-updates#about-the-dependabotyml-file
