@@ -36,6 +36,7 @@ categories:
       - feature
       - enhancement
       - 'kind/feature'
+      - ''
   - title: '🐛 Bug Fixes'
     label:
       - 'type: bug'
