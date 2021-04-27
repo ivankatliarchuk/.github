@@ -3,6 +3,16 @@ name: release-drafter
 on:
   push:
     branches: [$default-branch]
+  workflow_dispatch:
+    inputs:
+      prerelease:
+        description: Is this a pre-release
+        required: true
+        default: true
+      publish:
+        description: Publish release
+        required: false
+        default: false
 
 jobs:
   draft-a-release:
