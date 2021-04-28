@@ -4,7 +4,7 @@ name-template: 'v$NEXT_PATCH_VERSION'
 tag-template: 'v$NEXT_PATCH_VERSION'
 template: |
   <!-- Optional: add a release summary here -->
-  **Disclaimer**: This is an automatically generated changelog draft
+  **Disclaimer**: This is an automatically generated changelog draft for **v$RESOLVED_VERSION**
 
   <summary of changes here>
 
@@ -17,6 +17,8 @@ template: |
   👏 A big thanks to $CONTRIBUTORS
 
   The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
+
+  This release note has been generated automatically by [Release Drafter](https://github.com/marketplace/actions/release-drafter).
 
 no-changes-template: |
   <!-- Optional: add a release summary here -->
