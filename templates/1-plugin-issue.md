@@ -10,12 +10,11 @@ Thanks for reporting a plugin issue!
 USE THE TEMPLATE. Otherwise your plugin issue may be rejected.
 
 First, see the contribution guidelines:
-https://github.com/google/google/blob/master/CONTRIBUTING.md#contributing-to-google
+https://github.com/ivankatliarchuk/.github/blob/main/contributing.md
 
 Plugin issues describe broken functionality within a plugin's code base, eg. the streaming site has made breaking changes, streams don't get resolved correctly, or authentication has stopped working, etc.
 
-Also check the list of open and closed plugin issues:
-https://github.com/google/google/issues?q=is%3Aissue+label%3A%22plugin+issue%22
+Also check the list of open and closed plugin issues
 
 Please see the text preview to avoid unnecessary formatting errors.
 -->
@@ -50,7 +49,6 @@ INCLUDE THE ENTIRE COMMAND LINE and make sure to **remove usernames and password
 
 Use the `--loglevel debug` parameter and avoid using parameters which suppress log output.
 Debug log includes important details about your platform. Don't remove it.
-https://google.github.io/latest/cli.html#cmdoption-loglevel
 
 You can copy the output to https://gist.github.com/ or paste it below.
 

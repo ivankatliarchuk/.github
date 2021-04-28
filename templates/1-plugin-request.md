@@ -10,14 +10,11 @@ Thanks for requesting a plugin!
 USE THE TEMPLATE. Otherwise your plugin request may be rejected.
 
 First, see the contribution guidelines:
-https://github.com/company/company/blob/master/CONTRIBUTING.md#contributing-to-company
+https://github.com/ivankatliarchuk/.github/blob/main/contributing.md
 
 READ THE PLUGIN REQUEST REQUIREMENTS BEFORE POSTING!
-Plugin requests which fall into the categories we will not implement will be closed immediately.
-https://github.com/company/company/blob/master/CONTRIBUTING.md#plugin-requests
 
-Also check the list of open and closed plugin requests:
-https://github.com/company/company/issues?q=is%3Aissue+label%3A%22plugin+request%22
+Also check the list of open and closed issues.
 
 Please see the text preview to avoid unnecessary formatting errors.
 -->

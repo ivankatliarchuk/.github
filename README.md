@@ -50,6 +50,9 @@ For more information, please see the article on [creating a default community he
 - [Awesome: github templates](https://github.com/devspace/awesome-github-templates)
 - [Awesome: github](https://github.com/phillipadsmith/awesome-github)
 
+- [Dependabot: validator](https://dependabot.com/docs/config-file/validator)
+- [Dependabot: docs][dependabot.docs]
+
 ### Helpers
 
 - [Cheat sheet: emoji](https://github.com/ikatyang/emoji-cheat-sheet)
@@ -104,6 +107,7 @@ repositories: JSON.parse(fs.readFileSync(`${config_folder}/repositories.json`), 
 - [X] Add [self merge][self-merge] to self repo
 - [ ] Add [self merge][self-merge] to org template
 - [X] Add renovate action to self repo
+- [ ] Use [GitDown](https://github.com/gajus/gitdown) for markdown pre-process
 - [ ] Renovate to work with mutliple repositories
 - [ ] Setup [file sync action][file-sync-aciton]:
 - [ ] Sync files with other repositories(dependabot,renovate etc)
@@ -125,3 +129,4 @@ repositories: JSON.parse(fs.readFileSync(`${config_folder}/repositories.json`), 
 [governance.link-checker.status]: https://github.com/ivankatliarchuk/.github/actions/workflows/governance.links-checker.yml
 [forks.badge]: https://img.shields.io/github/forks/ivankatliarchuk/.github.svg?style=social&label=Fork
 [forks.url]: https://github.com/ivankatliarchuk/.github/network/members
+[dependabot.docs]: https://docs.github.com/en/code-security/supply-chain-security/configuration-options-for-dependency-updates#about-the-dependabotyml-file

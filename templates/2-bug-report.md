@@ -10,12 +10,11 @@ Thanks for reporting a bug!
 USE THE TEMPLATE. Otherwise your bug report may be rejected.
 
 First, see the contribution guidelines:
-https://github.com/CloudKats/CloudKats/blob/master/CONTRIBUTING.md#contributing-to-CloudKats
+https://github.com/ivankatliarchuk/.github/blob/main/contributing.md
 
 Bugs are the result of broken functionality within CloudKats's main code base. Use the plugin issue template if your report is about a broken plugin.
 
-Also check the list of open and closed bug reports:
-https://github.com/CloudKats/CloudKats/issues?q=is%3Aissue+label%3A%22bug%22
+Also check the list of open and closed bug reports
 
 Please see the text preview to avoid unnecessary formatting errors.
 -->
@@ -55,7 +54,6 @@ INCLUDE THE ENTIRE COMMAND LINE and make sure to **remove usernames and password
 
 Use the `--loglevel debug` parameter and avoid using parameters which suppress log output.
 Debug log includes important details about your platform. Don't remove it.
-https://CloudKats.github.io/latest/cli.html#cmdoption-loglevel
 
 You can copy the output to https://gist.github.com/ or paste it below.
 
