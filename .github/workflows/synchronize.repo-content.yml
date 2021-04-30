@@ -1,8 +1,8 @@
-name: syncronize-repository-content
+name: synchronize.repo-content
 
 on:
   schedule:
-    - cron: '15 1 * * 5'
+    - cron: '1 0 * * 5'
   workflow_dispatch:
 
 env:
