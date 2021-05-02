@@ -47,7 +47,7 @@ jobs:
         run: echo "::set-output name=CURRENT_DATE::$(date -u +'%Y-%m-%dT%H-%M')"
 
       # Step 3: Display a message if 'sync' step had new commits (simple test)
-      - uses: tgymnich/fork-sync@v1.4
+      - uses: tgymnich/fork-sync@v1.5
         with:
           base: main
           head: main
