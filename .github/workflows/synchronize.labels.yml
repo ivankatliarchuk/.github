@@ -1,5 +1,5 @@
 ---
-name: sync labels
+name: synchronize.labels
 
 on:
   push:

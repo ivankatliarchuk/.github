@@ -7,7 +7,7 @@
 Put an `x` into the [ ] to show you have filled the information
 -->
 
-- [ ] Make sure you are opening from a **topic/feature/feat/docs/bug/bugfix/fix branch** (right side) and not your master branch!
+- [ ] Make sure you are opening from a **feature/feat/docs/fix/bug/hotfix/stable/chore** (right side) and not your master branch!
 - [ ] Ensure that the pull request title represents the desired changelog entry
 
 ## 📒 Description
@@ -25,9 +25,8 @@ Put an `x` into the [ ] to show you have filled the information
 - [ ] Bugfix
 - [ ] New feature
 - [ ] Enhancement/optimization
-- [ ] Keyboard (addition or update)
-- [ ] Keymap/layout/userspace (addition or update)
 - [ ] Documentation
+- [ ] Dependencies
 
 ### 🤯 List of changes
 <!-- The changelog of this PR. It's useful for bigger PR-s -->
