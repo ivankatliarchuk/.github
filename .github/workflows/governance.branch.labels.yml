@@ -2,7 +2,7 @@ name: pull-request-branch-labels
 # todo: should only run if branch not named as it should
 on:
   pull_request:
-    types: [opened, assigned, synchronize, ready_for_review]
+    types: [opened, ready_for_review]
 
 jobs:
   pr-labeler:
@@ -13,6 +13,11 @@ jobs:
         github.actor != 'dependabot[bot]' || github.actor != 'renovate[bot]' ||
         github.actor != 'renovate-bot'
     steps:
+      - name: identify actor & creator
+        run: |
+          echo "actor: ${{ github.actor }}"
+          echo "creator: ${{ github.event.pull_request.user.login }}"
+
       - name: validate branch name
         uses: AlbertHernandez/branch-name-action@v1.0.2
         with:
