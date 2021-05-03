@@ -2,7 +2,7 @@ name: release-drafter
 
 on:
   push:
-    branches: [$default-branch]
+    branches: [main]
   workflow_dispatch:
     inputs:
       prerelease:
