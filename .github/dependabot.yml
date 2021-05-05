@@ -12,7 +12,7 @@ updates:
       - ":game_die: dependencies"
       - ":robot: bot"
     commit-message:
-      prefix: deps
+      prefix: fix
       include: "scope"
     reviewers:
       - ivankatliarchuk
@@ -22,7 +22,7 @@ updates:
     schedule:
       interval: "daily"
     commit-message:
-      prefix: ci
+      prefix: fix
       include: "scope"
     labels:
       - ":game_die: dependencies"
@@ -40,7 +40,7 @@ updates:
     reviewers:
       - ivankatliarchuk
     commit-message:
-      prefix: git
+      prefix: fix
       include: "scope"
 
   - package-ecosystem: "gomod"
@@ -48,7 +48,7 @@ updates:
     schedule:
       interval: "weekly"
     commit-message:
-      prefix: go
+      prefix: fix
       include: "scope"
     labels:
       - ":game_die: dependencies"
@@ -63,7 +63,7 @@ updates:
     schedule:
       interval: "weekly"
     commit-message:
-      prefix: docker
+      prefix: fix
       include: "scope"
     labels:
       - ":game_die: dependencies"
@@ -76,7 +76,7 @@ updates:
     schedule:
       interval: "daily"
     commit-message:
-      prefix: node
+      prefix: fix
       include: "scope"
     labels:
       - ":game_die: dependencies"

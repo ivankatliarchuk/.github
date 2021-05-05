@@ -28,12 +28,11 @@ const repo = [
 ]
 
 module.exports = {
-  "extends": ["config:base", ":disableRateLimiting"],
+  "extends": ["config:base", ":disableRateLimiting", ":semanticCommits"],
   "assigneesFromCodeOwners": true,
   "assignees": ["ivankatliarchuk"],
   "labels": ["renovate", "dependencies", "automated"],
   "dependencyDashboardTitle": "Dependency Dashboard self-hosted",
-  "commitMessagePrefix": "⬆️",
   "gitAuthor": "Renovate Bot <bot@renovateapp.com>",
   "onboarding": true,
   "platform": "github",
