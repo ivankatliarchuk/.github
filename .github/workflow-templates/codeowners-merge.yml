@@ -3,7 +3,7 @@
 name: codeowners-merging
 
 on:
-  pull_request_target: {  branches: $default-branch, types: opened }
+  pull_request_target: { branches: $default-branch, types: opened }
   issue_comment: { types: created }
   pull_request_review: { types: submitted }
 
@@ -17,6 +17,7 @@ jobs:
         with:
           fetch-depth: '1'
           submodules: 'recursive'
+
       - name: check if merge was approved by code owner
         if: steps.check.outputs.triggered == 'true'
         uses: orta/code-owner-self-merge@1.4.1
