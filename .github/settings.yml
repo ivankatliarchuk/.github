@@ -132,7 +132,7 @@ labels:
   description: "Gate PR in Zuul CI"
 ## more info https://github.com/crazy-max/ghaction-github-labeler
 - # automerge
-  name: ":bell: automerge"
+  name: ':bell: automerge'
   color: "8f4fbc"
   description: ""
 - # approve
@@ -140,7 +140,7 @@ labels:
   color: "44d84c"
   description: ""
 - # approve
-  name: "✅ Approved"
+  name: '✅ Approved'
   color: "44b5d8"
   description: ""
 - # bot
@@ -336,7 +336,10 @@ labels:
   escription: Everything is working fine
 - name: 'kind/github-action'
   color: 9adae7
-  escription: Github action related label
+  escription: Github action
+- name: 'kind/github'
+  color: 9adae7
+  escription: Github setup
 
 # Needs
 - name: 'needs/area'

@@ -49,17 +49,22 @@ labels:
     matcher:
       comment: "/stale"
 
-  - label: "github"
+  - label: "kind/github"
     sync: true
     matcher:
       # This is shorthand for any: [".github/**"]
       files: ".github/**"
-      author:
-        - github-actions
-        - actions-bot
-        - rennovate
-        - dependabot
-        - bot
+
+  - label: ':robot: bot'
+    sync: true
+    matcher:
+      - github-actions
+      - rennovate
+      - dependabot
+      - dependabot[bot]
+      - dependabot-preview[bot]
+      - renovate[bot]
+      - renovate-bot
 
   - label: ":robot: ci"
     sync: true
@@ -119,16 +124,14 @@ labels:
 
 # Optional, if you want labels to generate a success/failure status check
 checks:
-  - context: "Status Check"
+  - context: "merge status check"
     url: "https://docs.github.com/en/rest/reference/checks"
     description:
-      success: "Ready for review & merge."
-      failure: "Missing labels for release."
+      success: "Ready for merge."
+      failure: "Missing labels for merge."
     labels:
       any:
-        - any
-        - have
+        - ':robot: bot'
+        - ':bell: automerge'
       all:
-        - all
-        - must
-        - have
+        - '✅ Approved'
