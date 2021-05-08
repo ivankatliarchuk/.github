@@ -48,16 +48,18 @@ issue:
         owner: true
 
     - prefix: area
-      list: [ "ui-ux", "semantics", "translation", "security" ]
+      list: [ "kind/bug", "kind/github-action", "kind/feature", "kind/security", 'kind/docs', 'kind/question', 'release' ]
       multiple: true
       needs:
         comment: |
           @$AUTHOR: There are no area labels on this issue. Adding an appropriate label will greatly expedite the process for us. You can add as many area as you see fit. **If you are unsure what to do you can ignore this!**
 
-          * `/area ui-ux`
-          * `/area semantics`
-          * `/area translation`
-          * `/area security`
+          * `/area kind/bug`
+          * `/area kind/github-action`
+          * `/area kind/feature`
+          * `/area kind/docs`
+          * `/area kind/question`
+          * `/area kind/security`
 
     - prefix: os
       list: ['mac', 'win', 'linux']
