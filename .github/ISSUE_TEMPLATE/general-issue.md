@@ -5,11 +5,10 @@ kind: needs/area,needs/triage
 ---
 <!-- Before submitting a new issue, please make sure that the same issue has not been created already -->
 
+### 📒 Description
+<!-- Short and concise description of the improvement/feature -->
+
 ### 💻 Environment
 <!-- Let us know the platform you would like the improvement to be in -->
 
 Platform: <!-- macOS/Windows/Linux -->
-
-
-### 📒 Description
-<!-- Short and concise description of the improvement/feature -->

@@ -4,18 +4,22 @@ name: governance
 
 on:
   pull_request_target:
-    branches: [$default-branch]
+    branches: [master, main]
     types: [synchronize, opened, labeled, unlabeled]
   issues:
     types: [opened, labeled, unlabeled]
   issue_comment:
     types: [created]
+  workflow_dispatch:
 
 jobs:
   main:
     name: governance
     runs-on: ubuntu-latest
-    if: github.repository == 'ivankatliarchuk/.github'
+    if: >
+      github.repository == 'ivankatliarchuk/.github' &&
+        (github.actor != 'dependabot[bot]' || github.actor != 'dependabot-preview[bot]' ||
+          github.actor != 'renovate[bot]' ||  github.actor != 'renovate-bot')
     steps:
       - uses: DeFiCh/oss-governance-bot@v2
         with:

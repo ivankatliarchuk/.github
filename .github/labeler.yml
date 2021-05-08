@@ -5,7 +5,6 @@ version: v1
 
 labels:
   - label: "kind/feature"
-    sync: true # remove label if match failed, default: false (pull_request/issue only)
     matcher:
       title: "^feat:.*"
       body: "/feat"
@@ -22,7 +21,6 @@ labels:
           lte: 1000
 
   - label: "kind/bug"
-    sync: true # remove label if match failed, default: false (pull_request/issue only)
     matcher:
       # Matcher will match on any 7 matcher
       title: "^fix:.*"
@@ -33,7 +31,6 @@ labels:
       commits: "^fix:.*"
 
   - label: "kind/chore"
-    sync: true # remove label if match failed, default: false (pull_request/issue only)
     matcher:
       title: "^chore:.*"
       body: "(\\n|.)*- \\[x\\] chore(\\n|.)*"
@@ -49,20 +46,22 @@ labels:
     matcher:
       comment: "/stale"
 
-  - label: "github"
-    sync: true
+  - label: "kind/github"
     matcher:
       # This is shorthand for any: [".github/**"]
       files: ".github/**"
-      author:
-        - github-actions
-        - actions-bot
-        - rennovate
-        - dependabot
-        - bot
+
+  - label: ':robot: bot'
+    matcher:
+      - github-actions
+      - rennovate
+      - dependabot
+      - dependabot[bot]
+      - dependabot-preview[bot]
+      - renovate[bot]
+      - renovate-bot
 
   - label: ":robot: ci"
-    sync: true
     matcher:
       files:
         any: [ ".github/**", ]
@@ -70,7 +69,6 @@ labels:
 
   # PR Files Count
   - label: ":smiley_cat: size S"
-    sync: true
     matcher:
       files:
         count:
@@ -78,7 +76,6 @@ labels:
           lte: 4
 
   - label: ":nauseated_face: size M"
-    sync: true
     matcher:
       files:
         count:
@@ -86,7 +83,6 @@ labels:
           lte: 10
 
   - label: ":skull_and_crossbones: size L"
-    sync: true
     matcher:
       files:
         count:
@@ -94,14 +90,12 @@ labels:
           lte: 20
 
   - label: ":hourglass_flowing_sand: size XL"
-    sync: true
     matcher:
       files:
         count:
           gte: 20
 
   - label: ":memo: documentation"
-    sync: true # remove label if match failed, default: false (pull_request/issue only)
     matcher:
       # Matcher will match on any 7 matcher
       title: "^docs:.*"
@@ -119,16 +113,14 @@ labels:
 
 # Optional, if you want labels to generate a success/failure status check
 checks:
-  - context: "Status Check"
+  - context: "merge status check"
     url: "https://docs.github.com/en/rest/reference/checks"
     description:
-      success: "Ready for review & merge."
-      failure: "Missing labels for release."
+      success: "Ready for merge."
+      failure: "Missing labels for merge."
     labels:
       any:
-        - any
-        - have
+        - ':robot: bot'
+        - ':bell: automerge'
       all:
-        - all
-        - must
-        - have
+        - '✅ Approved'
