@@ -340,6 +340,8 @@ labels:
 - name: 'kind/github'
   color: 9adae7
   escription: Github setup
+- name: 'kind/security'
+  color: 32a6a8
 
 # Needs
 - name: 'needs/area'
