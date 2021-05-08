@@ -6,6 +6,8 @@ labels: kind/bug,bug
 ---
 <!-- Before submitting a new issue, please make sure that the same issue has not been created already -->
 
+* [ ] I've searched for similar [issues](../issues) and didn't find any solution
+
 ### 💻 Environment
 <!-- Info about the platform and Toggl Version. It helps us narrow down the issue to smaller section of our project -->
 

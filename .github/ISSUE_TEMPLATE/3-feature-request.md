@@ -11,6 +11,7 @@ labels: kind/feature
 <!-- Replace the space character between the square brackets with an x in order to check the boxes -->
 - [ ] This is a feature request and I have read the contribution guidelines.
 - [ ] I am using the latest development version from the master branch.
+- [ ] I've searched for similar [feature](../issues) and didn't find any similar
 
 ### Description
 

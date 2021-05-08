@@ -9,7 +9,7 @@ assignees: ''
 
 Confirm by changing [ ] to [x] below to ensure that it's a bug:
 - [ ] I've gone though the [User Guide](google.com)
-- [ ] I've searched for [previous similar issues](https://github.com/issues) and didn't find any solution
+- [ ] I've searched for similar issues and didn't find any solution [issues](../../../issues)
 
 **Describe the bug**
 A clear and concise description of what the bug is.
