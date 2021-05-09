@@ -31,7 +31,6 @@ issue:
         member: true
         owner: true
         first_timer: false
-        first_time_contributor: false
       needs:
         comment: |
           @$AUTHOR: Thanks for opening an issue, it is currently awaiting triage.
@@ -50,9 +49,16 @@ issue:
     - prefix: area
       list: [ 'bug', 'github-action', "feature", "security", 'docs', 'question', 'release', 'dependencies' ]
       multiple: true
+      author_association:
+        collaborator: true
+        member: true
+        owner: true
+        first_timer: true
       needs:
         comment: |
           @$AUTHOR: There are no area labels on this issue. You can add as many area as you see fit. **If you are unsure what to do you can ignore this!**
+
+          Aread can be added by writing in a comment ⬇️
 
           * `/area kind/bug`
           * `/area kind/github-action`
@@ -140,26 +146,29 @@ pull_request:
       needs:
         comment: |
           @$AUTHOR: There are no 'kind' label on this PR. You need a 'kind' label.
+          Label can be added by writing in a comment ⬇️
 
-          * `kind/feature`
-          * `kind/fix`
-          * `kind/chore`
-          * `kind/docs`
-          * `kind/refactor`
-          * `kind/github`
-          * `kind/security`
-          * `kind/question`
+          * `/kind feature`
+          * `/kind fix`
+          * `/kind chore`
+          * `/kind docs`
+          * `/kind refactor`
+          * `/kind github`
+          * `/kind security`
+          * `/kind question`
 
         status:
           context: 'governance kind/* Label'
           description:
             success: Ready for review & merge.
             failure: Missing kind label for release generation.
+
       author_association:
         author: true
         collaborator: true
         member: true
         owner: true
+        first_timer: true
 
     - prefix: priority
       multiple: false

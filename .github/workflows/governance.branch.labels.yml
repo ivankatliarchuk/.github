@@ -24,6 +24,7 @@ jobs:
           comment_for_invalid_branch_name: |
             **Pro Tip!**
             You can help us label your Pull Requests by using the following branch naming convention next time you create a pull request.
+
             Branch naming convention | Label
             ------------------------ | ------
             `feature/**`             | kind/feature
