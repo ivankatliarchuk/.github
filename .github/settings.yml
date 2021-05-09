@@ -147,10 +147,6 @@ labels:
   name: ":robot: bot"
   color: "69cde9"
   description: ""
-- # automation
-  name: ":robot: ci"
-  color: "69cde9"
-  description: ""
 - # bug
   name: ":bug: bug"
   color: "b60205"

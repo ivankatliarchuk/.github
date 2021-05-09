@@ -60,12 +60,6 @@ labels:
         - renovate[bot]
         - renovate-bot
 
-  - label: ":robot: ci"
-    matcher:
-      files:
-        any: [ ".github/**", ]
-        all: [ "!app/**" ]
-
   # PR Files Count
   - label: ":smiley_cat: size S"
     matcher:
