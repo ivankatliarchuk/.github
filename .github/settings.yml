@@ -132,11 +132,11 @@ labels:
   description: "Gate PR in Zuul CI"
 ## more info https://github.com/crazy-max/ghaction-github-labeler
 - # automerge
-  name: ':bell: automerge'
+  name: 'automerge'
   color: "8f4fbc"
   description: ""
 - # approve
-  name: ":bell: approved"
+  name: "approved"
   color: "44d84c"
   description: ""
 - # approve

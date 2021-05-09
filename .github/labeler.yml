@@ -121,6 +121,6 @@ checks:
     labels:
       any:
         - ':robot: bot'
-        - ':bell: automerge'
+        - 'automerge'
       all:
         - '✅ Approved'
