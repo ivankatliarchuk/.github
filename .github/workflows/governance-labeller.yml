@@ -18,4 +18,4 @@ jobs:
       - uses: fuxingloh/multi-labeler@v1.5.1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }} # optional, default to '${{ github.token }}'
-          config-path: .github/labeler.yml # optional, default to '.github/labeler.yml'
+          config-path: .github/governance-labeler.yml
