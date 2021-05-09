@@ -24,3 +24,4 @@ jobs:
       - uses: DeFiCh/oss-governance-bot@v2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          config-path: .github/governance-bot.yml

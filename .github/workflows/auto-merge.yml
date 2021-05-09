@@ -33,7 +33,7 @@ jobs:
         uses: pascalgn/automerge-action@v0.13.1
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-          MERGE_LABELS: ':bell: automerge,✅ Approved'
+          MERGE_LABELS: 'automerge,✅ Approved'
           MERGE_RETRY_SLEEP: "60000"
           MERGE_DELETE_BRANCH: "true"
           MERGE_METHOD: squash
@@ -44,7 +44,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           merge-method: merge
-          required-labels: ':bell: automerge,✅ Approved'
+          required-labels: 'automerge,✅ Approved'
           do-not-merge-labels: ':warning: do-not-merge,:warning: wip'
           pull-request: ${{ github.event.inputs.pull-request }}
           dry-run: false

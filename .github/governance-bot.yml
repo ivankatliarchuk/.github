@@ -31,7 +31,6 @@ issue:
         member: true
         owner: true
         first_timer: false
-        first_time_contributor: false
       needs:
         comment: |
           @$AUTHOR: Thanks for opening an issue, it is currently awaiting triage.
@@ -48,11 +47,18 @@ issue:
         owner: true
 
     - prefix: area
-      list: [ "kind/bug", "kind/github-action", "kind/feature", "kind/security", 'kind/docs', 'kind/question', 'release' ]
+      list: [ 'bug', 'github-action', "feature", "security", 'docs', 'question', 'release', 'dependencies' ]
       multiple: true
+      author_association:
+        collaborator: true
+        member: true
+        owner: true
+        first_timer: true
       needs:
         comment: |
-          @$AUTHOR: There are no area labels on this issue. Adding an appropriate label will greatly expedite the process for us. You can add as many area as you see fit. **If you are unsure what to do you can ignore this!**
+          @$AUTHOR: There are no area labels on this issue. You can add as many area as you see fit. **If you are unsure what to do you can ignore this!**
+
+          Aread can be added by writing in a comment ⬇️
 
           * `/area kind/bug`
           * `/area kind/github-action`
@@ -60,6 +66,7 @@ issue:
           * `/area kind/docs`
           * `/area kind/question`
           * `/area kind/security`
+          * `/area dependencies`
 
     - prefix: os
       list: ['mac', 'win', 'linux']
@@ -135,27 +142,33 @@ pull_request:
   labels:
     - prefix: kind
       multiple: true
-      list: ['feature', 'fix', 'chore', 'docs', 'refactor', 'dependencies']
+      list: [feature, fix, chore, docs, refactor, security, github, question]
       needs:
         comment: |
-          @$AUTHOR: There are no 'kind' label on this PR. You need a 'kind' label to generate the release automatically.
+          @$AUTHOR: There are no 'kind' label on this PR. You need a 'kind' label.
+          Label can be added by writing in a comment ⬇️
 
           * `/kind feature`
           * `/kind fix`
           * `/kind chore`
           * `/kind docs`
           * `/kind refactor`
-          * `/kind dependencies`
+          * `/kind github`
+          * `/kind security`
+          * `/kind question`
+
         status:
-          context: 'Governance / Kind Label'
+          context: 'governance kind/* Label'
           description:
             success: Ready for review & merge.
             failure: Missing kind label for release generation.
+
       author_association:
         author: true
         collaborator: true
         member: true
         owner: true
+        first_timer: true
 
     - prefix: priority
       multiple: false

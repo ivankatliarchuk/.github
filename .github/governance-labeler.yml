@@ -11,8 +11,6 @@ labels:
       comment: "/feat"
       branch: "^feat/.*"
       commits: "^feat:.*"
-      author:
-        - github-actions
       files:
         any: [ "src/*" ]
         all: [ "!app/config/**" ]
@@ -53,13 +51,14 @@ labels:
 
   - label: ':robot: bot'
     matcher:
-      - github-actions
-      - rennovate
-      - dependabot
-      - dependabot[bot]
-      - dependabot-preview[bot]
-      - renovate[bot]
-      - renovate-bot
+      author:
+        - github-actions
+        - rennovate
+        - dependabot
+        - dependabot[bot]
+        - dependabot-preview[bot]
+        - renovate[bot]
+        - renovate-bot
 
   - label: ":robot: ci"
     matcher:
@@ -121,6 +120,6 @@ checks:
     labels:
       any:
         - ':robot: bot'
-        - ':bell: automerge'
+        - 'automerge'
       all:
         - '✅ Approved'

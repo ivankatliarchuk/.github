@@ -2,7 +2,7 @@ name: synchronize.repo-content
 
 on:
   schedule:
-    - cron: '1 0 * * 5'
+    - cron: '1 0 1 * *'
   workflow_dispatch:
 
 env:

@@ -1,7 +1,7 @@
 ---
 name: "⁉️ General Question"
 about: General question about this project
-labels: kind/question
+labels: kind/question,area/question
 ---
 
 <!--

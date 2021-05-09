@@ -2,7 +2,7 @@
 name: "🎉 Release Checklist Template"
 about: A checklist for release preparation
 title: Release X.X.X
-labels: 'release'
+labels: 'area/release'
 assignees: ''
 
 ---
