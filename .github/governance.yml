@@ -48,7 +48,7 @@ issue:
         owner: true
 
     - prefix: area
-      list: [ "kind/bug", "kind/github-action", "kind/feature", "kind/security", 'kind/docs', 'kind/question', 'release' ]
+      list: [ 'kind/bug', 'kind/github-action', "kind/feature", "kind/security", 'kind/docs', 'kind/question', 'release', 'dependencies' ]
       multiple: true
       needs:
         comment: |
@@ -60,6 +60,7 @@ issue:
           * `/area kind/docs`
           * `/area kind/question`
           * `/area kind/security`
+          * `/area dependencies`
 
     - prefix: os
       list: ['mac', 'win', 'linux']
