@@ -17,7 +17,7 @@ jobs:
     name: governance
     runs-on: ubuntu-latest
     if: >
-      github.repository == 'ivankatliarchuk/.github' &&
+      github.repository != 'ivankatliarchuk/.github' &&
         (github.actor != 'dependabot[bot]' || github.actor != 'dependabot-preview[bot]' ||
           github.actor != 'renovate[bot]' ||  github.actor != 'renovate-bot')
     steps:

@@ -39,7 +39,7 @@ issue:
     - prefix: kind
       list: ['feature', 'bug', 'question']
       multiple: true
-      needs: true
+      needs: false
       author_association:
         author: true
         collaborator: true
