@@ -2,7 +2,7 @@
 name: 🐞 Bug report
 about: Report any bug
 title: "[A very brief summary of a bug]"
-labels: kind/bug,bug
+labels: kind/bug,bug,area/bug
 ---
 <!-- Before submitting a new issue, please make sure that the same issue has not been created already -->
 
@@ -45,7 +45,7 @@ PASTE ERROR MESSAGE HERE
 3. Scroll down to '....'
 4. See error
 
-### Are you willing to resolve this issue by submitting a Pull Request?
+### Are you willing to resolve this issue by submitting a Pull Request❓
 
 <!--
   Remember that first-time contributors are welcome! 🙌

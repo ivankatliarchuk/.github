@@ -314,17 +314,17 @@ labels:
   color: 76b5c5
   description: Fix a bug
 - name: 'kind/chore'
-  color: 154f79
+  color: 15791e
   description: Non feature change
+- name: 'kind/feature'
+  color: 15791e
+  description: New feature
 - name: 'kind/dependencies'
   color: 2673aa
   description: Pull requests that update a dependency file
 - name: 'kind/docs'
   color: 26aa8a
   description: Non feature documentation change
-- name: 'kind/feature'
-  color: 15791e
-  description: New feature request
 - name: 'kind/question'
   color: 757915
   description: Generic question
@@ -350,3 +350,23 @@ labels:
   color: 3b7f94
 - name: 'needs/kind'
   color: baaf4c
+
+# Issues e.g., Area
+- name: 'area/bug'
+  color: 8a3b94
+- name: 'area/github-action'
+  color: 9adae7
+- name: 'area/feature'
+  color: 15791e
+- name: 'area/chore'
+  color: 15791e
+- name: 'area/docs'
+  color: 26aa8a
+- name: 'area/question'
+  color: 757915
+- name: 'area/release'
+  color: 879998
+- name: 'area/dependencies'
+  color: 8a3b94
+- name: 'area/security'
+  color: 32a6a8

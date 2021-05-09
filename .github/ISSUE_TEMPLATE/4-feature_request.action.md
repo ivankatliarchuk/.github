@@ -2,7 +2,7 @@
 name: '🚀 Feature Request'
 about: Discuss adding new functionality for github actions
 title: "[A very brief summary of your request]"
-labels: "kind/feature,:sparkles: enhancement,kind/github-action"
+labels: "kind/feature,:sparkles: enhancement,kind/github-action,area/feature"
 assignees: ''
 
 ---

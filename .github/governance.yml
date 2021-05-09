@@ -48,11 +48,11 @@ issue:
         owner: true
 
     - prefix: area
-      list: [ 'kind/bug', 'kind/github-action', "kind/feature", "kind/security", 'kind/docs', 'kind/question', 'release', 'dependencies' ]
+      list: [ 'bug', 'github-action', "feature", "security", 'docs', 'question', 'release', 'dependencies' ]
       multiple: true
       needs:
         comment: |
-          @$AUTHOR: There are no area labels on this issue. Adding an appropriate label will greatly expedite the process for us. You can add as many area as you see fit. **If you are unsure what to do you can ignore this!**
+          @$AUTHOR: There are no area labels on this issue. You can add as many area as you see fit. **If you are unsure what to do you can ignore this!**
 
           * `/area kind/bug`
           * `/area kind/github-action`
@@ -136,19 +136,22 @@ pull_request:
   labels:
     - prefix: kind
       multiple: true
-      list: ['feature', 'fix', 'chore', 'docs', 'refactor', 'dependencies']
+      list: [feature, fix, chore, docs, refactor, security, github, question]
       needs:
         comment: |
-          @$AUTHOR: There are no 'kind' label on this PR. You need a 'kind' label to generate the release automatically.
+          @$AUTHOR: There are no 'kind' label on this PR. You need a 'kind' label.
 
-          * `/kind feature`
-          * `/kind fix`
-          * `/kind chore`
-          * `/kind docs`
-          * `/kind refactor`
-          * `/kind dependencies`
+          * `kind/feature`
+          * `kind/fix`
+          * `kind/chore`
+          * `kind/docs`
+          * `kind/refactor`
+          * `kind/github`
+          * `kind/security`
+          * `kind/question`
+
         status:
-          context: 'Governance / Kind Label'
+          context: 'governance kind/* Label'
           description:
             success: Ready for review & merge.
             failure: Missing kind label for release generation.

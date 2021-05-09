@@ -2,7 +2,7 @@
 name: 🦠 Bug report
 about: Report github action bugs
 title: "[A very brief summary of a github action bug]"
-labels: bug,kind/bug,kind/github-action
+labels: bug,kind/bug,kind/github-action,area/github-action,area/bug
 assignees: ''
 
 ---
