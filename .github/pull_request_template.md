@@ -1,7 +1,14 @@
-<!--- Provide a general summary of your changes in the title above. -->
+<!---
+Thanks for filing a pull request 😄 ! Before you submit, please read the following:
 
-<!--- This template is entirely optional and can be removed, but is here to help both you and us. -->
-<!--- Anything on lines wrapped in comments like these will not show up in the final text. -->
+Search open/closed issues before submitting since someone might have pushed the same thing before!
+
+This template is entirely optional and can be removed, but is here to help both you and us.
+Provide a general summary of your changes in the title above.
+Anything on lines wrapped in comments like these will not show up in the final text.
+-->
+
+# ↪️ Pull Request
 
 <!--
 Put an `x` into the [ ] to show you have filled the information
@@ -42,15 +49,20 @@ Put an `x` into the [ ] to show you have filled the information
 ### 🔎 Review hints
 <!-- Tips to the reviewer about how this should be tested -->
 
+## 🚨 Test instructions
+
+<!-- In case it is impossible (or too hard) to reliably test this feature/fix with unit tests, please provide test instructions! -->
+
 ## Checklist
 
 <!--- Go over all the following points, and put an `x` in all the boxes that apply. -->
 <!--- If you're unsure about any of these, don't hesitate to ask. We're here to help! -->
 - [ ] My code follows the code style of this project.
 - [ ] I have read the [**CONTRIBUTING** document](https://github.com/ivankatliarchuk/.github/blob/main/contributing.md).
-- [ ] I have added tests to cover my changes.
+- [ ] Added/updated unit tests for this change
 - [ ] I have tested the changes and verified that they work and don't break anything (as well as I can manage).
-- [ ] I have also tested the proposed changes in combination with various popular addons and can confirm my changes do not break them.
+- [ ] Filled out test instructions (In case there aren't any unit tests)
 - [ ] I followed the existing code standards and didn't mess up the formatting.
 - [ ] My change requires a change to the documentation.
 - [ ] I did my best to add documentation to any public classes or methods I added.
+- [ ] Included links to related issues/PRs
