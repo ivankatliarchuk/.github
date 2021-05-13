@@ -248,12 +248,21 @@ labels:
   description: ""
 
 # Priority
-- color: d93f0b
+- color: 6600cc
   name: priority/urgent-now
   description: Urgent fix, as fast as possible
-- color: d93f0b
+- color: cc99ff
   name: priority/important-soon
   description: Will be important soon
+- color: 99ff66
+  name: priority/low
+  description: Nice to have
+- color: d93f0b
+  name: priority/medium
+  description: ffff33
+- color: ff3300
+  name: priority/high
+  description: Is the most important thing
 
 # Triage
 - color: b1f488
