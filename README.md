@@ -108,7 +108,7 @@ repositories: JSON.parse(fs.readFileSync(`${config_folder}/repositories.json`), 
 - [ ] Add [self merge][self-merge] to org template
 - [X] Add renovate action to self repo
 - [ ] Use [GitDown](https://github.com/gajus/gitdown) for markdown pre-process
-- [ ] Renovate to work with mutliple repositories
+- [X] Renovate to work with mutliple repositories
 - [ ] Setup [Licensed](https://github.com/github/licensed) for all repos
 - [ ] Setup [file sync action][file-sync-aciton]:
 - [ ] Sync files with other repositories(dependabot,renovate etc)

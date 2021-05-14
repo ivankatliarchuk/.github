@@ -1,6 +1,6 @@
 ---
 name: 🐞 Bug report
-about: Report any bug
+about: Did something not work as expected?
 title: "[A very brief summary of a bug]"
 labels: kind/bug,bug,area/bug
 ---
@@ -15,11 +15,15 @@ labels: kind/bug,bug,area/bug
 - OS:  <!-- [e.g. ubuntu 20.04, macOS 11.0] -->
 - Version(s):  <!-- python --version, node --version -->
 
-### Bug description
-<!-- Use this section to clearly and concisely describe the bug. -->
+### 💯 Expected behavior
+<!-- A clear and concise description of what you expected to happen -->
 
 ### 🐞 Actual behavior
 <!-- A clear and concise description of what happened -->
+<!--- If you are seeing an error, please include the full error message and stack trace -->
+
+### Bug description
+<!-- Use this section to clearly and concisely describe the bug. -->
 
 **Full code that generated the error**
 
@@ -33,10 +37,6 @@ PASTE CODE HERE
 PASTE ERROR MESSAGE HERE
 ```
 
-### 💯 Expected behavior
-<!-- A clear and concise description of what you expected to happen -->
-
-
 ### 🔨 Steps to reproduce
 <!-- Clear steps to reproduce the issue -->
 
@@ -44,6 +44,10 @@ PASTE ERROR MESSAGE HERE
 2. Click on '....'
 3. Scroll down to '....'
 4. See error
+
+## 💁 Possible Solution
+
+<!--- Not obligatory, but suggest a fix/reason for the bug -->
 
 ### Are you willing to resolve this issue by submitting a Pull Request❓
 
