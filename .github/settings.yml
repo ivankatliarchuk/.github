@@ -3,7 +3,7 @@
 repository:
   # See https://developer.github.com/v3/repos/#edit for all available settings.
   # name: .github
-  description: '↘️ Repository used to organize everything around Organisations.'
+  description: '↘️ Github community heatlh files'
   topics: ivank, github, configuration, sync, org, organisation
   private: false
   has_issues: true
