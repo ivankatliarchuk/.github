@@ -45,7 +45,7 @@ labels:
   color: 85f920
 - name: help wanted
   color: 008672
-- name: question
+- name: '❔ Question'
   color: D876E3
 - name: wontfix
   color: FFFFFF
