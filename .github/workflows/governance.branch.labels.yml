@@ -21,14 +21,14 @@ jobs:
       - name: validate branch name
         uses: AlbertHernandez/branch-name-action@v1.0.2
         with:
-          branch_pattern: 'feature|fix|bug|chore|hotfix|docs|dependencies|deps|renovate'
+          branch_pattern: 'feature|feat|fix|bug|chore|hotfix|docs|dependencies|deps|renovate'
           comment_for_invalid_branch_name: |
             **Pro Tip!**
             You can help us label your Pull Requests by using the following branch naming convention next time you create a pull request.
 
             Branch naming convention | Label
             ------------------------ | ------
-            `feature/**`             | kind/feature
+            `feat/**|feature/**`     | kind/feature
             `fix/**`                  | kind/fix
             `chore/**`               | kind/chore
             `stable/**`              | kind/stable
