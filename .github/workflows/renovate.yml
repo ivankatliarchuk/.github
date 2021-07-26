@@ -26,7 +26,7 @@ jobs:
           fetch-depth: '1'
       # https://github.com/renovatebot/github-action install renovate app
       - name: run renovate across repositories
-        uses: renovatebot/github-action@v25.56.9
+        uses: renovatebot/github-action@v25.58.0
         with:
           configurationFile: ${{ env.RENOVATE_CONFIG_FOLDER }}/renovate-config.js
           token: ${{ secrets.RENOVATE_TOKEN }}
