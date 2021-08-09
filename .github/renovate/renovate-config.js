@@ -158,7 +158,8 @@ module.exports = {
     },
     {
       fileMatch: [
-        '^Dockerfile$'
+        '^Dockerfile$',
+        "Dockerfile$",
       ],
       matchStrings: [
         '#\\s*renovate:\\s*datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s(ARG|ENV) .*?_VERSION(=|\\s)(?<currentValue>.*)\\s'
@@ -167,7 +168,8 @@ module.exports = {
     },
     {
       "fileMatch": [
-        "^Dockerfile$"
+        "^Dockerfile$",
+        "Dockerfile$",
       ],
       "matchStrings": [
         "#\\s*renovate:\\s*depName=(?<depName>.*?)?\\s.*?:\\s(?<currentValue>.*)\\s"
