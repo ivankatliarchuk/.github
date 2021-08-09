@@ -41,12 +41,7 @@ module.exports = {
   "printConfig": false,
   "pruneStaleBranches": false,
   "username": "ivankatliarchuk",
-  "repositories": [
-    "ivankatliarchuk/.github",
-    "ivankatliarchuk/ivankatliarchuk.github.io",
-    "ivankatliarchuk/knowledge-base",
-    "ivankatliarchuk/dotfiles"
-  ],
+  "repositories": repo,
   "prHourlyLimit": 20,
   "stabilityDays": 3,
   "semanticCommits": "enabled",
