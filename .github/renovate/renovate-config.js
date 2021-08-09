@@ -24,7 +24,8 @@ const repo = [
   'ivankatliarchuk/.github',
   'ivankatliarchuk/ivankatliarchuk.github.io',
   'ivankatliarchuk/knowledge-base',
-  'ivankatliarchuk/dotfiles'
+  'ivankatliarchuk/dotfiles',
+  'cloudkats/docker-tools'
 ]
 
 module.exports = {
@@ -154,6 +155,26 @@ module.exports = {
       ],
       "matchStrings": ["uses: (?<depName>.*?)@(?<currentValue>.*?)\n"],
       "datasourceTemplate": "github-releases"
+    },
+    {
+      fileMatch: [
+        '^Dockerfile$'
+      ],
+      matchStrings: [
+        '#\\s*renovate:\\s*datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s(ARG|ENV) .*?_VERSION(=|\\s)(?<currentValue>.*)\\s'
+      ],
+      versioningTemplate: '{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}'
+    },
+    {
+      "fileMatch": [
+        "^Dockerfile$"
+      ],
+      "matchStrings": [
+        "#\\s*renovate:\\s*depName=(?<depName>.*?)?\\s.*?:\\s(?<currentValue>.*)\\s"
+      ],
+      "versioningTemplate": "semver",
+      "datasourceTemplate": "github-releases",
+      "lookupNameTemplate": "{{{depName}}}"
     }
   ]
 };
