@@ -165,6 +165,8 @@ module.exports = {
       "fileMatch": [
         "^Dockerfile$",
         "Dockerfile$",
+        "(^|/|\\.)Dockerfile$",
+        "(^|/)Dockerfile\\.[^/]*$"
       ],
       "matchStrings": [
         "#\\s*renovate:\\s*depName=(?<depName>.*?)?\\s.*?:\\s(?<currentValue>.*)\\s"
@@ -172,6 +174,30 @@ module.exports = {
       "versioningTemplate": "semver",
       "datasourceTemplate": "github-releases",
       "lookupNameTemplate": "{{{depName}}}"
+    },
+    {
+      "fileMatch": [
+        "Dockerfile$",
+        "^Dockerfile$",
+        "(^|/|\\.)Dockerfile$",
+        "(^|/)Dockerfile\\.[^/]*$"
+      ],
+      "matchStrings": [
+        "datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\sENV .*?_VERSION=(?<currentValue>.*)\\s"
+      ],
+      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}",
+      "datasourceTemplate": "github-releases"
+    },
+    {
+      "fileMatch": [
+        "Dockerfile$",
+        "(^|/|\\.)Dockerfile$",
+        "(^|/)Dockerfile\\.[^/]*$"
+      ],
+      "matchStrings": [
+        "ARG IMAGE=(?<depName>.*?):(?<currentValue>.*?)@(?<currentDigest>sha256:[a-f0-9]+)s"
+      ],
+      "datasourceTemplate": "docker"
     }
   ]
 };
