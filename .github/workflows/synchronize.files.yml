@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2.3.4
+      - uses: actions/checkout@v2.3.5
       - name: calculate date
         id: envs
         run: echo "::set-output name=CURRENT_DATE::$(date -u +'%Y-%m-%dT%H-%M')"
@@ -22,7 +22,7 @@ jobs:
     # running this job only for master branch
 
     steps:
-      - uses: actions/checkout@v2.3.4
+      - uses: actions/checkout@v2.3.5
         with:
           fetch-depth: '2'
           submodules: 'true'
