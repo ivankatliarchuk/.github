@@ -14,6 +14,7 @@ on:
 
 env:
   RENOVATE_CONFIG_FOLDER: .github/renovate
+  RENOVATE_CACHE_DIR: .github/renovate/.cache
   LOG_LEVEL: info
 
 jobs:
@@ -34,3 +35,4 @@ jobs:
           USER_NAME: ${{ github.repository_owner }}
           RENOVATE_CONFIG_FOLDER: ${{ env.RENOVATE_CONFIG_FOLDER }}
           LOG_LEVEL: info
+          RENOVATE_CACHE_DIR: ${{ env.RENOVATE_CACHE_DIR }}

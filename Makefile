@@ -24,14 +24,15 @@ validate: ## Validate files with pre-commit hooks
 set-token: ## Set tokens for local development
 	@envchain --set vars RENOVATE_TOKEN
 
-
-
 renovate: ## Run renovate
 	@docker run --rm -it \
 	-v ${PWD}/.github/renovate/renovate-config.js:/github-action/renovate-config.js -w /tmp \
+	-v ${PWD}/.github/renovate/.cache:/github-action/cache \
 	--user ubuntu:121 \
 	-e RENOVATE_CONFIG_FILE=/github-action/renovate-config.js \
+	-e RENOVATE_CACHE_DIR=/github-action/cache \
 	-e RENOVATE_TOKEN \
 	-e DOCKER_HUB_PASSWORD \
   -e DRY_RUN \
+	-e LOG_LEVEL=info \
 	${CI_RENOVATE_IMAGE}

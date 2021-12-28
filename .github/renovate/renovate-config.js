@@ -25,18 +25,18 @@ const cfg = {
 }
 
 const repo1 = [
-  'ivankatliarchuk/.github',
   'ivankatliarchuk/ivankatliarchuk.github.io',
   'ivankatliarchuk/knowledge-base',
   'ivankatliarchuk/dotfiles',
-  'cloudkats/docker-tools'
 ]
 
 const repo = [
+  'ivankatliarchuk/.github',
   'cloudkats/docker-tools'
 ]
 
 module.exports = {
+  "platform": "github",
   "extends": [
     "config:base",
     ":disableRateLimiting",
@@ -44,13 +44,13 @@ module.exports = {
     ":ignoreUnstable",
     ":rebaseStalePrs"
   ],
+  "logLevel": "debug",
   "assigneesFromCodeOwners": true,
   "assignees": ["ivankatliarchuk"],
   "labels": ["renovate", "dependencies", "automated"],
   "dependencyDashboardTitle": "Dependency Dashboard self-hosted",
   "gitAuthor": "Renovate Bot <bot@renovateapp.com>",
   "onboarding": true,
-  "platform": "github",
   "dryRun": false,
   "printConfig": false,
   "pruneStaleBranches": true,
@@ -114,12 +114,64 @@ module.exports = {
       "separateMinorPatch": true,
       "matchDatasources": ["helm"],
       "groupName": "helm"
+    },
+    {
+      "groupName": "actions",
+      "matchPackageNames": ["actions/*"],
+      "matchManagers": ["github-actions"],
+      "additionalBranchPrefix": "{{packageFileDir}}-",
+      "separateMajorMinor": true,
+      "separateMinorPatch": true,
+      "separateMultipleMajor": true
     }
   ],
   "regexManagers": [
+    {
+      "fileMatch": [
+        "Dockerfile$",
+        "^Dockerfile$",
+        "(^|/|\\.)Dockerfile$",
+        "(^|/)Dockerfile\\.[^/]*$"
+      ],
+      "matchStrings": [
+        "datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\sENV .*?_VERSION=(?<currentValue>.*)\\s"
+      ],
+      "datasourceTemplate": "github-releases",
+      "extractVersionTemplate": "^v?(?<version>.*)$"
+    },
+    {
+      "fileMatch": [
+        "Dockerfile$",
+        "^Dockerfile$",
+        "(^|/|\\.)Dockerfile$",
+        "(^|/)Dockerfile\\.[^/]*$"
+      ],
+      "matchStrings": [
+        "datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\sARG .*?_VERSION=(?<currentValue>.*)\\s"
+      ],
+      "datasourceTemplate": "github-releases",
+      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}",
+      "extractVersionTemplate": "^v?(?<version>.*)$"
+    },
+    {
+      "fileMatch": [
+        "Dockerfile$",
+        "(^|/|\\.)Dockerfile$",
+        "(^|/)Dockerfile\\.[^/]*$"
+      ],
+      "matchStrings": [
+        "ARG IMAGE=(?<depName>.*?):(?<currentValue>.*?)@(?<currentDigest>sha256:[a-f0-9]+)s"
+      ],
+      "datasourceTemplate": "docker"
+    },
+    {
+      // TODO: validate why is not working correctly
+      "fileMatch": [
+        "(^workflow-templates|\.github\/workflows)\/[^/]+\.ya?ml$",
+        "(^workflow-templates|\.github\/workflows)\/[^/]+\.ya?ml$(^|\/)action\.ya?ml$"
+      ],
+      "matchStrings": ["uses: (?<depName>.*?)@(?<currentValue>.*?)\n"],
+      "datasourceTemplate": 'github-tags'
+    },
   ]
 };
-
-// cache
-// https://docs.renovatebot.com/self-hosted-configuration/#cachedir
-// "cacheDir": "/my-own-different-cache-folder"
