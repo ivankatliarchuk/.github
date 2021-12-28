@@ -53,7 +53,7 @@ module.exports = {
   "platform": "github",
   "dryRun": false,
   "printConfig": false,
-  "pruneStaleBranches": false,
+  "pruneStaleBranches": true,
   "username": "ivankatliarchuk",
   "repositories": repo,
   "prHourlyLimit": 50,
@@ -63,6 +63,10 @@ module.exports = {
   "major": { "automerge": false, "labels": ["dependencies", "major"] },
   "minor": { "automerge": false, "labels": ["dependencies", "minor"] },
   "patch": { "automerge": false },
+  // cache +
+  "cacheDir": process.env.RENOVATE_CACHE_DIR,
+  "repositoryCache": (process.env.RENOVATE_CACHE_DIR ? true : false),
+  // cache -
   "hostRules": [
     {
       "hostType": 'docker',
@@ -80,45 +84,42 @@ module.exports = {
       "enabled": false
     },
     {
-      matchPackageNames: ['node'],
-      major: {
-        enabled: true
-      },
-      separateMultipleMajor: true,
+      "matchPackageNames": ["node"],
+      "major": { "enabled": true },
+      "separateMultipleMajor": true
     },
-    // {
-    //   "automerge": false,
-    //   "ignoreTests": true,
-    //   "matchDatasources": ["docker"],
-    //   "matchUpdateTypes": ["patch", "minor"],
-    //   "groupName": "docker (non-major)"
-    // },
     {
+      "labels": ["docker"],
       "automerge": false,
+      "major": { "enabled": true },
       "separateMajorMinor": true,
       "separateMinorPatch": true,
       "matchDatasources": ["docker"],
       "separateMultipleMajor": true,
+      "additionalBranchPrefix": "{{packageFileDir}}-"
     },
-    // {
-    //   "separateMinorPatch": true,
-    //   "matchDatasources": ["terraform"],
-    //   "matchUpdateTypes": ["patch", "minor"],
-    //   "groupName": "terraform (non-major)"
-    // },
-    // {
-    //   "matchDatasources": ["terraform"],
-    //   "matchUpdateTypes": ["major"],
-    //   "separateMultipleMajor": true,
-    //   "groupName": "terraform (major)"
-    // },
-    // {
-    //   "commitMessageTopic": "Helm chart {{depName}}",
-    //   "separateMinorPatch": true,
-    //   "matchDatasources": ["helm"],
-    //   "groupName": "helm"
-    // }
+    {
+      "automerge": false,
+      "separateMajorMinor": true,
+      "separateMinorPatch": true,
+      "separateMultipleMajor": true,
+      "matchDatasources": ["terraform"],
+      "additionalBranchPrefix": "{{packageFileDir}}-",
+      "matchManagers": ["terraform"],
+      "matchPackagePatterns": [".*"]
+    },
+    {
+      "commitMessageTopic": "Helm chart {{depName}}",
+      "separateMajorMinor": true,
+      "separateMinorPatch": true,
+      "matchDatasources": ["helm"],
+      "groupName": "helm"
+    }
   ],
   "regexManagers": [
   ]
 };
+
+// cache
+// https://docs.renovatebot.com/self-hosted-configuration/#cachedir
+// "cacheDir": "/my-own-different-cache-folder"
