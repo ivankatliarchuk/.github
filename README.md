@@ -1,6 +1,8 @@
 
 # Configuration Repository
 
+---
+
 [![governance][governance-badge]][governance-action]
 [![governance.link-checker][governance.link-checker.badge]][governance.link-checker.status]
 [![toc generator][toc-badge]][toc-action]
@@ -10,6 +12,8 @@
 [![](https://img.shields.io/github/license/ivankatliarchuk/.github)](https://github.com/ivankatliarchuk/.github/LICENCE)
 
 [![GitHub forks][forks.badge]][forks.url]
+
+---
 
 > Default community health files, such as CONTRIBUTING and CODE_OF_CONDUCT. Default files will be used for any public repository owned by the account that does not contain its own file of that type.
 
