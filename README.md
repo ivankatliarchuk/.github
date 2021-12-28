@@ -1,13 +1,12 @@
 
 # Configuration Repository
 
-[![syncronize-repository-content][sync-badge]][sync-action]
 [![governance][governance-badge]][governance-action]
 [![governance.link-checker][governance.link-checker.badge]][governance.link-checker.status]
 [![toc generator][toc-badge]][toc-action]
-
 ![Repository Size](https://img.shields.io/github/repo-size/ivankatliarchuk/.github)
-![Lines of Codes](https://img.shields.io/tokei/lines/github/ivankatliarchuk/.github)
+![](https://img.shields.io/github/commit-activity/m/ivankatliarchuk/.github)
+![](https://img.shields.io/github/last-commit/ivankatliarchuk/.github)
 [![](https://img.shields.io/github/license/ivankatliarchuk/.github)](https://github.com/ivankatliarchuk/.github/LICENCE)
 
 [![GitHub forks][forks.badge]][forks.url]
