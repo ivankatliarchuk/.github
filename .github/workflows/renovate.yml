@@ -35,3 +35,4 @@ jobs:
           USER_NAME: ${{ github.repository_owner }}
           LOG_LEVEL: info
           RENOVATE_CACHE_DIR: ${{ env.RENOVATE_CACHE_DIR }}
+          DOCKER_HUB_PASSWORD: ${{ secrets.DOCKER_HUB_PASSWORD }}

@@ -10,20 +10,6 @@ if (!process.env.DOCKER_HUB_PASSWORD) {
   throw new Error('DOCKER_HUB_PASSWORD must be set');
 }
 
-const cfg = {
-  "asignees": [
-    "ivankatliarchuk"
-  ],
-  "labels": ["renovate", "dependencies", ":robot: bot", ':game_die: dependencies'],
-  "logLevel": "info",
-  "gitAuthor": 'Renovate Bot <bot@renovateapp.com>',
-  "dashboardTitle": 'Dependency Dashboard self-hosted',
-  "username": "ivankatliarchuk",
-  "branchName": 'github-renovate',
-  "baseBranches": ['master', 'main'],
-  'timezone': "Europe/London"
-}
-
 const repo1 = [
   'ivankatliarchuk/ivankatliarchuk.github.io',
   'ivankatliarchuk/knowledge-base',
