@@ -5,7 +5,9 @@ MAKEFLAGS += --warn-undefined-variables
 MAKEFLAGS += --no-builtin-rules
 
 export DRY_RUN ?= true
-renovate ?= renovate/renovate:24.110.3-slim
+CI_RENOVATE_IMAGE ?= renovate/renovate:31.10.0
+export RENOVATE_TOKEN ?= $(shell envchain vars env | grep RENOVATE_TOKEN | tr "=" " " |  awk '{print $$2}')
+export DOCKER_HUB_PASSWORD ?= $(shell envchain vars env | grep DOCKER_HUB_PASSWORD | tr "=" " " |  awk '{print $$2}')
 
 help:
 	@printf "Usage: make [target] [VARIABLE=value]\nTargets:\n"
@@ -22,15 +24,14 @@ validate: ## Validate files with pre-commit hooks
 set-token: ## Set tokens for local development
 	@envchain --set vars RENOVATE_TOKEN
 
-globals:
-	$(eval export $(shell envchain vars env | grep RENOVATE_TOKEN || echo "No RENOVATE_TOKEN env vars for renovate"))
 
-renovate: globals
+
 renovate: ## Run renovate
 	@docker run --rm -it \
 	-v ${PWD}/.github/renovate/renovate-config.js:/github-action/renovate-config.js -w /tmp \
 	--user ubuntu:121 \
 	-e RENOVATE_CONFIG_FILE=/github-action/renovate-config.js \
 	-e RENOVATE_TOKEN \
-    -e DRY_RUN \
-	${renovate}
+	-e DOCKER_HUB_PASSWORD \
+  -e DRY_RUN \
+	${CI_RENOVATE_IMAGE}
