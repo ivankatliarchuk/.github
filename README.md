@@ -15,13 +15,11 @@ For more information, please see the article on [creating a default community he
 ![](https://img.shields.io/github/last-commit/ivankatliarchuk/.github)
 [![](https://img.shields.io/github/license/ivankatliarchuk/.github)](https://github.com/ivankatliarchuk/.github/LICENCE)
 
-[![GitHub forks][forks.badge]][forks.url]
-
 ---
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**
+## Contents
 
 - [Resources](#resources)
   - [Helpers](#helpers)
@@ -31,6 +29,8 @@ For more information, please see the article on [creating a default community he
 - [TODO](#todo)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+---
 
 ## Resources
 
@@ -105,14 +105,11 @@ repositories: JSON.parse(fs.readFileSync(`${config_folder}/repositories.json`), 
 - [X] Setup workflow templates
 - [X] Add [auto approve][auto-approve]
 - [X] Add [self merge][self-merge] to self repo
-- [ ] Add [self merge][self-merge] to org template
 - [X] Add renovate action to self repo
 - [ ] Use [GitDown](https://github.com/gajus/gitdown) for markdown pre-process
 - [X] Renovate to work with mutliple repositories
 - [ ] Setup [Licensed](https://github.com/github/licensed) for all repos
-- [ ] Setup [file sync action][file-sync-aciton]:
-- [ ] Sync files with other repositories(dependabot,renovate etc)
-- [ ] Syhc [workflow files](https://github.com/varunsridharan/action-github-workflow-sync)
+- [ ] Template some of the files and share accross repositories
 
 <!-- resources -->
 [1]: https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/creating-a-default-community-health-file
@@ -125,9 +122,6 @@ repositories: JSON.parse(fs.readFileSync(`${config_folder}/repositories.json`), 
 [auto-approve]: https://github.com/search?o=desc&q=hmarr%2Fauto-approve-action+path%3A.github%2Fworkflows+language%3AYAML&s=&type=Code
 [self-merge]: https://github.com/search?o=desc&q=orta%2Fcode-owner-self-merge+path%3A.github%2Fworkflows+language%3AYAML&s=&type=Code
 [how-to-org-template]: https://docs.github.com/en/actions/learn-github-actions/sharing-workflows-with-your-organization
-[file-sync-aciton]: https://github.com/marketplace/actions/file-sync
 [governance.link-checker.badge]: https://github.com/ivankatliarchuk/.github/actions/workflows/governance.links-checker.yml/badge.svg
 [governance.link-checker.status]: https://github.com/ivankatliarchuk/.github/actions/workflows/governance.links-checker.yml
-[forks.badge]: https://img.shields.io/github/forks/ivankatliarchuk/.github.svg?style=social&label=Fork
-[forks.url]: https://github.com/ivankatliarchuk/.github/network/members
 [dependabot.docs]: https://docs.github.com/en/code-security/supply-chain-security/configuration-options-for-dependency-updates#about-the-dependabotyml-file

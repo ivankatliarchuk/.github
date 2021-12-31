@@ -85,3 +85,13 @@ repos:
   - id: commitlint
     stages: [commit-msg]
     additional_dependencies: ["@commitlint/config-conventional"]
+- repo: https://github.com/thlorenz/doctoc
+  rev: v2.1.0
+  hooks:
+  - id: doctoc
+    args: ['--title=## Contents', '--github']
+    descripiton: 'Generates table of contents for markdown files'
+    exclude: |
+      (?x)(
+        ^.github/
+      )
