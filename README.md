@@ -19,7 +19,7 @@ For more information, please see the article on [creating a default community he
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-## Contents
+**Table of Contents**
 
 - [Resources](#resources)
   - [Helpers](#helpers)
