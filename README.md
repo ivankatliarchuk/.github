@@ -53,9 +53,6 @@ For more information, please see the article on [creating a default community he
 - [Awesome: github templates](https://github.com/devspace/awesome-github-templates)
 - [Awesome: github](https://github.com/phillipadsmith/awesome-github)
 
-- [Dependabot: validator](https://dependabot.com/docs/config-file/validator)
-- [Dependabot: docs][dependabot.docs]
-
 ### Helpers
 
 - [Cheat sheet: emoji](https://github.com/ikatyang/emoji-cheat-sheet)

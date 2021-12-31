@@ -3,8 +3,8 @@
 repository:
   # See https://developer.github.com/v3/repos/#edit for all available settings.
   # name: .github
-  description: '↘️ Github community heatlh files'
-  topics: ivank, github, configuration, sync, org, organisation
+  description: ':octocat: Github community heatlh files'
+  topics: ivank, github, configuration, sync, organisation, settings
   private: false
   has_issues: true
   has_projects: false
@@ -24,13 +24,17 @@ branches:
 - name: main
   protection:
     required_pull_request_reviews:
+      # The number of approvals required. (1-6)
       required_approving_review_count: 1
+      # Dismiss approved reviews automatically when a new commit is pushed.
       dismiss_stale_reviews: true
       require_code_owner_reviews: true
     required_status_checks:
+      # Required. Require branches to be up to date before merging.
       strict: true
       contexts: []
-    enforce_admins: false
+    enforce_admins: true
+- name: test-settings
 
 # Labels: define labels for Issues and Pull Requests
 # https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md

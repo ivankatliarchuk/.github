@@ -43,7 +43,7 @@ categories:
       - node
       - go
   - title: '🐛 Bug Fixes'
-    label:
+    labels:
       - 'type: bug'
       - 'fix'
       - 'bugfix'
@@ -51,7 +51,7 @@ categories:
       - 'kind/fix'
       - bug
   - title: '🧰  Maintenance'
-    label:
+    labels:
       - 'type: maintenance'
       - 'chore'
       - 'kind/refactor'
@@ -123,6 +123,8 @@ exclude-labels:
   - no-changelog
   - skip-changelog
   - invalid
+  - '[skip-changelog]'
+  - '[skip-ci]'
 
 autolabeler:
   - label: 'chore'
