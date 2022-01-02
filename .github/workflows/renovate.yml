@@ -36,13 +36,10 @@ jobs:
           RENOVATE_CONFIG_FILE: ${{ env.RENOVATE_BASE_CONFIG_PATH }}/renovate-config.js
           RENOVATE_REPOSITORY_CONFIG_FILE: ${{ env.RENOVATE_BASE_CONFIG_PATH }}/repositories.json
         with:
-          entrypoint: bash
-          args: -c "pwd;ls -la;cat $RENOVATE_REPOSITORY_CONFIG_FILE"
+          entrypoint: /usr/local/bin/renovate
+          # args: -c "pwd;ls -la;cat $RENOVATE_REPOSITORY_CONFIG_FILE"
 
-          # /usr/local/bin/renovate
-        # run: >-
-        #   echo "TEST"
-
+      # This action is too much of opinionated solution
       # https://github.com/renovatebot/github-action install renovate app
       # - name: run renovate across repositories
       #   uses: renovatebot/github-action@v31.13.1
