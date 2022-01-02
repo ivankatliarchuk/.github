@@ -40,7 +40,7 @@ module.exports = {
   "printConfig": false,
   "pruneStaleBranches": true,
   "username": "ivankatliarchuk",
-  "repositories": JSON.parse(Fs.readFileSync(process.env.RENOVATE_REPOSITORY_CONFIG_FILE, 'utf8')),,
+  "repositories": JSON.parse(Fs.readFileSync(process.env.RENOVATE_REPOSITORY_CONFIG_FILE, 'utf8')),
   "prHourlyLimit": 50,
   "stabilityDays": 3,
   "semanticCommits": "enabled",
