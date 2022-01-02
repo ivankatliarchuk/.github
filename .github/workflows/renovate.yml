@@ -22,13 +22,15 @@ jobs:
   renovate:
     runs-on: ubuntu-latest
     if: github.repository == 'ivankatliarchuk/.github'
+    container:
+      image: renovate/renovate:31.14-slim
     steps:
       - uses: actions/checkout@v2.4.0
         with:
           fetch-depth: '1'
 
       - name: "execute-dependency-update"
-        uses: docker://renovate/renovate:31.14-slim
+        # uses: docker://renovate/renovate:31.14-slim
         env:
           DOCKER_HUB_PASSWORD: ${{ secrets.DOCKER_HUB_PASSWORD }}
           RENOVATE_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
