@@ -27,9 +27,15 @@ jobs:
           fetch-depth: '1'
       - name: run it
         uses: docker://renovate/renovate:31.14-slim
+        env:
+          DOCKER_HUB_PASSWORD: ${{ secrets.DOCKER_HUB_PASSWORD }}
+          RENOVATE_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
+          USER_NAME: ${{ github.repository_owner }}
+          RENOVATE_CONFIG_FILE: ./github-action/renovate-config.js
         with:
           entrypoint: bash
-          args: -c "echo 'TEST in DOCKER'"
+          args: -c "pwd;ls -la"
+          # /usr/local/bin/renovate
         # run: >-
         #   echo "TEST"
 
