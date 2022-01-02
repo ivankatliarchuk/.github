@@ -22,7 +22,7 @@ jobs:
   renovate:
     runs-on: ubuntu-latest
     container:
-      image: renovate/renovate:31.14-slim
+      image: dockerhub-username:docker-image-tag
     if: github.repository == 'ivankatliarchuk/.github'
     steps:
       - uses: actions/checkout@v2.4.0
@@ -40,9 +40,9 @@ jobs:
           USER_NAME: ${{ github.repository_owner }}
           RENOVATE_CONFIG_FILE: ${{ env.RENOVATE_BASE_CONFIG_PATH }}/renovate-config.js
           RENOVATE_REPOSITORY_CONFIG_FILE: ${{ env.RENOVATE_BASE_CONFIG_PATH }}/repositories.json
-        with:
-          entrypoint: bash
-          args: -c "/usr/local/bin/renovate"
+        # with:
+        #   entrypoint: bash
+        #   args: -c "/usr/local/bin/renovate"
 
       # This action is too much of opinionated solution
       # https://github.com/renovatebot/github-action install renovate app
