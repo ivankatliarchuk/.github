@@ -27,14 +27,14 @@ jobs:
         with:
           fetch-depth: '1'
 
-      - name: run it
+      - name: ""
         uses: docker://renovate/renovate:31.14-slim
         env:
           DOCKER_HUB_PASSWORD: ${{ secrets.DOCKER_HUB_PASSWORD }}
           RENOVATE_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
           USER_NAME: ${{ github.repository_owner }}
-          RENOVATE_CONFIG_FILE: ${{ BASE_PATH }}/renovate-config.js
-          RENOVATE_REPOSITORY_CONFIG_FILE: ${{ BASE_PATH }}/repositories.json
+          RENOVATE_CONFIG_FILE: ${{ env.BASE_PATH }}/renovate-config.js
+          RENOVATE_REPOSITORY_CONFIG_FILE: ${{ env.BASE_PATH }}/repositories.json
         with:
           entrypoint: bash
           args: -c "pwd;ls -la;cat $RENOVATE_REPOSITORY_CONFIG_FILE"
