@@ -21,16 +21,17 @@ jobs:
   renovate:
     runs-on: ubuntu-latest
     if: github.repository == 'ivankatliarchuk/.github'
-    container:
-      image: renovate/renovate:31.14-slim
-
     steps:
       - uses: actions/checkout@v2.4.0
         with:
           fetch-depth: '1'
       - name: run it
-        run: >-
-          echo "TEST"
+        uses: docker://renovate/renovate:31.14-slim
+        with:
+          entrypoint: bash
+          args: -c "echo 'TEST in DOCKER'"
+        # run: >-
+        #   echo "TEST"
 
       # https://github.com/renovatebot/github-action install renovate app
       # - name: run renovate across repositories
