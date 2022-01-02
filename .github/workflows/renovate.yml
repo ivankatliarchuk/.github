@@ -21,17 +21,24 @@ jobs:
   renovate:
     runs-on: ubuntu-latest
     if: github.repository == 'ivankatliarchuk/.github'
+    container:
+      image: renovate/renovate:31.14-slim
+
     steps:
       - uses: actions/checkout@v2.4.0
         with:
           fetch-depth: '1'
+      - name: run it
+        run: >-
+          echo "TEST"
+
       # https://github.com/renovatebot/github-action install renovate app
-      - name: run renovate across repositories
-        uses: renovatebot/github-action@v31.13.1
-        with:
-          configurationFile: ${{ env.RENOVATE_CONFIG_FOLDER }}/renovate-config.js
-          token: ${{ secrets.RENOVATE_TOKEN }}
-        env:
-          USER_NAME: ${{ github.repository_owner }}
-          RENOVATE_CACHE_DIR: ${{ env.RENOVATE_CACHE_DIR }}
-          DOCKER_HUB_PASSWORD: ${{ secrets.DOCKER_HUB_PASSWORD }}
+      # - name: run renovate across repositories
+      #   uses: renovatebot/github-action@v31.13.1
+      #   with:
+      #     configurationFile: ${{ env.RENOVATE_CONFIG_FOLDER }}/renovate-config.js
+      #     token: ${{ secrets.RENOVATE_TOKEN }}
+      #   env:
+      #     USER_NAME: ${{ github.repository_owner }}
+      #     RENOVATE_CACHE_DIR: ${{ env.RENOVATE_CACHE_DIR }}
+      #     DOCKER_HUB_PASSWORD: ${{ secrets.DOCKER_HUB_PASSWORD }}
