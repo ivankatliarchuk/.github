@@ -50,8 +50,8 @@ module.exports = {
   "minor": { "automerge": false, "labels": ["dependencies", "minor"] },
   "patch": { "automerge": false },
   // cache +
-  "cacheDir": process.env.RENOVATE_CACHE_DIR,
-  "repositoryCache": (process.env.RENOVATE_CACHE_DIR ? true : false),
+  // "cacheDir": process.env.RENOVATE_CACHE_DIR,
+  // "repositoryCache": (process.env.RENOVATE_CACHE_DIR ? true : false),
   // cache -
   "hostRules": [
     {

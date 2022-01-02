@@ -14,7 +14,7 @@ on:
 
 env:
   RENOVATE_CONFIG_FOLDER: .github/renovate
-  RENOVATE_CACHE_DIR: renovate/.cache
+  # RENOVATE_CACHE_DIR: renovate/.cache
   LOG_LEVEL: info
   RENOVATE_BASE_CONFIG_PATH: renovate
 
