@@ -21,8 +21,12 @@ env:
 jobs:
   renovate:
     runs-on: ubuntu-latest
+    # https://docs.github.com/en/actions/learn-github-actions/workflow-syntax-for-github-actions#jobsjob_idcontainer
     container:
-      image: dockerhub-username:docker-image-tag
+      image: renovate/renovate:31.14-slim
+      # credentials:
+      #   username: ${{ secrets.DOCKER_HUB_PASSWORD }}
+      #   password: ${{ secrets.DOCKER_HUB_USERNAME }}
     if: github.repository == 'ivankatliarchuk/.github'
     steps:
       - uses: actions/checkout@v2.4.0
