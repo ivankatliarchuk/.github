@@ -27,7 +27,7 @@ jobs:
         with:
           fetch-depth: '1'
 
-      - name: ""
+      - name: "execute-dependency-update"
         uses: docker://renovate/renovate:31.14-slim
         env:
           DOCKER_HUB_PASSWORD: ${{ secrets.DOCKER_HUB_PASSWORD }}
@@ -36,8 +36,8 @@ jobs:
           RENOVATE_CONFIG_FILE: ${{ env.RENOVATE_BASE_CONFIG_PATH }}/renovate-config.js
           RENOVATE_REPOSITORY_CONFIG_FILE: ${{ env.RENOVATE_BASE_CONFIG_PATH }}/repositories.json
         with:
-          entrypoint: /usr/local/bin/renovate
-          # args: -c "pwd;ls -la;cat $RENOVATE_REPOSITORY_CONFIG_FILE"
+          entrypoint: bash
+          args: -c "/usr/local/bin/renovate"
 
       # This action is too much of opinionated solution
       # https://github.com/renovatebot/github-action install renovate app
