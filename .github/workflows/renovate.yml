@@ -14,9 +14,9 @@ on:
 
 env:
   RENOVATE_CONFIG_FOLDER: .github/renovate
-  RENOVATE_CACHE_DIR: .github/renovate/.cache
+  RENOVATE_CACHE_DIR: renovate/.cache
   LOG_LEVEL: info
-  BASE_PATH: .github/renovate
+  RENOVATE_BASE_CONFIG_PATH: renovate
 
 jobs:
   renovate:
@@ -33,8 +33,8 @@ jobs:
           DOCKER_HUB_PASSWORD: ${{ secrets.DOCKER_HUB_PASSWORD }}
           RENOVATE_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
           USER_NAME: ${{ github.repository_owner }}
-          RENOVATE_CONFIG_FILE: ${{ env.BASE_PATH }}/renovate-config.js
-          RENOVATE_REPOSITORY_CONFIG_FILE: ${{ env.BASE_PATH }}/repositories.json
+          RENOVATE_CONFIG_FILE: ${{ env.RENOVATE_BASE_CONFIG_PATH }}/renovate-config.js
+          RENOVATE_REPOSITORY_CONFIG_FILE: ${{ env.RENOVATE_BASE_CONFIG_PATH }}/repositories.json
         with:
           entrypoint: bash
           args: -c "pwd;ls -la;cat $RENOVATE_REPOSITORY_CONFIG_FILE"
