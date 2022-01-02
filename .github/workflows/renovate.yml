@@ -35,7 +35,7 @@ jobs:
 
       # https://github.com/renovatebot/github-action install renovate app
       # - name: run renovate across repositories
-      #   uses: renovatebot/github-action@v31.13.1
+      #   uses: renovatebot/github-action@v31.14.1
       #   with:
       #     configurationFile: ${{ env.RENOVATE_CONFIG_FOLDER }}/renovate-config.js
       #     token: ${{ secrets.RENOVATE_TOKEN }}
