@@ -16,6 +16,7 @@ env:
   RENOVATE_CONFIG_FOLDER: .github/renovate
   RENOVATE_CACHE_DIR: .github/renovate/.cache
   LOG_LEVEL: info
+  BASE_PATH: .github/renovate
 
 jobs:
   renovate:
@@ -25,16 +26,19 @@ jobs:
       - uses: actions/checkout@v2.4.0
         with:
           fetch-depth: '1'
+
       - name: run it
         uses: docker://renovate/renovate:31.14-slim
         env:
           DOCKER_HUB_PASSWORD: ${{ secrets.DOCKER_HUB_PASSWORD }}
           RENOVATE_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
           USER_NAME: ${{ github.repository_owner }}
-          RENOVATE_CONFIG_FILE: ./github-action/renovate-config.js
+          RENOVATE_CONFIG_FILE: ${{ BASE_PATH }}/renovate-config.js
+          RENOVATE_REPOSITORY_CONFIG_FILE: ${{ BASE_PATH }}/repositories.json
         with:
           entrypoint: bash
-          args: -c "pwd;ls -la"
+          args: -c "pwd;ls -la;cat $RENOVATE_REPOSITORY_CONFIG_FILE"
+
           # /usr/local/bin/renovate
         # run: >-
         #   echo "TEST"

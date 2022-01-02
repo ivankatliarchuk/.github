@@ -7,18 +7,17 @@ const dry_run = process.env.DRY_RUN || false
 console.log(`DRY_RUN mode: ${dry_run}`);
 
 if (!process.env.DOCKER_HUB_PASSWORD) {
-  throw new Error('DOCKER_HUB_PASSWORD must be set');
+  throw new Error('"DOCKER_HUB_PASSWORD" must be set');
+}
+
+if (!process.env.RENOVATE_REPOSITORY_CONFIG_FILE) {
+  throw new Error('"RENOVATE_REPOSITORY_CONFIG_FILE" must be set');
 }
 
 const repo1 = [
   'ivankatliarchuk/ivankatliarchuk.github.io',
   'ivankatliarchuk/knowledge-base',
   'ivankatliarchuk/dotfiles',
-]
-
-const repo = [
-  'ivankatliarchuk/.github',
-  'cloudkats/docker-tools'
 ]
 
 module.exports = {
@@ -41,7 +40,7 @@ module.exports = {
   "printConfig": false,
   "pruneStaleBranches": true,
   "username": "ivankatliarchuk",
-  "repositories": repo,
+  "repositories": JSON.parse(Fs.readFileSync(process.env.RENOVATE_REPOSITORY_CONFIG_FILE, 'utf8')),,
   "prHourlyLimit": 50,
   "stabilityDays": 3,
   "semanticCommits": "enabled",
