@@ -41,4 +41,4 @@ jobs:
           USER_NAME: ${{ github.repository_owner }}
           DOCKER_HUB_PASSWORD: ${{ secrets.DOCKER_HUB_PASSWORD }}
           RENOVATE_CONFIG_FILE: renovate/renovate-config.js
-          LOG_LEVEL: 'debug'
+          LOG_LEVEL: 'info'
