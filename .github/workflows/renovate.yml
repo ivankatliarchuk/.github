@@ -29,16 +29,16 @@ jobs:
           fetch-depth: '1'
 
       - run: ls -la
+        # --volume /tmp:/tmp
 
       # This action is too much of opinionated solution
       # https://github.com/renovatebot/github-action install renovate app
       - name: run renovate across repositories
         uses: renovatebot/github-action@v31.19.0
         with:
-          configurationFile: renovate/renovate-config.js
+          configurationFile: renovate/config.js
           token: ${{ secrets.RENOVATE_TOKEN }}
         env:
           USER_NAME: ${{ github.repository_owner }}
           DOCKER_HUB_PASSWORD: ${{ secrets.DOCKER_HUB_PASSWORD }}
-          RENOVATE_CONFIG_FILE: renovate/renovate-config.js
           LOG_LEVEL: 'info'
