@@ -10,10 +10,6 @@ if (!process.env.DOCKER_HUB_PASSWORD) {
   throw new Error('"DOCKER_HUB_PASSWORD" must be set');
 }
 
-if (!process.env.RENOVATE_REPOSITORY_CONFIG_FILE) {
-  throw new Error('"RENOVATE_REPOSITORY_CONFIG_FILE" must be set');
-}
-
 const repo1 = [
   'ivankatliarchuk/ivankatliarchuk.github.io',
   'ivankatliarchuk/knowledge-base',
