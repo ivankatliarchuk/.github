@@ -21,6 +21,11 @@ const repo1 = [
   'ivankatliarchuk/dotfiles',
 ]
 
+const repo = [
+  "ivankatliarchuk/.github",
+  "cloudkats/docker-tools"
+]
+
 module.exports = {
   "platform": "github",
   "extends": [
@@ -41,7 +46,8 @@ module.exports = {
   "printConfig": false,
   "pruneStaleBranches": true,
   "username": "ivankatliarchuk",
-  "repositories": JSON.parse(Fs.readFileSync(process.env.RENOVATE_REPOSITORY_CONFIG_FILE, 'utf8')),
+  // "repositories": JSON.parse(Fs.readFileSync(process.env.RENOVATE_REPOSITORY_CONFIG_FILE, 'utf8')),
+  "repositories": repo,
   "prHourlyLimit": 50,
   "stabilityDays": 3,
   "semanticCommits": "enabled",
