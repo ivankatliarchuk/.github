@@ -26,7 +26,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2.4.0
 
-      - run: ls -la/.github/renovate
+      - run: ls -la .github/renovate
         # --volume /tmp:/tmp
 
       # This action is too much of opinionated solution
