@@ -2,12 +2,17 @@
 // https://github.com/renovatebot/github-action/blob/main/.github/renovate.json
 // https://docs.renovatebot.com/configuration-options/
 // todo: https://github.com/marketplace/actions/envsubst-action
+const Fs = require('fs');
 
 const dry_run = process.env.DRY_RUN || false
 console.log(`DRY_RUN mode: ${dry_run}`);
 
 if (!process.env.DOCKER_HUB_PASSWORD) {
-  throw new Error('DOCKER_HUB_PASSWORD must be set');
+  throw new Error('"DOCKER_HUB_PASSWORD" must be set');
+}
+
+if (!process.env.RENOVATE_REPOSITORY_CONFIG_FILE) {
+  throw new Error('"RENOVATE_REPOSITORY_CONFIG_FILE" must be set');
 }
 
 const repo1 = [
@@ -17,8 +22,8 @@ const repo1 = [
 ]
 
 const repo = [
-  'ivankatliarchuk/.github',
-  'cloudkats/docker-tools'
+  "ivankatliarchuk/.github",
+  "cloudkats/docker-tools"
 ]
 
 module.exports = {
@@ -41,6 +46,7 @@ module.exports = {
   "printConfig": false,
   "pruneStaleBranches": true,
   "username": "ivankatliarchuk",
+  // "repositories": JSON.parse(Fs.readFileSync(process.env.RENOVATE_REPOSITORY_CONFIG_FILE, 'utf8')),
   "repositories": repo,
   "prHourlyLimit": 50,
   "stabilityDays": 3,
@@ -50,8 +56,8 @@ module.exports = {
   "minor": { "automerge": false, "labels": ["dependencies", "minor"] },
   "patch": { "automerge": false },
   // cache +
-  "cacheDir": process.env.RENOVATE_CACHE_DIR,
-  "repositoryCache": (process.env.RENOVATE_CACHE_DIR ? true : false),
+  // "cacheDir": process.env.RENOVATE_CACHE_DIR,
+  // "repositoryCache": (process.env.RENOVATE_CACHE_DIR ? true : false),
   // cache -
   "hostRules": [
     {
