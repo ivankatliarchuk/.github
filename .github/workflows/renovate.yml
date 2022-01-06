@@ -27,16 +27,16 @@ jobs:
       - uses: actions/checkout@v2.4.0
         with:
           fetch-depth: '1'
-          clean: 'false'
 
       # This action is too much of opinionated solution
       # https://github.com/renovatebot/github-action install renovate app
       - name: run renovate across repositories
         uses: renovatebot/github-action@v31.19.0
         with:
-          configurationFile: ${{ env.RENOVATE_CONFIG_FOLDER }}/renovate-config.js
+          configurationFile: renovate/renovate-config.js
           token: ${{ secrets.RENOVATE_TOKEN }}
         env:
           USER_NAME: ${{ github.repository_owner }}
           # RENOVATE_CACHE_DIR: ${{ env.RENOVATE_CACHE_DIR }}
           DOCKER_HUB_PASSWORD: ${{ secrets.DOCKER_HUB_PASSWORD }}
+          LOG_LEVEL: 'debug'
