@@ -28,6 +28,8 @@ jobs:
         with:
           fetch-depth: '1'
 
+      - run: ls -la
+
       # This action is too much of opinionated solution
       # https://github.com/renovatebot/github-action install renovate app
       - name: run renovate across repositories
@@ -37,6 +39,6 @@ jobs:
           token: ${{ secrets.RENOVATE_TOKEN }}
         env:
           USER_NAME: ${{ github.repository_owner }}
-          # RENOVATE_CACHE_DIR: ${{ env.RENOVATE_CACHE_DIR }}
           DOCKER_HUB_PASSWORD: ${{ secrets.DOCKER_HUB_PASSWORD }}
+          RENOVATE_CONFIG_FILE: renovate/renovate-config.js
           LOG_LEVEL: 'debug'
