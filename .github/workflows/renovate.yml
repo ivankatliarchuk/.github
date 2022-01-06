@@ -16,7 +16,7 @@ env:
   RENOVATE_CONFIG_FOLDER: renovate
   # RENOVATE_CACHE_DIR: renovate/.cache
   LOG_LEVEL: info
-  RENOVATE_BASE_CONFIG_PATH: renovate
+  # RENOVATE_BASE_CONFIG_PATH: renovate
 
 jobs:
   renovate:
