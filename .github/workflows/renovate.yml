@@ -25,10 +25,8 @@ jobs:
     if: github.repository == 'ivankatliarchuk/.github'
     steps:
       - uses: actions/checkout@v2.4.0
-        with:
-          fetch-depth: '1'
 
-      - run: ls -la
+      - run: ls -la/.github/renovate
         # --volume /tmp:/tmp
 
       # This action is too much of opinionated solution
