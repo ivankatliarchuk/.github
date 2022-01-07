@@ -3,9 +3,6 @@
 // https://docs.renovatebot.com/configuration-options/
 // todo: https://github.com/marketplace/actions/envsubst-action
 
-const dry_run = process.env.DRY_RUN || false
-console.log(`DRY_RUN mode: ${dry_run}`);
-
 if (!process.env.DOCKER_HUB_PASSWORD) {
   throw new Error('"DOCKER_HUB_PASSWORD" must be set');
 }
