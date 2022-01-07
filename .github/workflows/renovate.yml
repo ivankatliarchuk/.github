@@ -21,6 +21,8 @@ env:
 jobs:
   renovate:
     runs-on: ubuntu-latest
+    env:
+      FORCE_COLOR: true
 
     if: github.repository == 'ivankatliarchuk/.github'
     steps:
