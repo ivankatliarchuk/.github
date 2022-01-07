@@ -34,10 +34,10 @@ jobs:
       - name: run renovate across repositories
         uses: renovatebot/github-action@v31.14.0
         with:
-          # configurationFile: renovate-config.js
+          configurationFile: renovate-config.js
           token: ${{ secrets.RENOVATE_TOKEN }}
         env:
           USER_NAME: ${{ github.repository_owner }}
           DOCKER_HUB_PASSWORD: ${{ secrets.DOCKER_HUB_PASSWORD }}
-          RENOVATE_CONFIG_FILE: renovate-config.js
+          # RENOVATE_CONFIG_FILE: renovate-config.js
           LOG_LEVEL: 'info'
