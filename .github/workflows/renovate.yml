@@ -34,7 +34,7 @@ jobs:
       - name: run renovate across repositories
         uses: renovatebot/github-action@v30.3.1
         with:
-          configurationFile: renovate-config.js
+          configurationFile: .github/workflows/renovate-config.js
           token: ${{ secrets.RENOVATE_TOKEN }}
         env:
           USER_NAME: ${{ github.repository_owner }}
