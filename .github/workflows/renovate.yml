@@ -28,7 +28,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2.4.0
 
-      - run: ls -la
+      - run: |
+          ls -la
+          env
         # --volume /tmp:/tmp
 
       # This action is too much of opinionated solution
