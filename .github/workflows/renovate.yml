@@ -32,7 +32,7 @@ jobs:
       # This action is too much of opinionated solution
       # https://github.com/renovatebot/github-action install renovate app
       - name: run renovate across repositories
-        uses: renovatebot/github-action@v30.3.1
+        uses: renovatebot/github-action@v25.76.1
         with:
           configurationFile: .github/workflows/renovate-config.js
           token: ${{ secrets.RENOVATE_TOKEN }}
