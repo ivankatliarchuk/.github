@@ -33,10 +33,9 @@ module.exports = {
   "logLevel": "debug",
   "assigneesFromCodeOwners": true,
   "assignees": ["ivankatliarchuk"],
-  "labels": ["renovate", "dependencies", "automated"],
   "dependencyDashboardTitle": "Dependency Dashboard self-hosted",
   "gitAuthor": "Renovate Bot <bot@renovateapp.com>",
-  "onboarding": true,
+  "onboarding": false,
   "dryRun": false,
   "printConfig": false,
   "pruneStaleBranches": true,
@@ -47,13 +46,14 @@ module.exports = {
   "stabilityDays": 3,
   "semanticCommits": "enabled",
   "onboardingConfig": { "extends": ["github>ivankatliarchuk/.github"] },
-  "major": { "automerge": false, "labels": ["dependencies", "major"] },
-  "minor": { "automerge": false, "labels": ["dependencies", "minor"] },
-  "patch": { "automerge": false },
+  // "major": { "automerge": false, "labels": ["dependencies", "major"] },
+  // "minor": { "automerge": false, "labels": ["dependencies", "minor"] },
+  // "patch": { "automerge": false },
   // cache +
   // "cacheDir": process.env.RENOVATE_CACHE_DIR,
   // "repositoryCache": (process.env.RENOVATE_CACHE_DIR ? true : false),
   // cache -
+  "labels": ["renovate", "dependencies", "automated"],
   "hostRules": [
     {
       "hostType": 'docker',
