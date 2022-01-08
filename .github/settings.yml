@@ -380,3 +380,12 @@ labels:
   color: 8a3b94
 - name: 'area/security'
   color: 32a6a8
+
+# renovate
+- name: 'renovate'
+  color: b134eb
+  description: Universal dependency update tool
+
+- name: 'docker'
+  color: 34d5eb
+  description: Docker is a set of platform as a service products that use OS-level virtualization

@@ -54,7 +54,7 @@ module.exports = {
       "automerge": false,
       "major": { "enabled": true },
       "separateMajorMinor": true,
-      "separateMinorPatch": false,
+      "separateMinorPatch": true,
       "matchDatasources": ["docker"],
       "separateMultipleMajor": true,
       "commitMessageSuffix": "({{packageFileDir}})",
@@ -76,7 +76,7 @@ module.exports = {
     {
       "automerge": false,
       "separateMajorMinor": true,
-      "separateMinorPatch": false,
+      "separateMinorPatch": true,
       "matchManagers": ["terraform", "terraform-version"],
       "matchPackagePatterns": [".*"],
       "groupName": "{{datasource}} {{depType}} {{packageFile}}",
