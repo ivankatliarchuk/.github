@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 // https://github.com/renovatebot/github-action/blob/main/.github/renovate.json
 // https://docs.renovatebot.com/configuration-options/
 
@@ -16,7 +16,8 @@ module.exports = {
   "gitAuthor": "Renovate Bot <bot@renovateapp.com>",
   "onboarding": true,
   "platform": "github",
-  "dryRun": dry_run,
+  // "dryRun": dry_run,
+  "repositories": ["cloudkats/docker-tools"],
   "printConfig": false,
   "pruneStaleBranches": true,
   "recreateClosed": true,
@@ -29,13 +30,20 @@ module.exports = {
   "onboardingConfig": { "extends": ["github>ivankatliarchuk/.github"] },
   "hostRules": [
     {
-      "hostType": 'docker',
-      "username": 'cloudkats',
+      "hostType": "docker",
+      "username": "cloudkats",
       "password": process.env.RENOVATE_DOCKER_HUB_PASSWORD,
     },
   ],
   "packageRules": [
     // labels section --> start
+    {
+      "matchUpdateTypes": ["*"],
+      "matchManagers": ["*"],
+      "matchPackagePatterns": ["*"],
+      "matchDatasources": ["*"],
+      "addLabels": ["renovate"]
+    },
     {
       "matchUpdateTypes": ["major", "minor", "patch", "pin", "digest"],
       "addLabels": ["{{depType}}", "{{datasource}}", "{{updateType}}"]
@@ -61,7 +69,6 @@ module.exports = {
       "addLabels": ["{{depType}}", "{{datasource}}", "{{updateType}}"]
     },
     {
-      "groupName": "actions",
       "matchPackageNames": ["actions/*"],
       "matchManagers": ["github-actions"],
       "additionalBranchPrefix": "{{packageFileDir}}-",
@@ -108,10 +115,17 @@ module.exports = {
       "matchManagers": ["*"],
       "addLabels": ["{{depType}}", "{{datasource}}", "{{updateType}}"]
     },
+    {
+      "matchManagers": ["regex"],
+      "addLabels": ["{{depType}}", "{{datasource}}", "{{updateType}}"]
+    },
 
     // legacy
 
-    { "matchPackagePatterns": ["*"], "addLabels": ["{{depType}}", "{{datasource}}", "{{updateType}}"] },
+    {
+      "matchPackagePatterns": ["*"],
+      "addLabels": ["{{depType}}", "{{datasource}}", "{{updateType}}"]
+    },
     {
       "versioning": "regex:^v(?<major>\\d+)(\\.(?<minor>\\d+))?(\\.(?<patch>\\d+))?",
       "groupName": "actions",
@@ -128,7 +142,7 @@ module.exports = {
       "matchDatasources": "go",
       "matchManagers": ["gomod"],
       "matchUpdateTypes": ["pin", "digest"]
-    },
+    }
   ],
   "regexManagers": [
     {
@@ -172,11 +186,11 @@ module.exports = {
     {
       // TODO: validate why is not working correctly
       "fileMatch": [
-        "(^workflow-templates|\.github\/workflows)\/[^/]+\.ya?ml$",
-        "(^workflow-templates|\.github\/workflows)\/[^/]+\.ya?ml$(^|\/)action\.ya?ml$"
+        "(^workflow-templates|.github/workflows)\/[^/]+\.ya?ml$",
+        "(^workflow-templates|.github/workflows)\/[^/]+\.ya?ml$(^|\/)action\.ya?ml$"
       ],
       "matchStrings": ["uses: (?<depName>.*?)@(?<currentValue>.*?)\n"],
-      "datasourceTemplate": 'github-tags'
+      "datasourceTemplate": "github-tags"
     },
     // legacy
     {
@@ -208,13 +222,13 @@ module.exports = {
     },
     {
       fileMatch: [
-        '^Dockerfile$',
+        "^Dockerfile$",
         "Dockerfile$",
       ],
       matchStrings: [
-        '#\\s*renovate:\\s*datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s(ARG|ENV) .*?_VERSION(=|\\s)(?<currentValue>.*)\\s'
+        "#\\s*renovate:\\s*datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s(ARG|ENV) .*?_VERSION(=|\\s)(?<currentValue>.*)\\s"
       ],
-      versioningTemplate: '{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}'
+      versioningTemplate: "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
     },
     {
       "fileMatch": [

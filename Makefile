@@ -5,7 +5,8 @@ MAKEFLAGS += --warn-undefined-variables
 MAKEFLAGS += --no-builtin-rules
 
 export DRY_RUN ?= true
-CI_RENOVATE_IMAGE ?= renovate/renovate:31.14-slim
+# todo renovate it
+CI_RENOVATE_IMAGE ?= renovate/renovate:31.20-slim
 export RENOVATE_TOKEN ?= $(shell envchain vars env | grep RENOVATE_TOKEN | tr "=" " " |  awk '{print $$2}')
 export DOCKER_HUB_PASSWORD ?= $(shell envchain vars env | grep DOCKER_HUB_PASSWORD | tr "=" " " |  awk '{print $$2}')
 
@@ -25,14 +26,15 @@ set-token: ## Set tokens for local development
 	@envchain --set vars RENOVATE_TOKEN
 
 PHONY: renovate
-renovate: ## Run renovate
-	@docker run --rm -it \
-	-v ${PWD}/.github/renovate/renovate-config.js:/github-action/renovate-config.js -w /tmp \
-	-v ${PWD}/.github/renovate/.cache:/github-action/cache \
+deps: ## Run renovate
+	docker run --rm -it \
+	-v ${PWD}/renovate/config.js:/ren/renovate-config.js -w /tmp \
+	-v ${PWD}/renovate/.cache:/ren/cache \
 	--user ubuntu:121 \
-	-e RENOVATE_CONFIG_FILE=/github-action/renovate-config.js \
-	-e RENOVATE_CACHE_DIR=/github-action/cache \
+	-e RENOVATE_CONFIG_FILE=/ren/renovate-config.js \
+	-e RENOVATE_CACHE_DIR=/ren/cache \
 	-e RENOVATE_TOKEN \
 	-e DOCKER_HUB_PASSWORD \
 	-e LOG_LEVEL=info \
+	-e DRY_RUN=true \
 	${CI_RENOVATE_IMAGE} --dry-run=true

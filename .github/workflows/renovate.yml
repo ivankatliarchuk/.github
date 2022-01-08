@@ -63,12 +63,4 @@ jobs:
 #          },
 #          "total": {"fileCount": 5, "depCount": 10}
 #        }
-#  INFO: Dependency extraction complete (repository=cloudkats/docker-tools)
-#        "baseBranch": "master",
-#        "stats": {
-#          "dockerfile": {"fileCount": 33, "depCount": 48},
-#          "github-actions": {"fileCount": 18, "depCount": 74},
-#          "regex": {"fileCount": 18, "depCount": 23}
-#        },
-#        "total": {"fileCount": 69, "depCount": 145}
-#        }
+
