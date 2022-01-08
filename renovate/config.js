@@ -1,20 +1,11 @@
 'use strict';
 // https://github.com/renovatebot/github-action/blob/main/.github/renovate.json
 // https://docs.renovatebot.com/configuration-options/
-// todo: https://github.com/marketplace/actions/envsubst-action
 
 const dry_run = process.env.RENOVATE_DRY_RUN
 console.log(`DRY_RUN mode: ${dry_run}`);
 
-console.log(process.env)
-
-const repo = [
-  // 'ivankatliarchuk/.github',
-  // 'ivankatliarchuk/ivankatliarchuk.github.io',
-  // 'ivankatliarchuk/knowledge-base',
-  // 'ivankatliarchuk/dotfiles',
-  'cloudkats/docker-tools'
-]
+// console.log(process.env)
 
 module.exports = {
   "extends": [":disableRateLimiting", ":semanticCommits"],
