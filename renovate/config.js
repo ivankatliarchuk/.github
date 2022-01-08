@@ -107,7 +107,7 @@ module.exports = {
       ],
       "matchPackagePatterns": [".*"],
       "addLabels": ["{{depType}}", "{{datasource}}", "{{updateType}}"]
-    }
+    },
 
     // legacy
 
