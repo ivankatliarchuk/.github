@@ -1,46 +1,72 @@
+# name: renovate
+
+# on:
+#   workflow_dispatch:
+#     branches:
+#       - $default-branch
+#   schedule:
+#     - cron: '0 6 * * 5'
+#   pull_request_target:
+#     branches:
+#       - $default-branch
+#     types:
+#       - closed
+
+# env:
+#   LOG_LEVEL: info
+
+# jobs:
+#   renovate:
+#     runs-on: ubuntu-latest
+#     env:
+#       FORCE_COLOR: true
+
+#     if: github.repository == 'ivankatliarchuk/.github'
+#     steps:
+#       - uses: actions/checkout@v2.4.0
+
+#       - run: |
+#           ls -la
+#           env
+#         # --volume /tmp:/tmp
+
+#       # This action is too much of opinionated solution
+#       # https://github.com/renovatebot/github-action install renovate app
+#       - name: run renovate across repositories
+#         uses: renovatebot/github-action@v29.36.2
+#         with:
+#           token: ${{ secrets.RENOVATE_TOKEN }}
+#         env:
+#           USER_NAME: ${{ github.repository_owner }}
+#           DOCKER_HUB_PASSWORD: ${{ secrets.DOCKER_HUB_PASSWORD }}
+#           RENOVATE_CONFIG_FILE: ../renovate-config.js
+#           LOG_LEVEL: 'info'
 name: renovate
 
 on:
   workflow_dispatch:
     branches:
-      - $default-branch
-  schedule:
-    - cron: '0 6 * * 5'
-  pull_request_target:
-    branches:
-      - $default-branch
-    types:
-      - closed
+      - renovate-test
 
 env:
-  # RENOVATE_CONFIG_FOLDER: renovate
-  # RENOVATE_CACHE_DIR: renovate/.cache
+  RENOVATE_CONFIG_FOLDER: .github/renovate
   LOG_LEVEL: info
-  # RENOVATE_BASE_CONFIG_PATH: renovate
 
 jobs:
   renovate:
     runs-on: ubuntu-latest
-    env:
-      FORCE_COLOR: true
-
     if: github.repository == 'ivankatliarchuk/.github'
     steps:
       - uses: actions/checkout@v2.4.0
-
-      - run: |
-          ls -la
-          env
-        # --volume /tmp:/tmp
-
-      # This action is too much of opinionated solution
+        with:
+          fetch-depth: '1'
       # https://github.com/renovatebot/github-action install renovate app
       - name: run renovate across repositories
-        uses: renovatebot/github-action@v29.36.2
+        uses: renovatebot/github-action@v29.25.0
         with:
+          configurationFile: ${{ env.RENOVATE_CONFIG_FOLDER }}/renovate-config.js
           token: ${{ secrets.RENOVATE_TOKEN }}
         env:
           USER_NAME: ${{ github.repository_owner }}
-          DOCKER_HUB_PASSWORD: ${{ secrets.DOCKER_HUB_PASSWORD }}
-          RENOVATE_CONFIG_FILE: ../renovate-config.js
-          LOG_LEVEL: 'info'
+          RENOVATE_CONFIG_FOLDER: ${{ env.RENOVATE_CONFIG_FOLDER }}
+          LOG_LEVEL: info
