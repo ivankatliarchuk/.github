@@ -57,8 +57,7 @@ module.exports = {
       "separateMinorPatch": true,
       "matchDatasources": ["docker"],
       "separateMultipleMajor": true,
-      "commitMessageSuffix": "({{packageFileDir}})",
-      "groupName": "{{datasource}} {{depType}} {{packageFile}}",
+      "groupName": "{{packageFile}}",
       "addLabels": ["{{depType}}", "{{datasource}}", "{{updateType}}"]
     },
     {
@@ -69,7 +68,6 @@ module.exports = {
       "separateMajorMinor": true,
       "separateMinorPatch": true,
       "separateMultipleMajor": true,
-      "commitMessageSuffix": "({{packageFileDir}})",
       "groupName": "{{datasource}} {{depType}} {{packageFile}}",
       "addLabels": ["{{depType}}", "{{datasource}}", "{{updateType}}"]
     },
@@ -80,7 +78,6 @@ module.exports = {
       "matchManagers": ["terraform", "terraform-version"],
       "matchPackagePatterns": [".*"],
       "groupName": "{{datasource}} {{depType}} {{packageFile}}",
-      "commitMessageSuffix": "({{packageFileDir}})",
       "addLabels": ["{{depType}}", "{{datasource}}", "{{updateType}}"]
     },
     {
@@ -95,7 +92,6 @@ module.exports = {
       "separateMajorMinor": false,
       "separateMinorPatch": false,
       "groupName": "{{datasource}} {{depType}} {{packageFile}}",
-      "commitMessageSuffix": "({{packageFileDir}})",
       "ignorePaths": [".*python-version"],
       "matchManagers": [
         "pip_requirements",
