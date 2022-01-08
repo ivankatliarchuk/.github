@@ -41,7 +41,7 @@ jobs:
           RENOVATE_REPOSITORIES_FILE: ${{ env.RENOVATE_CONFIG_FOLDER }}/repositories.json
 
       # https://github.com/renovatebot/github-action install renovate app
-      - name: run renovate across repositories
+      - name: execute-dependency-update
         uses: renovatebot/github-action@v31.21.0
         with:
           configurationFile: ${{ env.RENOVATE_CONFIG_FOLDER }}/config.js
