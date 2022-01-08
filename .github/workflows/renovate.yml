@@ -32,7 +32,7 @@ jobs:
       - name: repositories
         id: prepare
         run: |
-          node --version
+          echo "node: $(node --version)"
           REPOSITORIES=$(./renovate/repositories.js)
           echo $REPOSITORIES
           echo "::set-output name=REPOSITORIES::$REPOSITORIES"
