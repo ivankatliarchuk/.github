@@ -4,8 +4,9 @@ on:
   workflow_dispatch:
     branches:
       - $default-branch
-#   schedule:
-#     - cron: '0 6 * * 5'
+  schedule:
+    # https://crontab.guru/
+    - cron: '0 6 * * 5'
 #   pull_request_target:
 #     branches:
 #       - $default-branch
@@ -54,7 +55,7 @@ jobs:
           fetch-depth: '1'
 
       - run: |
-          ls -la
+          node --version
 
       # https://github.com/renovatebot/github-action install renovate app
       - name: run renovate across repositories
@@ -68,3 +69,22 @@ jobs:
           DOCKER_HUB_PASSWORD: ${{ secrets.DOCKER_HUB_PASSWORD }}
           LOG_LEVEL: info
           RENOVATE_REPOSITORIES: ivankatliarchuk/dotfiles
+
+#  INFO: Dependency extraction complete (repository=ivankatliarchuk/dotfiles)
+#        "baseBranch": "master",
+#        "stats": {
+#          "managers": {
+#            "github-actions": {"fileCount": 4, "depCount": 8},
+#            "pip_requirements": {"fileCount": 1, "depCount": 2}
+#          },
+#          "total": {"fileCount": 5, "depCount": 10}
+#        }
+#  INFO: Dependency extraction complete (repository=cloudkats/docker-tools)
+#        "baseBranch": "master",
+#        "stats": {
+#          "dockerfile": {"fileCount": 33, "depCount": 48},
+#          "github-actions": {"fileCount": 18, "depCount": 74},
+#          "regex": {"fileCount": 18, "depCount": 23}
+#        },
+#        "total": {"fileCount": 69, "depCount": 145}
+#        }
