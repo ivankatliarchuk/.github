@@ -4,14 +4,16 @@ on:
   workflow_dispatch:
     branches:
       - $default-branch
+    dryrun:
+      description: Perform a dry run by logging messages instead of creating/updating/deleting branches and PRs.
+      required: false
+      default: true
   schedule:
     # https://crontab.guru/
     - cron: '0 6 * * 5'
 #   pull_request_target:
 #     branches:
 #       - $default-branch
-#     types:
-#       - closed
 
 env:
   RENOVATE_CONFIG_FOLDER: renovate
@@ -30,11 +32,11 @@ jobs:
       - name: repositories
         id: prepare
         run: |
-          which node
           node --version
-          echo "::set-output name=REPOSITORIES::$(./renovate/repositories.js)"
+          REPOSITORIES=$(./renovate/repositories.js)
+          echo $REPOSITORIES
+          echo "::set-output name=REPOSITORIES::$REPOSITORIES"
         env:
-          TEST: true
           RENOVATE_REPOSITORIES_FILE: ${{ env.RENOVATE_CONFIG_FOLDER }}/repositories.json
 
       # https://github.com/renovatebot/github-action install renovate app
@@ -49,6 +51,7 @@ jobs:
           DOCKER_HUB_PASSWORD: ${{ secrets.DOCKER_HUB_PASSWORD }}
           LOG_LEVEL: info
           RENOVATE_REPOSITORIES: ${{ steps.prepare.outputs.repositories }}
+          DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.dryrun || 'false' }}
 
 #  INFO: Dependency extraction complete (repository=ivankatliarchuk/dotfiles)
 #        "baseBranch": "master",
