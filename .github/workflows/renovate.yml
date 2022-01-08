@@ -4,40 +4,71 @@ on:
   workflow_dispatch:
     branches:
       - $default-branch
+    inputs:
+      dryrun:
+        description: Perform a dry run by logging messages instead of creating/updating/deleting branches and PRs.
+        required: false
+        default: true
   schedule:
+    # https://crontab.guru/
     - cron: '0 6 * * 5'
-  pull_request_target:
-    branches:
-      - $default-branch
-    types:
-      - closed
+#   pull_request_target:
+#     branches:
+#       - $default-branch
 
 env:
   RENOVATE_CONFIG_FOLDER: renovate
-  # RENOVATE_CACHE_DIR: renovate/.cache
   LOG_LEVEL: info
-  # RENOVATE_BASE_CONFIG_PATH: renovate
+  FORCE_COLOR: true
 
 jobs:
   renovate:
     runs-on: ubuntu-latest
-
     if: github.repository == 'ivankatliarchuk/.github'
     steps:
       - uses: actions/checkout@v2.4.0
-
-      - run: ls -la renovate
-        # --volume /tmp:/tmp
-
-      # This action is too much of opinionated solution
-      # https://github.com/renovatebot/github-action install renovate app
-      - name: run renovate across repositories
-        uses: renovatebot/github-action@v31.14.0
         with:
-          # configurationFile: ../renovate/config.js
+          fetch-depth: '1'
+
+      - name: repositories
+        id: prepare
+        run: |
+          echo "node: $(node --version)"
+          REPOSITORIES=$(./renovate/repositories.js)
+          echo $REPOSITORIES
+          echo "::set-output name=REPOSITORIES::$REPOSITORIES"
+        env:
+          RENOVATE_REPOSITORIES_FILE: ${{ env.RENOVATE_CONFIG_FOLDER }}/repositories.json
+
+      # https://github.com/renovatebot/github-action install renovate app
+      - name: execute-dependency-update
+        uses: renovatebot/github-action@v31.21.0
+        with:
+          configurationFile: ${{ env.RENOVATE_CONFIG_FOLDER }}/config.js
           token: ${{ secrets.RENOVATE_TOKEN }}
         env:
           USER_NAME: ${{ github.repository_owner }}
-          DOCKER_HUB_PASSWORD: ${{ secrets.DOCKER_HUB_PASSWORD }}
-          RENOVATE_CONFIG_FILE: ../renovate/config.js
-          LOG_LEVEL: 'info'
+          RENOVATE_CONFIG_FOLDER: ${{ env.RENOVATE_CONFIG_FOLDER }}
+          RENOVATE_DOCKER_HUB_PASSWORD: ${{ secrets.DOCKER_HUB_PASSWORD }}
+          LOG_LEVEL: info
+          RENOVATE_REPOSITORIES: ${{ steps.prepare.outputs.repositories }}
+          RENOVATE_DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.dryrun || 'false' }}
+
+#  INFO: Dependency extraction complete (repository=ivankatliarchuk/dotfiles)
+#        "baseBranch": "master",
+#        "stats": {
+#          "managers": {
+#            "github-actions": {"fileCount": 4, "depCount": 8},
+#            "pip_requirements": {"fileCount": 1, "depCount": 2}
+#          },
+#          "total": {"fileCount": 5, "depCount": 10}
+#        }
+#  INFO: Dependency extraction complete (repository=cloudkats/docker-tools)
+#        "baseBranch": "master",
+#        "stats": {
+#          "dockerfile": {"fileCount": 33, "depCount": 48},
+#          "github-actions": {"fileCount": 18, "depCount": 74},
+#          "regex": {"fileCount": 18, "depCount": 23}
+#        },
+#        "total": {"fileCount": 69, "depCount": 145}
+#        }
