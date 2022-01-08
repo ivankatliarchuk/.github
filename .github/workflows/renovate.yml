@@ -52,7 +52,7 @@ jobs:
           DOCKER_HUB_PASSWORD: ${{ secrets.DOCKER_HUB_PASSWORD }}
           LOG_LEVEL: info
           RENOVATE_REPOSITORIES: ${{ steps.prepare.outputs.repositories }}
-          DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.dryrun || 'false' }}
+          RENOVATE_DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.dryrun || 'false' }}
 
 #  INFO: Dependency extraction complete (repository=ivankatliarchuk/dotfiles)
 #        "baseBranch": "master",
