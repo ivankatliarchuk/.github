@@ -6,20 +6,6 @@
 const dry_run = process.env.DRY_RUN || false
 console.log(`DRY_RUN mode: ${dry_run}`);
 
-const cfg = {
-  "asignees": [
-    "ivankatliarchuk"
-  ],
-  "labels": ["renovate", "dependencies", ":robot: bot", ':game_die: dependencies'],
-  "logLevel": "info",
-  "gitAuthor": 'Renovate Bot <bot@renovateapp.com>',
-  "dashboardTitle": 'Dependency Dashboard self-hosted',
-  "username": "ivankatliarchuk",
-  "branchName": 'github-renovate',
-  "baseBranches": ['master', 'main'],
-  'timezone': "Europe/London"
-}
-
 const repo = [
   // 'ivankatliarchuk/.github',
   // 'ivankatliarchuk/ivankatliarchuk.github.io',
