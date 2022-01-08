@@ -49,7 +49,7 @@ on:
       - renovate-test
 
 env:
-  RENOVATE_CONFIG_FOLDER: .github/renovate
+  RENOVATE_CONFIG_FOLDER: renovate
   LOG_LEVEL: info
 
 jobs:
