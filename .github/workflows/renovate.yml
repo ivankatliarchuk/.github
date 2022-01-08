@@ -64,7 +64,7 @@ jobs:
       - name: run renovate across repositories
         uses: renovatebot/github-action@v29.25.0
         with:
-          configurationFile: ${{ env.RENOVATE_CONFIG_FOLDER }}/renovate-config.js
+          configurationFile: ${{ env.RENOVATE_CONFIG_FOLDER }}/config.js
           token: ${{ secrets.RENOVATE_TOKEN }}
         env:
           USER_NAME: ${{ github.repository_owner }}
