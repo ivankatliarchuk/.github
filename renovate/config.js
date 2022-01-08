@@ -27,7 +27,7 @@ module.exports = {
   "printConfig": false,
   "pruneStaleBranches": false,
   "username": "ivankatliarchuk",
-  "repositories": repo,
+  // "repositories": repo,
   "prHourlyLimit": 20,
   "stabilityDays": 3,
   "semanticCommits": "enabled",

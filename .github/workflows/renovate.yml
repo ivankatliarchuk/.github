@@ -67,3 +67,4 @@ jobs:
           RENOVATE_CONFIG_FOLDER: ${{ env.RENOVATE_CONFIG_FOLDER }}
           DOCKER_HUB_PASSWORD: ${{ secrets.DOCKER_HUB_PASSWORD }}
           LOG_LEVEL: info
+          RENOVATE_REPOSITORIES: ivankatliarchuk/dotfiles
