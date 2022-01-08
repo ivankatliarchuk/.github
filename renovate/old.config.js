@@ -6,8 +6,6 @@
 const dry_run = process.env.DRY_RUN || false
 console.log(`DRY_RUN mode: ${dry_run}`);
 
-console.log(process.env)
-
 const repo = [
   // 'ivankatliarchuk/.github',
   // 'ivankatliarchuk/ivankatliarchuk.github.io',
@@ -20,7 +18,7 @@ module.exports = {
   "extends": [":disableRateLimiting", ":semanticCommits"],
   "assigneesFromCodeOwners": true,
   "assignees": ["ivankatliarchuk"],
-  "labels": ["renovate", "dependencies"],
+  "labels": ["renovate", "dependencies", "automated"],
   "dependencyDashboardTitle": "Dependency Dashboard self-hosted",
   "gitAuthor": "Renovate Bot <bot@renovateapp.com>",
   "onboarding": true,
@@ -33,6 +31,9 @@ module.exports = {
   "stabilityDays": 3,
   "semanticCommits": "enabled",
   "onboardingConfig": { "extends": ["github>ivankatliarchuk/.github"] },
+  "major": { "automerge": false, "labels": ["dependencies", "major"] },
+  "minor": { "automerge": false, "labels": ["dependencies", "minor"] },
+  "patch": { "automerge": false },
   "packageRules": [
     { "labels": ["major", "dependencies"], "matchUpdateTypes": ["major"] },
     {

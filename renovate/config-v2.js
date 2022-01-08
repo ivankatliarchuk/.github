@@ -10,17 +10,6 @@ if (!process.env.DOCKER_HUB_PASSWORD) {
   throw new Error('"DOCKER_HUB_PASSWORD" must be set');
 }
 
-const repo1 = [
-  'ivankatliarchuk/ivankatliarchuk.github.io',
-  'ivankatliarchuk/knowledge-base',
-  'ivankatliarchuk/dotfiles',
-]
-
-const repo = [
-  "ivankatliarchuk/.github",
-  "cloudkats/docker-tools"
-]
-
 module.exports = {
   "platform": "github",
   "extends": [
