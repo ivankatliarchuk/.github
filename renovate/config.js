@@ -68,11 +68,46 @@ module.exports = {
       "additionalBranchPrefix": "{{packageFileDir}}-",
       "separateMajorMinor": true,
       "separateMinorPatch": true,
-      "separateMultipleMajor": true
+      "separateMultipleMajor": true,
       "commitMessageSuffix": "({{packageFileDir}})",
       "groupName": "{{datasource}} {{depType}} {{packageFile}}",
       "addLabels": ["{{depType}}", "{{datasource}}", "{{updateType}}"]
     },
+    {
+      "automerge": false,
+      "separateMajorMinor": true,
+      "separateMinorPatch": false,
+      "matchManagers": ["terraform", "terraform-version"],
+      "matchPackagePatterns": [".*"],
+      "groupName": "{{datasource}} {{depType}} {{packageFile}}",
+      "commitMessageSuffix": "({{packageFileDir}})",
+      "addLabels": ["{{depType}}", "{{datasource}}", "{{updateType}}"]
+    },
+    {
+      "commitMessageTopic": "Helm chart {{depName}}",
+      "separateMajorMinor": true,
+      "separateMinorPatch": false,
+      "matchDatasources": ["helm"],
+      "groupName": "{{datasource}} {{depType}} {{packageFile}}",
+      "addLabels": ["{{depType}}", "{{datasource}}", "{{updateType}}"]
+    },
+    {
+      "separateMajorMinor": false,
+      "separateMinorPatch": false,
+      "groupName": "{{datasource}} {{depType}} {{packageFile}}",
+      "commitMessageSuffix": "({{packageFileDir}})",
+      "ignorePaths": [".*python-version"],
+      "matchManagers": [
+        "pip_requirements",
+        "pyenv",
+        "pip-compile",
+        "pip_setup",
+        "pipenv",
+        "setup-cfg"
+      ],
+      "matchPackagePatterns": [".*"],
+      "addLabels": ["{{depType}}", "{{datasource}}", "{{updateType}}"]
+    }
 
     // legacy
 
@@ -82,12 +117,6 @@ module.exports = {
     {
       "groupName": "devDependencies(non-major)",
       "matchDepTypes": ["devDependencies(non-major)"]
-    },
-    {
-      "commitMessageTopic": "Helm chart {{depName}}",
-      "separateMinorPatch": true,
-      "matchDatasources": ["helm"],
-      "groupName": "helm"
     },
     {
       "labels": ["renovate/image-release", "dependency/major"],
@@ -112,11 +141,6 @@ module.exports = {
       "matchManagers": ["gomod"],
       "matchUpdateTypes": ["pin", "digest"]
     },
-    {
-      "matchDepTypes": ["devDependencies"],
-      "matchUpdateTypes": ["patch", "minor"],
-      "groupName": "devDependencies (non-major)"
-    }
   ],
   "regexManagers": [
     {
