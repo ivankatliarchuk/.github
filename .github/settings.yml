@@ -389,3 +389,7 @@ labels:
 - name: 'docker'
   color: 34d5eb
   description: Docker is a set of platform as a service products that use OS-level virtualization
+
+- name: 'digest'
+  color: b134eb
+  description: Configuration to apply when updating a digest
