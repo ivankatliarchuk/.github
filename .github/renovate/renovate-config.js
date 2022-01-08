@@ -21,10 +21,10 @@ const cfg = {
 }
 
 const repo = [
-  'ivankatliarchuk/.github',
-  'ivankatliarchuk/ivankatliarchuk.github.io',
-  'ivankatliarchuk/knowledge-base',
-  'ivankatliarchuk/dotfiles',
+  // 'ivankatliarchuk/.github',
+  // 'ivankatliarchuk/ivankatliarchuk.github.io',
+  // 'ivankatliarchuk/knowledge-base',
+  // 'ivankatliarchuk/dotfiles',
   'cloudkats/docker-tools'
 ]
 
