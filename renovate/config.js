@@ -27,7 +27,10 @@ module.exports = {
   "platform": "github",
   "dryRun": dry_run,
   "printConfig": false,
-  "pruneStaleBranches": false,
+  "pruneStaleBranches": true,
+  "recreateClosed": true,
+  "rebaseWhen": "behind-base-branch",
+  "baseBranches": ["master", "main"],
   "username": "ivankatliarchuk",
   "prHourlyLimit": 20,
   "stabilityDays": 3,
@@ -41,10 +44,15 @@ module.exports = {
     },
   ],
   "packageRules": [
+    // labels section --> start
     {
       "matchUpdateTypes": ["major", "minor", "patch", "pin", "digest"],
       "addLabels": ["{{depType}}", "{{datasource}}", "{{updateType}}"]
     },
+    { "addLabels": ["php"], "matchLanguages": ["php"] },
+    { "addLabels": ["js"], "matchLanguages": ["js"] },
+    { "addLabels": ["python"], "matchLanguages": ["python"] },
+    // labels section --> end
     {
       "description": "Disables the creation of branches/PRs for any minor/patch updates etc. of python version",
       "matchFiles": [".*python-version"],
@@ -69,12 +77,10 @@ module.exports = {
       "separateMajorMinor": true,
       "separateMinorPatch": true,
       "separateMultipleMajor": true
-    }
+    },
 
     // legacy
-    { "labels": ["php"], "matchLanguages": ["php"] },
-    { "labels": ["js"], "matchLanguages": ["js"] },
-    { "labels": ["python"], "matchLanguages": ["python"] },
+
     { "matchPackagePatterns": ["*"] },
     { "groupName": "dependencies", "matchDepTypes": ["dependencies"] },
     { "groupName": "devDependencies", "matchDepTypes": ["devDependencies"] },
