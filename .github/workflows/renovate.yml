@@ -49,7 +49,7 @@ jobs:
         env:
           USER_NAME: ${{ github.repository_owner }}
           RENOVATE_CONFIG_FOLDER: ${{ env.RENOVATE_CONFIG_FOLDER }}
-          DOCKER_HUB_PASSWORD: ${{ secrets.DOCKER_HUB_PASSWORD }}
+          RENOVATE_DOCKER_HUB_PASSWORD: ${{ secrets.DOCKER_HUB_PASSWORD }}
           LOG_LEVEL: info
           RENOVATE_REPOSITORIES: ${{ steps.prepare.outputs.repositories }}
           RENOVATE_DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.dryrun || 'false' }}

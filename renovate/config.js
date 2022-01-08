@@ -33,18 +33,45 @@ module.exports = {
   "stabilityDays": 3,
   "semanticCommits": "enabled",
   "onboardingConfig": { "extends": ["github>ivankatliarchuk/.github"] },
+  "hostRules": [
+    {
+      "hostType": 'docker',
+      "username": 'cloudkats',
+      "password": process.env.RENOVATE_DOCKER_HUB_PASSWORD,
+    },
+  ],
   "packageRules": [
-    { "labels": ["major", "dependencies"], "matchUpdateTypes": ["major"] },
     {
-      "labels": ["minor", "dependencies"],
-      "groupName": "devDependencies(non-major)",
-      "matchUpdateTypes": ["minor"]
+      "matchUpdateTypes": ["major", "minor", "patch", "pin", "digest"],
+      "addLabels": ["{{depType}}", "{{datasource}}", "{{updateType}}"]
     },
     {
-      "labels": ["patch", "dependencies"],
-      "groupName": "devDependencies(non-major)",
-      "matchUpdateTypes": ["patch", "digest", "bump"]
+      "description": "Disables the creation of branches/PRs for any minor/patch updates etc. of python version",
+      "matchFiles": [".*python-version"],
+      "matchUpdateTypes": ["minor", "major"],
+      "enabled": false
     },
+    {
+      "automerge": false,
+      "major": { "enabled": true },
+      "separateMajorMinor": true,
+      "separateMinorPatch": false,
+      "matchDatasources": ["docker"],
+      "separateMultipleMajor": true,
+      "commitMessageSuffix": "({{packageFileDir}})",
+      "groupName": "{{datasource}} {{depType}} {{packageFile}}",
+    },
+    {
+      "groupName": "actions",
+      "matchPackageNames": ["actions/*"],
+      "matchManagers": ["github-actions"],
+      "additionalBranchPrefix": "{{packageFileDir}}-",
+      "separateMajorMinor": true,
+      "separateMinorPatch": true,
+      "separateMultipleMajor": true
+    }
+
+    // legacy
     { "labels": ["php"], "matchLanguages": ["php"] },
     { "labels": ["js"], "matchLanguages": ["js"] },
     { "labels": ["python"], "matchLanguages": ["python"] },
@@ -54,13 +81,6 @@ module.exports = {
     {
       "groupName": "devDependencies(non-major)",
       "matchDepTypes": ["devDependencies(non-major)"]
-    },
-    {
-      "automerge": false,
-      "requiredStatusChecks": null,
-      "matchDatasources": ["docker"],
-      "matchUpdateTypes": ["patch"],
-      "groupName": "devDependencies(non-major)"
     },
     {
       "commitMessageTopic": "Helm chart {{depName}}",
@@ -74,16 +94,6 @@ module.exports = {
       "matchDatasources": ["docker"],
       "matchUpdateTypes": ["major"],
       "groupName": "docker"
-    },
-    {
-      "allowedVersions": "^12.0.0",
-      "groupName": "node",
-      "matchPackageNames": ["node", "@types/node"]
-    },
-    {
-      "allowedVersions": "^6.0.0",
-      "groupName": "node",
-      "matchPackageNames": ["npm"]
     },
     {
       "versioning": "regex:^v(?<major>\\d+)(\\.(?<minor>\\d+))?(\\.(?<patch>\\d+))?",

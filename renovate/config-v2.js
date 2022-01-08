@@ -36,9 +36,6 @@ module.exports = {
   "stabilityDays": 3,
   "semanticCommits": "enabled",
   "onboardingConfig": { "extends": ["github>ivankatliarchuk/.github"] },
-  "major": { "automerge": false, "labels": ["dependencies", "major"] },
-  "minor": { "automerge": false, "labels": ["dependencies", "minor"] },
-  "patch": { "automerge": false },
   // cache +
   // "cacheDir": process.env.RENOVATE_CACHE_DIR,
   // "repositoryCache": (process.env.RENOVATE_CACHE_DIR ? true : false),
@@ -47,7 +44,7 @@ module.exports = {
     {
       "hostType": 'docker',
       "username": 'cloudkats',
-      "password": process.env.DOCKER_HUB_PASSWORD,
+      "password": process.env.RENOVATE_DOCKER_HUB_PASSWORD,
     },
   ],
   "packageRules": [
