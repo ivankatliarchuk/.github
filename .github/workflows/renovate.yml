@@ -4,10 +4,11 @@ on:
   workflow_dispatch:
     branches:
       - $default-branch
-    dryrun:
-      description: Perform a dry run by logging messages instead of creating/updating/deleting branches and PRs.
-      required: false
-      default: true
+    inputs:
+      dryrun:
+        description: Perform a dry run by logging messages instead of creating/updating/deleting branches and PRs.
+        required: false
+        default: true
   schedule:
     # https://crontab.guru/
     - cron: '0 6 * * 5'
