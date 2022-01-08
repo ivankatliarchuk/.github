@@ -59,6 +59,7 @@ module.exports = {
       "separateMultipleMajor": true,
       "commitMessageSuffix": "({{packageFileDir}})",
       "groupName": "{{datasource}} {{depType}} {{packageFile}}",
+      "addLabels": ["{{depType}}", "{{datasource}}", "{{updateType}}"]
     },
     {
       "groupName": "actions",
@@ -68,6 +69,9 @@ module.exports = {
       "separateMajorMinor": true,
       "separateMinorPatch": true,
       "separateMultipleMajor": true
+      "commitMessageSuffix": "({{packageFileDir}})",
+      "groupName": "{{datasource}} {{depType}} {{packageFile}}",
+      "addLabels": ["{{depType}}", "{{datasource}}", "{{updateType}}"]
     },
 
     // legacy
