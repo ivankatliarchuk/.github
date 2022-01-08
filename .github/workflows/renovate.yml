@@ -18,33 +18,6 @@ env:
   LOG_LEVEL: info
   FORCE_COLOR: true
 
-# jobs:
-#   renovate:
-#     runs-on: ubuntu-latest
-#     env:
-#       FORCE_COLOR: true
-
-#     if: github.repository == 'ivankatliarchuk/.github'
-#     steps:
-#       - uses: actions/checkout@v2.4.0
-
-#       - run: |
-#           ls -la
-#           env
-#         # --volume /tmp:/tmp
-
-#       # This action is too much of opinionated solution
-#       # https://github.com/renovatebot/github-action install renovate app
-#       - name: run renovate across repositories
-#         uses: renovatebot/github-action@v29.36.2
-#         with:
-#           token: ${{ secrets.RENOVATE_TOKEN }}
-#         env:
-#           USER_NAME: ${{ github.repository_owner }}
-#           DOCKER_HUB_PASSWORD: ${{ secrets.DOCKER_HUB_PASSWORD }}
-#           RENOVATE_CONFIG_FILE: ../renovate-config.js
-#           LOG_LEVEL: 'info'
-
 jobs:
   renovate:
     runs-on: ubuntu-latest
@@ -54,8 +27,15 @@ jobs:
         with:
           fetch-depth: '1'
 
-      - run: |
+      - name: repositories
+        id: prepare
+        run: |
+          which node
           node --version
+          echo "::set-output name=REPOSITORIES::$(./renovate/repositories.js)"
+        env:
+          TEST: true
+          RENOVATE_REPOSITORIES_FILE: ${{ env.RENOVATE_CONFIG_FOLDER }}/repositories.json
 
       # https://github.com/renovatebot/github-action install renovate app
       - name: run renovate across repositories
@@ -68,7 +48,7 @@ jobs:
           RENOVATE_CONFIG_FOLDER: ${{ env.RENOVATE_CONFIG_FOLDER }}
           DOCKER_HUB_PASSWORD: ${{ secrets.DOCKER_HUB_PASSWORD }}
           LOG_LEVEL: info
-          RENOVATE_REPOSITORIES: ivankatliarchuk/dotfiles
+          RENOVATE_REPOSITORIES: ${{ steps.prepare.outputs.repositories }}
 
 #  INFO: Dependency extraction complete (repository=ivankatliarchuk/dotfiles)
 #        "baseBranch": "master",
