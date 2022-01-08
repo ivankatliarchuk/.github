@@ -1,9 +1,9 @@
-# name: renovate
+name: renovate
 
-# on:
-#   workflow_dispatch:
-#     branches:
-#       - $default-branch
+on:
+  workflow_dispatch:
+    branches:
+      - $default-branch
 #   schedule:
 #     - cron: '0 6 * * 5'
 #   pull_request_target:
@@ -12,8 +12,9 @@
 #     types:
 #       - closed
 
-# env:
-#   LOG_LEVEL: info
+env:
+  RENOVATE_CONFIG_FOLDER: renovate
+  LOG_LEVEL: info
 
 # jobs:
 #   renovate:
@@ -41,16 +42,6 @@
 #           DOCKER_HUB_PASSWORD: ${{ secrets.DOCKER_HUB_PASSWORD }}
 #           RENOVATE_CONFIG_FILE: ../renovate-config.js
 #           LOG_LEVEL: 'info'
-name: renovate
-
-on:
-  workflow_dispatch:
-    branches:
-      - renovate-test
-
-env:
-  RENOVATE_CONFIG_FOLDER: renovate
-  LOG_LEVEL: info
 
 jobs:
   renovate:
@@ -62,7 +53,7 @@ jobs:
           fetch-depth: '1'
       # https://github.com/renovatebot/github-action install renovate app
       - name: run renovate across repositories
-        uses: renovatebot/github-action@v29.25.0
+        uses: renovatebot/github-action@v31.21.0
         with:
           configurationFile: ${{ env.RENOVATE_CONFIG_FOLDER }}/config.js
           token: ${{ secrets.RENOVATE_TOKEN }}
