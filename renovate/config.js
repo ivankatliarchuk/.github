@@ -3,7 +3,7 @@
 // https://docs.renovatebot.com/configuration-options/
 // todo: https://github.com/marketplace/actions/envsubst-action
 
-const dry_run = process.env.DRY_RUN || false
+const dry_run = process.env.RENOVATE_DRY_RUN
 console.log(`DRY_RUN mode: ${dry_run}`);
 
 console.log(process.env)
