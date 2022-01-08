@@ -21,6 +21,6 @@ jobs:
           submodules: 'recursive'
 
       - name: check if merge was approved by code owner
-        uses: orta/code-owner-self-merge@1.6.3
+        uses: orta/code-owner-self-merge@1.6.4
         env:
           GITHUB_TOKEN: ${{  secrets.GITHUB_TOKEN }}
