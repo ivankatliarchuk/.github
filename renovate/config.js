@@ -16,8 +16,8 @@ module.exports = {
   "gitAuthor": "Renovate Bot <bot@renovateapp.com>",
   "onboarding": true,
   "platform": "github",
-  // "dryRun": dry_run,
-  "repositories": ["cloudkats/docker-tools"],
+  "dryRun": dry_run,
+  // "repositories": ["cloudkats/docker-tools"],
   "printConfig": false,
   "pruneStaleBranches": true,
   "recreateClosed": true,
@@ -35,18 +35,21 @@ module.exports = {
       "password": process.env.RENOVATE_DOCKER_HUB_PASSWORD,
     },
   ],
+  "git-submodules": {
+    "enabled": true
+    },
   "packageRules": [
     // labels section --> start
     {
-      "matchUpdateTypes": ["*"],
-      "matchManagers": ["*"],
-      "matchPackagePatterns": ["*"],
-      "matchDatasources": ["*"],
       "addLabels": ["renovate"]
     },
     {
+      "matchDatasources": ["git-refs", "github-tags"],
+      "addLabels": ["{{updateType}}"]
+    },
+    {
       "matchUpdateTypes": ["major", "minor", "patch", "pin", "digest"],
-      "addLabels": ["{{depType}}", "{{datasource}}", "{{updateType}}"]
+      "addLabels": ["{{datasource}}", "{{updateType}}"]
     },
     { "addLabels": ["php"], "matchLanguages": ["php"] },
     { "addLabels": ["js"], "matchLanguages": ["js"] },
@@ -66,7 +69,7 @@ module.exports = {
       "matchDatasources": ["docker"],
       "separateMultipleMajor": true,
       "groupName": "{{packageFile}}",
-      "addLabels": ["{{depType}}", "{{datasource}}", "{{updateType}}"]
+      "addLabels": ["{{datasource}}", "{{updateType}}"]
     },
     {
       "matchPackageNames": ["actions/*"],
@@ -76,7 +79,7 @@ module.exports = {
       "separateMinorPatch": true,
       "separateMultipleMajor": true,
       "groupName": "{{datasource}} {{depType}} {{packageFile}}",
-      "addLabels": ["{{depType}}", "{{datasource}}", "{{updateType}}"]
+      "addLabels": ["{{datasource}}", "{{updateType}}"]
     },
     {
       "automerge": false,
@@ -85,7 +88,7 @@ module.exports = {
       "matchManagers": ["terraform", "terraform-version"],
       "matchPackagePatterns": [".*"],
       "groupName": "{{datasource}} {{depType}} {{packageFile}}",
-      "addLabels": ["{{depType}}", "{{datasource}}", "{{updateType}}"]
+      "addLabels": ["{{datasource}}", "{{updateType}}"]
     },
     {
       "commitMessageTopic": "Helm chart {{depName}}",
@@ -93,7 +96,7 @@ module.exports = {
       "separateMinorPatch": false,
       "matchDatasources": ["helm"],
       "groupName": "{{datasource}} {{depType}} {{packageFile}}",
-      "addLabels": ["{{depType}}", "{{datasource}}", "{{updateType}}"]
+      "addLabels": ["{{datasource}}", "{{updateType}}"]
     },
     {
       "separateMajorMinor": false,
@@ -109,23 +112,19 @@ module.exports = {
         "setup-cfg"
       ],
       "matchPackagePatterns": [".*"],
-      "addLabels": ["{{depType}}", "{{datasource}}", "{{updateType}}"]
+      "addLabels": ["{{datasource}}", "{{updateType}}"]
     },
     {
       "matchManagers": ["*"],
-      "addLabels": ["{{depType}}", "{{datasource}}", "{{updateType}}"]
+      "addLabels": ["{{datasource}}", "{{updateType}}"]
     },
     {
       "matchManagers": ["regex"],
-      "addLabels": ["{{depType}}", "{{datasource}}", "{{updateType}}"]
+      "addLabels": ["{{datasource}}", "{{updateType}}"]
     },
 
     // legacy
 
-    {
-      "matchPackagePatterns": ["*"],
-      "addLabels": ["{{depType}}", "{{datasource}}", "{{updateType}}"]
-    },
     {
       "versioning": "regex:^v(?<major>\\d+)(\\.(?<minor>\\d+))?(\\.(?<patch>\\d+))?",
       "groupName": "actions",
@@ -135,13 +134,14 @@ module.exports = {
       "enabled": true,
       "groupName": "actions",
       "matchManagers": ["github-actions"],
-      "addLabels": ["{{depType}}", "{{datasource}}", "{{updateType}}"]
+      "addLabels": ["{{datasource}}", "{{updateType}}"]
     },
     {
       "versioning": "semver",
       "matchDatasources": "go",
       "matchManagers": ["gomod"],
-      "matchUpdateTypes": ["pin", "digest"]
+      "matchUpdateTypes": ["pin", "digest"],
+      "addLabels": ["{{datasource}}", "{{updateType}}", "go"]
     }
   ],
   "regexManagers": [
