@@ -6,8 +6,8 @@ MAKEFLAGS += --no-builtin-rules
 
 # todo renovate it
 CI_RENOVATE_IMAGE ?= renovate/renovate:31.20-slim
-export RENOVATE_TOKEN ?= $(shell envchain vars env | grep RENOVATE_TOKEN | tr "=" " " |  awk '{print $$2}')
-export RENOVATE_DOCKER_HUB_PASSWORD ?= $(shell envchain vars env | grep DOCKER_HUB_PASSWORD | tr "=" " " |  awk '{print $$2}')
+export RENOVATE_TOKEN ?= $(shell envchain vars env | grep RENOVATE_TOKEN | tr "=" " " | cut -d'=' -f2)
+export RENOVATE_DOCKER_HUB_PASSWORD ?= $(shell envchain vars env | grep DOCKER_HUB_PASSWORD | tr "=" " " | cut -d'=' -f2)
 
 help:
 	@printf "Usage: make [target] [VARIABLE=value]\nTargets:\n"
