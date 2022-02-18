@@ -42,7 +42,7 @@ jobs:
 
       # https://github.com/renovatebot/github-action install renovate app
       - name: execute-dependency-update
-        uses: renovatebot/github-action@v31.68.0
+        uses: renovatebot/github-action@v31.81.3
         with:
           configurationFile: ${{ env.RENOVATE_CONFIG_FOLDER }}/config.js
           token: ${{ secrets.RENOVATE_TOKEN }}
