@@ -11,7 +11,7 @@ on:
         default: true
   schedule:
     # https://crontab.guru/
-    - cron: '0 6 * * 5'
+    - cron: '0 4 * * *'
 #   pull_request_target:
 #     branches:
 #       - $default-branch
