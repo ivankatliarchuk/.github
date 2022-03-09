@@ -53,14 +53,3 @@ jobs:
           LOG_LEVEL: info
           RENOVATE_REPOSITORIES: ${{ steps.prepare.outputs.repositories }}
           RENOVATE_DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.dryrun || 'false' }}
-
-#  INFO: Dependency extraction complete (repository=ivankatliarchuk/dotfiles)
-#        "baseBranch": "master",
-#        "stats": {
-#          "managers": {
-#            "github-actions": {"fileCount": 4, "depCount": 8},
-#            "pip_requirements": {"fileCount": 1, "depCount": 2}
-#          },
-#          "total": {"fileCount": 5, "depCount": 10}
-#        }
-
