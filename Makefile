@@ -5,9 +5,9 @@ MAKEFLAGS += --warn-undefined-variables
 MAKEFLAGS += --no-builtin-rules
 
 # todo renovate it
-CI_RENOVATE_IMAGE ?= renovate/renovate:31.20-slim
-export RENOVATE_TOKEN ?= $(shell envchain vars env | grep RENOVATE_TOKEN | tr "=" " " | cut -d'=' -f2)
-export RENOVATE_DOCKER_HUB_PASSWORD ?= $(shell envchain vars env | grep DOCKER_HUB_PASSWORD | tr "=" " " | cut -d'=' -f2)
+CI_RENOVATE_IMAGE := renovate/renovate:32.7.5-slim
+RENOVATE_DRY_RUN := true
+LOG_LEVEL := debug
 
 help:
 	@printf "Usage: make [target] [VARIABLE=value]\nTargets:\n"
@@ -21,19 +21,17 @@ hooks: ## Setup pre commit.
 validate: ## Validate files with pre-commit hooks
 	@pre-commit run --all-files
 
-set-token: ## Set tokens for local development
-	@envchain --set vars RENOVATE_TOKEN
-
-PHONY: renovate
-deps: ## Run renovate
-	@docker run --rm -it \
-	-v ${PWD}/renovate/config.js:/ren/renovate-config.js -w /tmp \
+deps: ## Run renovate locally
+	docker run --rm -it \
+	-w /tmp \
+	-v ${PWD}/renovate/config.js:/ren/renovate-config.js \
+	-v ${PWD}/renovate/repositories.json:/ren/repositories.json \
 	-v ${PWD}/renovate/.cache:/ren/cache \
 	--user ubuntu:121 \
 	-e RENOVATE_CONFIG_FILE=/ren/renovate-config.js \
 	-e RENOVATE_CACHE_DIR=/ren/cache \
 	-e RENOVATE_TOKEN \
 	-e RENOVATE_DOCKER_HUB_PASSWORD \
-	-e LOG_LEVEL=debug \
-	-e RENOVATE_DRY_RUN=false \
+	-e LOG_LEVEL=$(LOG_LEVEL)\
+	-e RENOVATE_DRY_RUN=$(RENOVATE_DRY_RUN) \
 	${CI_RENOVATE_IMAGE}

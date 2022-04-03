@@ -2,6 +2,7 @@
 // https://github.com/renovatebot/github-action/blob/main/.github/renovate.json
 // https://docs.renovatebot.com/configuration-options/
 
+const fs = require('fs');
 const dry_run = process.env.RENOVATE_DRY_RUN
 console.log(`DRY_RUN mode: ${dry_run}`);
 
@@ -17,7 +18,7 @@ module.exports = {
   "onboarding": true,
   "platform": "github",
   "dryRun": dry_run,
-  // "repositories": ["cloudkats/docker-tools"],
+  "repositories": JSON.parse(fs.readFileSync('/ren/repositories.json', 'utf8')),
   "printConfig": false,
   "pruneStaleBranches": true,
   "recreateClosed": true,
@@ -122,9 +123,7 @@ module.exports = {
       "matchManagers": ["regex"],
       "addLabels": ["{{datasource}}", "{{updateType}}"]
     },
-
     // legacy
-
     {
       "versioning": "regex:^v(?<major>\\d+)(\\.(?<minor>\\d+))?(\\.(?<patch>\\d+))?",
       "groupName": "actions",
@@ -140,7 +139,6 @@ module.exports = {
       "versioning": "semver",
       "matchDatasources": "go",
       "matchManagers": ["gomod"],
-      "matchUpdateTypes": ["pin", "digest"],
       "addLabels": ["{{datasource}}", "{{updateType}}", "go"]
     }
   ],
