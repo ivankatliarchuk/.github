@@ -4,7 +4,7 @@ SHELL := /bin/bash
 MAKEFLAGS += --warn-undefined-variables
 MAKEFLAGS += --no-builtin-rules
 
-CI_RENOVATE_IMAGE := renovate/renovate:32.7.5-slim
+CI_RENOVATE_IMAGE := renovate/renovate:32.10.4-slim
 RENOVATE_DRY_RUN := true
 LOG_LEVEL := debug
 
