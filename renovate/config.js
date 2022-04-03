@@ -12,13 +12,12 @@ module.exports = {
   "extends": [":disableRateLimiting", ":semanticCommits"],
   "assigneesFromCodeOwners": true,
   "assignees": ["ivankatliarchuk"],
-  "labels": ["renovate", "dependencies"],
   "dependencyDashboardTitle": "Dependency Dashboard self-hosted",
   "gitAuthor": "Renovate Bot <bot@renovateapp.com>",
   "onboarding": true,
   "platform": "github",
   "dryRun": dry_run,
-  "repositories": JSON.parse(fs.readFileSync('/ren/repositories.json', 'utf8')),
+  // "repositories": JSON.parse(fs.readFileSync('/ren/repositories.json', 'utf8')),
   "printConfig": false,
   "pruneStaleBranches": true,
   "recreateClosed": true,
@@ -38,19 +37,14 @@ module.exports = {
   ],
   "git-submodules": {
     "enabled": true
-    },
+  },
+  "labels": ["renovate", "dependencies"],
   "packageRules": [
     // labels section --> start
     {
-      "addLabels": ["renovate"]
-    },
-    {
-      "matchDatasources": ["git-refs", "github-tags"],
-      "addLabels": ["{{updateType}}"]
-    },
-    {
       "matchUpdateTypes": ["major", "minor", "patch", "pin", "digest"],
-      "addLabels": ["{{datasource}}", "{{updateType}}"]
+      "addLabels": ["{{depType}}", "{{datasource}}", "{{updateType}}"],
+      "commitMessageSuffix": '({{packageFile}})'
     },
     { "addLabels": ["php"], "matchLanguages": ["php"] },
     { "addLabels": ["js"], "matchLanguages": ["js"] },
@@ -113,14 +107,6 @@ module.exports = {
         "setup-cfg"
       ],
       "matchPackagePatterns": [".*"],
-      "addLabels": ["{{datasource}}", "{{updateType}}"]
-    },
-    {
-      "matchManagers": ["*"],
-      "addLabels": ["{{datasource}}", "{{updateType}}"]
-    },
-    {
-      "matchManagers": ["regex"],
       "addLabels": ["{{datasource}}", "{{updateType}}"]
     },
     // legacy
@@ -243,12 +229,7 @@ module.exports = {
       "lookupNameTemplate": "{{{depName}}}"
     },
     {
-      "fileMatch": [
-        "Dockerfile$",
-        "^Dockerfile$",
-        "(^|/|\\.)Dockerfile$",
-        "(^|/)Dockerfile\\.[^/]*$"
-      ],
+      "fileMatch": [".*"],
       "matchStrings": [
         "datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\sENV .*?_VERSION=(?<currentValue>.*)\\s"
       ],
@@ -256,15 +237,22 @@ module.exports = {
       "datasourceTemplate": "github-releases"
     },
     {
-      "fileMatch": [
-        "Dockerfile$",
-        "(^|/|\\.)Dockerfile$",
-        "(^|/)Dockerfile\\.[^/]*$"
-      ],
+      "fileMatch": [ ".*" ],
       "matchStrings": [
         "ARG IMAGE=(?<depName>.*?):(?<currentValue>.*?)@(?<currentDigest>sha256:[a-f0-9]+)s"
       ],
       "datasourceTemplate": "docker"
-    }
+    },
+    {
+      "description": "Update docker references in Makefile",
+      "fileMatch": [
+        "Makefile$"
+      ],
+      "matchStrings": [
+        "CI_RENOVATE_IMAGE\\s*:=\\s*(?<depName>renovate\\/renovate):(?<currentValue>[a-z0-9.-]+)(?:@(?<currentDigest>sha256:[a-f0-9]+))?"
+      ],
+      "datasourceTemplate": "docker",
+      "versioningTemplate": "docker"
+    },
   ]
 };

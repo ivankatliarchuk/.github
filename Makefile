@@ -4,7 +4,6 @@ SHELL := /bin/bash
 MAKEFLAGS += --warn-undefined-variables
 MAKEFLAGS += --no-builtin-rules
 
-# todo renovate it
 CI_RENOVATE_IMAGE := renovate/renovate:32.7.5-slim
 RENOVATE_DRY_RUN := true
 LOG_LEVEL := debug
@@ -32,6 +31,6 @@ deps: ## Run renovate locally
 	-e RENOVATE_CACHE_DIR=/ren/cache \
 	-e RENOVATE_TOKEN \
 	-e RENOVATE_DOCKER_HUB_PASSWORD \
-	-e LOG_LEVEL=$(LOG_LEVEL)\
+	-e LOG_LEVEL=$(LOG_LEVEL) \
 	-e RENOVATE_DRY_RUN=$(RENOVATE_DRY_RUN) \
 	${CI_RENOVATE_IMAGE}
