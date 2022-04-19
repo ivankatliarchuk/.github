@@ -19,7 +19,7 @@ jobs:
         (github.actor != 'dependabot[bot]' || github.actor != 'dependabot-preview[bot]' ||
           github.actor != 'renovate[bot]' ||  github.actor != 'renovate-bot')
     steps:
-      - uses: fuxingloh/multi-labeler@v1.6.0
+      - uses: fuxingloh/multi-labeler@v1.7.0
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }} # optional, default to '${{ github.token }}'
           config-path: .github/governance-labeler.yml
