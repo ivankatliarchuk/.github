@@ -1,9 +1,9 @@
 name: renovate
 
 on:
+  push:
+    branches: [main, master]
   workflow_dispatch:
-    branches:
-      - [main, master]
     inputs:
       dryrun:
         description: Perform a dry run by logging messages instead of creating/updating/deleting branches and PRs.
