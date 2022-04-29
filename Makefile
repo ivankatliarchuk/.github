@@ -15,7 +15,6 @@ help:
 hooks: ## Setup pre commit.
 	@pre-commit install
 	@pre-commit gc
-	@pre-commit autoupdate
 
 validate: ## Validate files with pre-commit hooks
 	@pre-commit run --all-files
