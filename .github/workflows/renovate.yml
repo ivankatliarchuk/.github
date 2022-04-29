@@ -8,11 +8,8 @@ on:
       dryrun:
         description: Perform a dry run by logging messages instead of creating/updating/deleting branches and PRs.
         required: true
-        type: choice
-        default: 'true'
-        options:
-        - 'true'
-        - 'false'
+        type: boolean
+        default: true
   schedule:
     # https://crontab.guru/
     - cron: '0 4 * * *'
