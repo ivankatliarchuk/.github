@@ -18,7 +18,7 @@ module.exports = {
   "platform": "github",
   "dryRun": dry_run,
   // "repositories": JSON.parse(fs.readFileSync('/ren/repositories.json', 'utf8')),
-  "printConfig": false,
+  "printConfig": true,
   "prConcurrentLimit": 0,
   "prHourlyLimit": 0,
   "stabilityDays": 3,
