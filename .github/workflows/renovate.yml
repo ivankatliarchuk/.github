@@ -3,7 +3,7 @@ name: renovate
 on:
   workflow_dispatch:
     branches:
-      - $default-branch
+      - [main, master]
     inputs:
       dryrun:
         description: Perform a dry run by logging messages instead of creating/updating/deleting branches and PRs.
@@ -12,9 +12,6 @@ on:
   schedule:
     # https://crontab.guru/
     - cron: '0 4 * * *'
-#   pull_request_target:
-#     branches:
-#       - $default-branch
 
 env:
   RENOVATE_CONFIG_FOLDER: renovate
