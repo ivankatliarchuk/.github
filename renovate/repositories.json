@@ -15,5 +15,6 @@
   "terraform-module/terraform-aws-ecs-services",
   "accelerator-blueprints/base-blueprint",
   "accelerator-blueprints/blueprint-github-action",
-  "accelerator-blueprints/blueprint-github-action-typescipt"
+  "accelerator-blueprints/blueprint-github-action-typescipt",
+  "cloudkats/hello-world-rest"
 ]
