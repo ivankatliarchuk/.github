@@ -128,12 +128,6 @@ module.exports = {
       "matchPackageNames": ["actions/*"]
     },
     {
-      "enabled": true,
-      "groupName": "actions",
-      "matchManagers": ["github-actions"],
-      "addLabels": ["{{datasource}}", "{{updateType}}"]
-    },
-    {
       "versioning": "semver",
       "matchDatasources": "go",
       "matchManagers": ["gomod"],
@@ -142,12 +136,6 @@ module.exports = {
     {
       "matchPackageNames": ["kubernetes/kubernetes"],
       "allowedVersions": "< 2"
-    },
-    {
-      "matchPaths": [
-        ".github/workflows/**"
-      ],
-      "semanticCommitType": "ci"
     }
   ],
   "regexManagers": [
