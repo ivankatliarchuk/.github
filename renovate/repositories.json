@@ -16,5 +16,6 @@
   "accelerator-blueprints/base-blueprint",
   "accelerator-blueprints/blueprint-github-action",
   "accelerator-blueprints/blueprint-github-action-typescipt",
-  "cloudkats/hello-world-rest"
+  "cloudkats/hello-world-rest",
+  "cloudkats/toolbox-aws"
 ]
