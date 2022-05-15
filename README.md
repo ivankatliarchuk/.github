@@ -58,6 +58,7 @@ For more information, please see the article on [creating a default community he
 - [Cheat sheet: emoji](https://github.com/ikatyang/emoji-cheat-sheet)
 - [Cheat sheet: emoji](https://gist.github.com/rxaviers/7360908)
 - [Color picker](https://imagecolorpicker.com/color-code/9ca49e)
+- [GitHub Labels](https://github.com/ivankatliarchuk/.github/labels)
 
 ## Blogs
 
@@ -79,27 +80,6 @@ Add the following to your renovate.json config
 
 > Renovate actions does not support extra files
 
-```js
-const fs = require('fs');
-const config_folder = '.github/renovate'
-
-if (!fs.existsSync(`${config_folder}/repositories.json`)) {
-  const err = `missing "${config_folder}/repositories.json" file`
-  console.log(`error: ${err}. exit...`)
-  throw Error(err)
-}
-
-if (!fs.existsSync(`${config_folder}/config.json`)) {
-  const err = `missing "${config_folder}/config.json" file`
-  console.log(`error: ${err}. exit...`)
-  throw Error(err)
-}
-
-repositories: JSON.parse(fs.readFileSync(`${config_folder}/repositories.json`), 'utf8'),
-```
-
-[GitHub Labels](https://github.com/ivankatliarchuk/.github/labels)
-
 ## TODO
 
 - [X] Setup workflow templates
@@ -110,6 +90,7 @@ repositories: JSON.parse(fs.readFileSync(`${config_folder}/repositories.json`), 
 - [X] Renovate to work with mutliple repositories
 - [ ] Setup [Licensed](https://github.com/github/licensed) for all repos
 - [ ] Template some of the files and share accross repositories
+- [ ] Renovate actions to support extra files
 
 <!-- resources -->
 [1]: https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/creating-a-default-community-health-file

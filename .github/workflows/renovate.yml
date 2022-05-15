@@ -35,10 +35,8 @@ jobs:
           REPOSITORIES=$(./renovate/repositories.js)
           echo $REPOSITORIES
           echo "::set-output name=REPOSITORIES::$REPOSITORIES"
-          echo "::set-output name=REGEXMAANAGERS::$($RENOVATE_REGEX_MANAGERS_FILE)"
         env:
           RENOVATE_REPOSITORIES_FILE: ${{ env.RENOVATE_CONFIG_FOLDER }}/repositories.json
-          RENOVATE_REGEX_MANAGERS_FILE: ${{ env.RENOVATE_CONFIG_FOLDER }}/renovate/regexManagers.js
 
       # https://github.com/renovatebot/github-action install renovate app
       - name: execute-dependency-update
@@ -52,5 +50,4 @@ jobs:
           RENOVATE_DOCKER_HUB_PASSWORD: ${{ secrets.DOCKER_HUB_PASSWORD }}
           LOG_LEVEL: info
           RENOVATE_REPOSITORIES: ${{ steps.prepare.outputs.repositories }}
-          RENOVATE_REGEX_MANAGERS: ${{ steps.prepare.outputs.regexmaanagers }}
           RENOVATE_DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.dryrun || 'false' }}

@@ -5,7 +5,8 @@ MAKEFLAGS += --warn-undefined-variables
 MAKEFLAGS += --no-builtin-rules
 
 CI_RENOVATE_IMAGE := renovate/renovate:32.10.4-slim
-RENOVATE_DRY_RUN := true
+RENOVATE_REPOSITORIES := $(shell cat ./renovate/repositories.json | jq -r '. | join(",")')
+RENOVATE_DRY_RUN := false
 LOG_LEVEL := debug
 
 help:
@@ -23,10 +24,11 @@ deps: ## Run renovate locally
 	docker run --rm -it \
 	-w /tmp \
 	-v ${PWD}/renovate/config.js:/ren/renovate-config.js \
-	-v ${PWD}/renovate/repositories.json:/ren/repositories.json \
 	-v ${PWD}/renovate/.cache:/ren/cache \
 	--user ubuntu:121 \
 	-e RENOVATE_CONFIG_FILE=/ren/renovate-config.js \
+	-e RENOVATE_REPOSITORIES=$(RENOVATE_REPOSITORIES) \
+	-e RENOVATE_REGEX_MANAGERS=$(RENOVATE_REGEX_MANAGERS) \
 	-e RENOVATE_CACHE_DIR=/ren/cache \
 	-e RENOVATE_TOKEN \
 	-e RENOVATE_DOCKER_HUB_PASSWORD \
