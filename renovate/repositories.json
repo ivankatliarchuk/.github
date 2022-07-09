@@ -10,7 +10,7 @@
   "terraform-module/terraform-aws-enforce-mfa",
   "terraform-module/terraform-aws-kms",
   "terraform-module/terraform-aws-eks-fargate-profile",
-  "terraform-module/terraform-aws-cloudfront-s3",
+  "terraform-module/terraform-aws-cloudfront",
   "terraform-module/terraform-aws-ecr",
   "https://github.com/terraform-module/terraform-aws-ecs",
   "terraform-module/terraform-aws-ecs-bootstrap",
