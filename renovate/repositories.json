@@ -12,7 +12,7 @@
   "terraform-module/terraform-aws-eks-fargate-profile",
   "terraform-module/terraform-aws-cloudfront",
   "terraform-module/terraform-aws-ecr",
-  "https://github.com/terraform-module/terraform-aws-ecs",
+  "terraform-module/terraform-aws-ecs",
   "terraform-module/terraform-aws-ecs-bootstrap",
   "terraform-module/terraform-aws-github-oidc-provider",
   "terraform-module/terraform-aws-gitlab-oidc-provider",
@@ -20,6 +20,10 @@
   "accelerator-blueprints/base-blueprint",
   "accelerator-blueprints/blueprint-github-action",
   "accelerator-blueprints/blueprint-github-action-typescipt",
+  "ik-performance/k6-blueprint",
+  "ik-performance/gatling-blueprint",
+  "ik-performance/performance-blueprint-project",
+  "ik-performance/serverless-artillery",
   "cloudkats/hello-world-rest",
   "cloudkats/toolbox-aws"
 ]
