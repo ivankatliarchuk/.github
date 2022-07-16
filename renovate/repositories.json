@@ -13,6 +13,7 @@
   "terraform-module/terraform-aws-cloudfront",
   "terraform-module/terraform-aws-ecr",
   "terraform-module/terraform-aws-ecs",
+  "terraform-module/terraform-aws-acm",
   "terraform-module/terraform-aws-ecs-bootstrap",
   "terraform-module/terraform-aws-github-oidc-provider",
   "terraform-module/terraform-aws-gitlab-oidc-provider",
