@@ -14,6 +14,7 @@
   "terraform-module/terraform-aws-ecr",
   "terraform-module/terraform-aws-ecs",
   "terraform-module/terraform-aws-acm",
+  "terraform-module/terraform-aws-lambda",
   "terraform-module/terraform-aws-dns",
   "terraform-module/terraform-aws-ecs-bootstrap",
   "terraform-module/terraform-aws-github-oidc-provider",
