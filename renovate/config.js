@@ -16,7 +16,7 @@ module.exports = {
   "gitAuthor": "IK Renovate Bot <ikbot@renovateapp.com>",
   "onboarding": true,
   "platform": "github",
-  "dryRun": dry_run,
+  // "dryRun": dry_run,
   // "repositories": JSON.parse(fs.readFileSync('/ren/repositories.json', 'utf8')),
   "printConfig": true,
   "prConcurrentLimit": 0,
