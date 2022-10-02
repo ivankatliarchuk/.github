@@ -11,7 +11,7 @@ Do the checklist before filing an issue:
 
  * [ ] Is this related to the `actions-rs` Actions?
        If you think it's a problem related to Github Actions in general, use GitHub Community forum instead: https://github.community
- * [ ] You've read the [Contributing](https://github.com/ivankatliarchuk/.github/blob/main/contributing.md)
+ * [ ] You've read the [Contributing](../contributing.md)
  * [ ] Is this something you can debug and fix? Send a pull request! Bug fixes and documentation fixes are welcome.
  * [ ] I've searched for similar [feature](../issues) and didn't find any similar
 
