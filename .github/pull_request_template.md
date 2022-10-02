@@ -58,7 +58,7 @@ Put an `x` into the [ ] to show you have filled the information
 <!--- Go over all the following points, and put an `x` in all the boxes that apply. -->
 <!--- If you're unsure about any of these, don't hesitate to ask. We're here to help! -->
 - [ ] My code follows the code style of this project.
-- [ ] I have read the [**CONTRIBUTING** document](https://github.com/ivankatliarchuk/.github/blob/main/contributing.md).
+- [ ] I have read the [**CONTRIBUTING** document](./contributing.md).
 - [ ] Added/updated unit tests for this change
 - [ ] I have tested the changes and verified that they work and don't break anything (as well as I can manage).
 - [ ] Filled out test instructions (In case there aren't any unit tests)
