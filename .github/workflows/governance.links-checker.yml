@@ -74,7 +74,7 @@ jobs:
           write-mode: append
 
       - name: create issue from file
-        uses: JasonEtco/create-an-issue@v2.6
+        uses: JasonEtco/create-an-issue@v2.8.0
         id: issue
         if: ${{ steps.lychee.outputs.exit_code > 0 }}
         env:
