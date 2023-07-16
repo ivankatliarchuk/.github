@@ -55,7 +55,7 @@ jobs:
 
       - name: read output
         id: readfile
-        uses: juliangruber/read-file-action@v1
+        uses: juliangruber/read-file-action@v1.1.6
         if: ${{ steps.lychee.outputs.exit_code > 0 }}
         with:
           path: ${{ env.LYCHEE_OUT }}
