@@ -10,5 +10,5 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3.5.3
+      - uses: actions/checkout@v4.0.0
       - uses: vweevers/additional-tags-action@v2
