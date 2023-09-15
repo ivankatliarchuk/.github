@@ -4,7 +4,7 @@ SHELL := /bin/bash
 MAKEFLAGS += --warn-undefined-variables
 MAKEFLAGS += --no-builtin-rules
 
-CI_RENOVATE_IMAGE := renovate/renovate:36.91.0-slim
+CI_RENOVATE_IMAGE := renovate/renovate:36.93.7-slim
 RENOVATE_REPOSITORIES := $(shell cat ./renovate/repositories.json | jq -r '. | join(",")')
 RENOVATE_DRY_RUN := false
 LOG_LEVEL := debug
