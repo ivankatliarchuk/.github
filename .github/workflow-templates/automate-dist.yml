@@ -26,7 +26,7 @@ jobs:
       # Run only if ‘dist' files were not changed
       - name: Setup node
         if: steps.filter.outputs.dist == 'false'
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
           node-version: 14.x
 
