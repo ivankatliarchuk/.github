@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: checkout code
         if: steps.check.outputs.triggered == 'true'
-        uses: actions/checkout@v2.7.0
+        uses: actions/checkout@v4.1.1
         with:
           fetch-depth: '1'
           submodules: 'recursive'
