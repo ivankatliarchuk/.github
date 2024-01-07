@@ -125,8 +125,7 @@ exclude-labels:
   - invalid
   - '[skip-changelog]'
   - '[skip-ci]'
-  - 'renovate'
-  - 'deps'
+  - 'github-action'
   - 'plugin'
 
 autolabeler:

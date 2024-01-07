@@ -88,7 +88,11 @@ module.exports = {
       "separateMinorPatch": true,
       "separateMultipleMajor": true,
       "groupName": "{{datasource}} {{depType}} {{packageFile}}",
-      "addLabels": ["rule::4"]
+      "addLabels": ["rule::4", "github-action"]
+    },
+    {
+      "matchManagers": ["github-actions"],
+      "addLabels": ["rule::4.1", "github-action"]
     },
     {
       "automerge": false,
