@@ -34,7 +34,7 @@ jobs:
       # todo https://github.com/peter-evans/link-checker
       - name: link checker
         id: lychee
-        uses: lycheeverse/lychee-action@v1.8.0
+        uses: lycheeverse/lychee-action@v1.9.0
         # if: failure()
         with:
           args: >
