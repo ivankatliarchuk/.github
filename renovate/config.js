@@ -127,11 +127,17 @@ module.exports = {
       "matchPackagePatterns": [".*"],
       "addLabels": ["rule::8"]
     },
+    {
+      "groupName": "pre-commit",
+      "matchManagers": ["pre-commit"],
+      "addLabels": ["rule::10", "pre-commit"]
+    },
     // legacy
     {
       "versioning": "regex:^v(?<major>\\d+)(\\.(?<minor>\\d+))?(\\.(?<patch>\\d+))?",
       "groupName": "actions",
-      "matchPackageNames": ["actions/*"]
+      "matchPackageNames": ["actions/*"],
+      "addLabels": ["rule::4.2", "github-action"]
     },
     {
       "versioning": "semver",

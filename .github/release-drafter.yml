@@ -125,8 +125,10 @@ exclude-labels:
   - invalid
   - '[skip-changelog]'
   - '[skip-ci]'
-  - 'github-action'
   - 'plugin'
+  # group them
+  - 'github-action'
+  - 'pre-commit'
 
 autolabeler:
   - label: 'chore'
