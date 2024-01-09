@@ -27,6 +27,7 @@ updates:
     labels:
       - ":game_die: dependencies"
       - ":robot: bot"
+      - "github-action"
     reviewers:
       - ivankatliarchuk
 
