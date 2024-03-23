@@ -75,25 +75,26 @@ module.exports = {
       "enabled": false
     },
     {
-      "automerge": false,
+      "automerge": true,
       "major": { "enabled": true },
       "separateMajorMinor": true,
       "separateMinorPatch": true,
       "matchDatasources": ["docker"],
       "separateMultipleMajor": true,
       "groupName": "{{datasource}}",
-      "addLabels": ["rule::4"],
-      "addLabels": ["rule::4", "{{datasource}}", "{{updateType}}"]
+      "addLabels": ["rule::4"]
     },
     {
-      "automerge": false,
+      "automerge": true,
+      // https://docs.renovatebot.com/configuration-options/#excluderepositories
+      "excludeRepositories": ["ivankatliarchuk/.github", "**/*-archived"],
       "matchManagers": ["github-actions"],
       "additionalBranchPrefix": "{{packageFileDir}}-",
       "separateMajorMinor": true,
       "separateMinorPatch": true,
       "separateMultipleMajor": true,
       "groupName": "{{datasource}} {{depType}} {{packageFile}}",
-      "addLabels": ["rule::4.2", "github-action", "skip-release"]
+      "addLabels": ["rule::4.1", "github-action", "skip-release"]
     },
     {
       "automerge": false,
@@ -140,7 +141,7 @@ module.exports = {
       "versioning": "regex:^v(?<major>\\d+)(\\.(?<minor>\\d+))?(\\.(?<patch>\\d+))?",
       "groupName": "actions",
       "matchPackageNames": ["actions/*"],
-      "addLabels": ["rule::4.2", "github-action"]
+      "addLabels": ["rule::4.21", "github-action"]
     },
     {
       "versioning": "semver",
