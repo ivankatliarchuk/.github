@@ -85,9 +85,7 @@ module.exports = {
       "addLabels": ["rule::4"]
     },
     {
-      "automerge": true,
       // https://docs.renovatebot.com/configuration-options/#excluderepositories
-      "excludeRepositories": ["ivankatliarchuk/.github", "**/*-archived"],
       "matchManagers": ["github-actions"],
       "additionalBranchPrefix": "{{packageFileDir}}-",
       "separateMajorMinor": true,
@@ -95,6 +93,13 @@ module.exports = {
       "separateMultipleMajor": true,
       "groupName": "{{datasource}} {{depType}} {{packageFile}}",
       "addLabels": ["rule::4.1", "github-action", "skip-release"]
+    },
+    {
+      "automerge": true,
+      // https://docs.renovatebot.com/configuration-options/#excluderepositories
+      "excludeRepositories": ["ivankatliarchuk/.github", "**/*-archived"],
+      "matchManagers": ["github-actions"],
+      "addLabels": ["rule::4.1"]
     },
     {
       "automerge": false,
