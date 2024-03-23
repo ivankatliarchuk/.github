@@ -45,7 +45,12 @@ module.exports = {
   "pre-commit": {
     "enabled": true
   },
-  "labels": ["renovate", "deps", "{{depType}}", "datasource::{{datasource}}", "type::{{updateType}}", "manager:{{manager}}"]
+  "labels": ["renovate", "deps", "{{depType}}", "datasource::{{datasource}}", "type::{{updateType}}", "manager:{{manager}}"],
+  "ignorePaths": [
+    "examples/**",
+    "k8s/sandbox/**",
+    "**/tests/**",
+  ],
   "vulnerabilityAlerts": {
     "enabled": true,
     "addLabels": ["vulnerability"]
@@ -70,29 +75,26 @@ module.exports = {
       "enabled": false
     },
     {
-      "automerge": false,
+      "automerge": true,
       "major": { "enabled": true },
       "separateMajorMinor": true,
       "separateMinorPatch": true,
       "matchDatasources": ["docker"],
       "separateMultipleMajor": true,
       "groupName": "{{datasource}}",
-      "addLabels": ["rule::4"],
-      "addLabels": ["{{datasource}}", "{{updateType}}"]
+      "addLabels": ["rule::4"]
     },
     {
-      "matchPackageNames": ["actions/*"],
+      "automerge": true,
+      // https://docs.renovatebot.com/configuration-options/#excluderepositories
+      "excludeRepositories": ["ivankatliarchuk/.github", "**/*-archived"],
       "matchManagers": ["github-actions"],
       "additionalBranchPrefix": "{{packageFileDir}}-",
       "separateMajorMinor": true,
       "separateMinorPatch": true,
       "separateMultipleMajor": true,
       "groupName": "{{datasource}} {{depType}} {{packageFile}}",
-      "addLabels": ["rule::4", "github-action"]
-    },
-    {
-      "matchManagers": ["github-actions"],
-      "addLabels": ["rule::4.1", "github-action"]
+      "addLabels": ["rule::4.1", "github-action", "skip-release"]
     },
     {
       "automerge": false,
@@ -128,16 +130,18 @@ module.exports = {
       "addLabels": ["rule::8"]
     },
     {
+      "automerge": true,
       "groupName": "pre-commit",
       "matchManagers": ["pre-commit"],
-      "addLabels": ["rule::10", "pre-commit"]
+      "commitMessageSuffix": "[skip ci]",
+      "addLabels": ["rule::10", "pre-commit", "skip-release", "skip-ci"]
     },
     // legacy
     {
       "versioning": "regex:^v(?<major>\\d+)(\\.(?<minor>\\d+))?(\\.(?<patch>\\d+))?",
       "groupName": "actions",
       "matchPackageNames": ["actions/*"],
-      "addLabels": ["rule::4.2", "github-action"]
+      "addLabels": ["rule::4.21", "github-action"]
     },
     {
       "versioning": "semver",
@@ -247,14 +251,14 @@ module.exports = {
     },
     {
       "customType": "regex",
-      fileMatch: [
+      "fileMatch": [
         "^Dockerfile$",
         "Dockerfile$",
       ],
-      matchStrings: [
+      "matchStrings": [
         "#\\s*renovate:\\s*datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s(ARG|ENV) .*?_VERSION(=|\\s)(?<currentValue>.*)\\s"
       ],
-      versioningTemplate: "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
+      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
     },
     {
       "customType": "regex",
@@ -299,6 +303,18 @@ module.exports = {
       ],
       "datasourceTemplate": "docker",
       "versioningTemplate": "docker"
-    }
+    },
+    {
+      "customType": "regex",
+      "description": "Update .tflint.hcl dependencies",
+      "fileMatch": [
+        ".tflint.hcl"
+      ],
+      "matchStrings": [
+        "plugin \"aws\" {\\n\\s*enabled\\s*=\\s*true\\n\\s*version\\s=\\s*\"(?<currentValue>[a-z.]+)\"\\n\\s * source\\s*=\\s*\"github.com\\/(?<depName>.*?)\"\\n}"
+      ],
+      "datasourceTemplate": "github-tags",
+      "versioningTemplate": "semver"
+    },
   ]
 };

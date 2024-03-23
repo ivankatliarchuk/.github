@@ -125,9 +125,9 @@ exclude-labels:
   - invalid
   - '[skip-changelog]'
   - '[skip-ci]'
-  - 'plugin'
+  - 'skip-ci'
+  - 'skip-release'
   # group them
-  - 'github-action'
   - 'pre-commit'
 
 autolabeler:

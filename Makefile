@@ -4,7 +4,7 @@ SHELL := /bin/bash
 MAKEFLAGS += --warn-undefined-variables
 MAKEFLAGS += --no-builtin-rules
 
-CI_RENOVATE_IMAGE := renovate/renovate:37.125.2-slim
+CI_RENOVATE_IMAGE := renovate/renovate:37.267.0-slim
 RENOVATE_REPOSITORIES := $(shell cat ./renovate/repositories.json | jq -r '. | join(",")')
 RENOVATE_DRY_RUN := false
 LOG_LEVEL := debug
@@ -20,7 +20,7 @@ hooks: ## Setup pre commit.
 validate: ## Validate files with pre-commit hooks
 	@pre-commit run --all-files
 
-deps: ## Run renovate locally
+run: ## Run renovate locally
 	docker run --rm -it \
 	-w /tmp \
 	-v ${PWD}/renovate/config.js:/ren/renovate-config.js \
