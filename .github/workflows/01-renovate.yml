@@ -1,4 +1,4 @@
-name: renovate
+name: 01-renovate
 
 on:
   push:
