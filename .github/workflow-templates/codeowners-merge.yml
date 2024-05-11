@@ -13,13 +13,13 @@ jobs:
     steps:
       - name: checkout code
         if: steps.check.outputs.triggered == 'true'
-        uses: actions/checkout@v4.1.1
+        uses: actions/checkout@v4.1.5
         with:
           fetch-depth: '1'
           submodules: 'recursive'
 
       - name: check if merge was approved by code owner
         if: steps.check.outputs.triggered == 'true'
-        uses: orta/code-owner-self-merge@1.6.5
+        uses: orta/code-owner-self-merge@1.6.6
         env:
           GITHUB_TOKEN: ${{  secrets.GITHUB_TOKEN }}
