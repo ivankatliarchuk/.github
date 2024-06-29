@@ -19,7 +19,7 @@ jobs:
     # To automatically get bug fixes and new Ruby versions for ruby/setup-ruby,
     # change this to (see https://github.com/ruby/setup-ruby#versioning):
     # uses: ruby/setup-ruby@v1
-      uses: ruby/setup-ruby@0cde4689ba33c09f1b890c1725572ad96751a3fc
+      uses: ruby/setup-ruby@3783f195e29b74ae398d7caca108814bbafde90e
       with:
         ruby-version: 2.6
     - name: Install dependencies
