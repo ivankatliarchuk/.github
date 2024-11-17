@@ -28,7 +28,7 @@ jobs:
     if: github.repository == 'ivankatliarchuk/.github'
     steps:
       # checkout to latest commit
-      - uses: actions/checkout@v4.2.0
+      - uses: actions/checkout@v4.2.2
       # run markdown linter
 
       # todo https://github.com/peter-evans/link-checker
