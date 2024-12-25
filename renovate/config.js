@@ -92,14 +92,15 @@ module.exports = {
       "separateMinorPatch": true,
       "separateMultipleMajor": true,
       "groupName": "{{datasource}} {{depType}} {{packageFile}}",
-      "addLabels": ["rule::4.1", "github-action", "skip-release"]
+      "addLabels": ["rule::4.1", "github-action", "skip-release"],
+      "versioning": "regex:^v(?<major>\\d+)(\\.(?<minor>\\d+))?(\\.(?<patch>\\d+))?"
     },
     {
       "automerge": true,
       // https://docs.renovatebot.com/configuration-options/#excluderepositories
       "excludeRepositories": ["ivankatliarchuk/.github", "**/*-archived"],
       "matchManagers": ["github-actions"],
-      "addLabels": ["rule::4.1"]
+      "addLabels": ["rule::4.1.1"]
     },
     {
       "automerge": false,
